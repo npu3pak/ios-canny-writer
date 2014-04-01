@@ -19,8 +19,8 @@
 		40ED40BA18EAEAC50003B099 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40B918EAEAC50003B099 /* AppDelegate.m */; };
 		40ED40BD18EAEAC50003B099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40ED40BB18EAEAC50003B099 /* Main.storyboard */; };
 		40ED40C018EAEAC50003B099 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40BE18EAEAC50003B099 /* Notes.xcdatamodeld */; };
-		40ED40C318EAEAC50003B099 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40C218EAEAC50003B099 /* MasterViewController.m */; };
-		40ED40C618EAEAC50003B099 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40C518EAEAC50003B099 /* DetailViewController.m */; };
+		40ED40C318EAEAC50003B099 /* RecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40C218EAEAC50003B099 /* RecordsViewController.m */; };
+		40ED40C618EAEAC50003B099 /* RecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40C518EAEAC50003B099 /* RecordDetailViewController.m */; };
 		40ED40C818EAEAC50003B099 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40ED40C718EAEAC50003B099 /* Images.xcassets */; };
 		40ED40CF18EAEAC50003B099 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40CE18EAEAC50003B099 /* XCTest.framework */; };
 		40ED40D018EAEAC50003B099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A718EAEAC50003B099 /* Foundation.framework */; };
@@ -63,10 +63,10 @@
 		40ED40B918EAEAC50003B099 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		40ED40BC18EAEAC50003B099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40ED40BF18EAEAC50003B099 /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
-		40ED40C118EAEAC50003B099 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		40ED40C218EAEAC50003B099 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		40ED40C418EAEAC50003B099 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		40ED40C518EAEAC50003B099 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		40ED40C118EAEAC50003B099 /* RecordsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordsViewController.h; sourceTree = "<group>"; };
+		40ED40C218EAEAC50003B099 /* RecordsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordsViewController.m; sourceTree = "<group>"; };
+		40ED40C418EAEAC50003B099 /* RecordDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordDetailViewController.h; sourceTree = "<group>"; };
+		40ED40C518EAEAC50003B099 /* RecordDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordDetailViewController.m; sourceTree = "<group>"; };
 		40ED40C718EAEAC50003B099 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		40ED40CD18EAEAC50003B099 /* NotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40ED40CE18EAEAC50003B099 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -152,10 +152,10 @@
 				40ED40B818EAEAC50003B099 /* AppDelegate.h */,
 				40ED40B918EAEAC50003B099 /* AppDelegate.m */,
 				40ED40BB18EAEAC50003B099 /* Main.storyboard */,
-				40ED40C118EAEAC50003B099 /* MasterViewController.h */,
-				40ED40C218EAEAC50003B099 /* MasterViewController.m */,
-				40ED40C418EAEAC50003B099 /* DetailViewController.h */,
-				40ED40C518EAEAC50003B099 /* DetailViewController.m */,
+				40ED40C118EAEAC50003B099 /* RecordsViewController.h */,
+				40ED40C218EAEAC50003B099 /* RecordsViewController.m */,
+				40ED40C418EAEAC50003B099 /* RecordDetailViewController.h */,
+				40ED40C518EAEAC50003B099 /* RecordDetailViewController.m */,
 				40ED40C718EAEAC50003B099 /* Images.xcassets */,
 				40ED40BE18EAEAC50003B099 /* Notes.xcdatamodeld */,
 				40ED40B018EAEAC50003B099 /* Supporting Files */,
@@ -291,9 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4013BBBA18EB00A800810653 /* Photo.m in Sources */,
-				40ED40C618EAEAC50003B099 /* DetailViewController.m in Sources */,
+				40ED40C618EAEAC50003B099 /* RecordDetailViewController.m in Sources */,
 				4013BBBD18EB00A800810653 /* Record.m in Sources */,
-				40ED40C318EAEAC50003B099 /* MasterViewController.m in Sources */,
+				40ED40C318EAEAC50003B099 /* RecordsViewController.m in Sources */,
 				40ED40BA18EAEAC50003B099 /* AppDelegate.m in Sources */,
 				40ED40C018EAEAC50003B099 /* Notes.xcdatamodeld in Sources */,
 				4013BBC018EB00A900810653 /* History.m in Sources */,

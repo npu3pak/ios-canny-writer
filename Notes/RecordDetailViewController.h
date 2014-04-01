@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  RecordDetailViewController.h
 //  Notes
 //
 //  Created by Евгений Сафронов on 01.04.14.
@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@class Record;
 
-@property (strong, nonatomic) id detailItem;
+@interface RecordDetailViewController : UIViewController
+
+@property (strong, nonatomic) Record* record;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

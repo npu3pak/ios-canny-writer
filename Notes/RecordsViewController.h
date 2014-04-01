@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  RecordsViewController.h
 //  Notes
 //
 //  Created by Евгений Сафронов on 01.04.14.
@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface RecordsViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

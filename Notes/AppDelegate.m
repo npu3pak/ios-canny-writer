@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "MasterViewController.h"
+#import "RecordsViewController.h"
 
 @implementation AppDelegate
 
@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UINavigationController *navigationController = (UINavigationController *) self.window.rootViewController;
-    MasterViewController *controller = (MasterViewController *) navigationController.topViewController;
+    RecordsViewController *controller = (RecordsViewController *) navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     return YES;
 }
