@@ -7,10 +7,10 @@
 //
 
 #import "RecordsViewController.h"
-
 #import "RecordDetailViewController.h"
 #import "Record.h"
 #import "NSDate-Utilities.h"
+#import "RecordsItemCell.h"
 
 @implementation RecordsViewController
 
@@ -25,6 +25,7 @@
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     Record *newRecord = [[Record alloc] initWithEntity:entity insertIntoManagedObjectContext:context];
+    newRecord.title = @"Test";
     newRecord.creationDate = [self getDate];
     [self saveContext:context];
 }
@@ -86,8 +87,12 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    RecordsItemCell *recordCell = (RecordsItemCell *) cell;
     Record *record = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [record.creationDate description];
+    recordCell.title.text = record.title;
+    recordCell.preview.text = record.text;
+    BOOL hasPhotos = record.photos != nil && record.photos.count > 0;
+    recordCell.statusImage.hidden = !hasPhotos;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
