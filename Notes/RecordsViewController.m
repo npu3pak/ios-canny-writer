@@ -10,6 +10,7 @@
 
 #import "RecordDetailViewController.h"
 #import "Record.h"
+#import "NSDate-Utilities.h"
 
 @implementation RecordsViewController
 
@@ -24,24 +25,53 @@
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     Record *newRecord = [[Record alloc] initWithEntity:entity insertIntoManagedObjectContext:context];
-    newRecord.creationDate = [NSDate date];
+    newRecord.creationDate = [self getDate];
     [self saveContext:context];
+}
+
+- (NSDate *)getDate {
+    NSDateComponents *comps = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:[NSDate date]];
+    return [[NSCalendar currentCalendar] dateFromComponents:comps];
 }
 
 - (void)saveContext:(NSManagedObjectContext *)context {
     NSError *error = nil;
     if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+        [self showErrorMessage:error];
     }
+}
+
+- (void)showErrorMessage:(NSError *)error {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка!" message:error.userInfo.description delegate:nil cancelButtonTitle:@"Закрыть" otherButtonTitles:nil];
+    [alertView show];
 }
 
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [[self.fetchedResultsController sections] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
+    NSString *dateString = sectionInfo.name;
+    NSDate *date = [dateFormat dateFromString:dateString];
+
+    if (date.isToday)
+        return @"Сегодня";
+    else if (date.isYesterday)
+        return @"Вчера";
+//    Дату пишет не по-нашему
+//    else if (date.isThisYear) {
+//        [dateFormat setDateFormat:@"cccc dd LLL"];
+//        return [dateFormat stringFromDate:date];
+//    }
+    else {
+        [dateFormat setDateFormat:@"dd.MM.yyyy"];
+        return [dateFormat stringFromDate:date];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -95,20 +125,22 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Record" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
 
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO];
-    NSArray *sortDescriptors = @[sortDescriptor];
+    NSSortDescriptor *sortDescriptorDate = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO];
+    NSSortDescriptor *sortDescriptorTitle = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:NO];
+    NSSortDescriptor *sortDescriptorText = [[NSSortDescriptor alloc] initWithKey:@"text" ascending:NO];
+    NSArray *sortDescriptors = @[sortDescriptorDate, sortDescriptorTitle, sortDescriptorText];
     [fetchRequest setSortDescriptors:sortDescriptors];
 
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                                                managedObjectContext:self.managedObjectContext
+                                                                                                  sectionNameKeyPath:@"creationDate"
+                                                                                                           cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
 
     NSError *error = nil;
     if (![self.fetchedResultsController performFetch:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+        [self showErrorMessage:error];
     }
 
     return _fetchedResultsController;
@@ -124,7 +156,6 @@
         case NSFetchedResultsChangeInsert:
             [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
-
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
@@ -139,20 +170,16 @@
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath {
     UITableView *tableView = self.tableView;
-
     switch (type) {
         case NSFetchedResultsChangeInsert:
             [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
-
         case NSFetchedResultsChangeDelete:
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
-
         case NSFetchedResultsChangeUpdate:
             [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
-
         case NSFetchedResultsChangeMove:
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];

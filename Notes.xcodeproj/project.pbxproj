@@ -10,6 +10,7 @@
 		4013BBBA18EB00A800810653 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBB918EB00A800810653 /* Photo.m */; };
 		4013BBBD18EB00A800810653 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBBC18EB00A800810653 /* Record.m */; };
 		4013BBC018EB00A900810653 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBBF18EB00A900810653 /* History.m */; };
+		4013BBC918EB36C500810653 /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBC818EB36C500810653 /* NSDate-Utilities.m */; };
 		40ED40A818EAEAC50003B099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A718EAEAC50003B099 /* Foundation.framework */; };
 		40ED40AA18EAEAC50003B099 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A918EAEAC50003B099 /* CoreGraphics.framework */; };
 		40ED40AC18EAEAC50003B099 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40AB18EAEAC50003B099 /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 		4013BBC318EB0B1600810653 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4013BBC418EB0B1600810653 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		4013BBC518EB0B1600810653 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4013BBC718EB36C500810653 /* NSDate-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-Utilities.h"; sourceTree = "<group>"; };
+		4013BBC818EB36C500810653 /* NSDate-Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-Utilities.m"; sourceTree = "<group>"; };
 		40ED40A418EAEAC50003B099 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40ED40A718EAEAC50003B099 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40ED40A918EAEAC50003B099 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -114,6 +117,15 @@
 			name = ManagedObjects;
 			sourceTree = "<group>";
 		};
+		4013BBC618EB368200810653 /* 3rd-party */ = {
+			isa = PBXGroup;
+			children = (
+				4013BBC718EB36C500810653 /* NSDate-Utilities.h */,
+				4013BBC818EB36C500810653 /* NSDate-Utilities.m */,
+			);
+			name = "3rd-party";
+			sourceTree = "<group>";
+		};
 		40ED409B18EAEAC50003B099 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +160,7 @@
 		40ED40AF18EAEAC50003B099 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				4013BBC618EB368200810653 /* 3rd-party */,
 				4013BBC118EB00B800810653 /* ManagedObjects */,
 				40ED40B818EAEAC50003B099 /* AppDelegate.h */,
 				40ED40B918EAEAC50003B099 /* AppDelegate.m */,
@@ -290,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4013BBC918EB36C500810653 /* NSDate-Utilities.m in Sources */,
 				4013BBBA18EB00A800810653 /* Photo.m in Sources */,
 				40ED40C618EAEAC50003B099 /* RecordDetailViewController.m in Sources */,
 				4013BBBD18EB00A800810653 /* Record.m in Sources */,
