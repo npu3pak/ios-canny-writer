@@ -12,6 +12,7 @@
 		4013BBC018EB00A900810653 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBBF18EB00A900810653 /* History.m */; };
 		4013BBC918EB36C500810653 /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBC818EB36C500810653 /* NSDate-Utilities.m */; };
 		4013BBCD18EB3DB900810653 /* RecordsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBCC18EB3DB900810653 /* RecordsItemCell.m */; };
+		4049019C18EBBDF9000B1968 /* RecordsItemCellNoTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4049019B18EBBDF9000B1968 /* RecordsItemCellNoTitle.m */; };
 		40ED40A818EAEAC50003B099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A718EAEAC50003B099 /* Foundation.framework */; };
 		40ED40AA18EAEAC50003B099 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A918EAEAC50003B099 /* CoreGraphics.framework */; };
 		40ED40AC18EAEAC50003B099 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40AB18EAEAC50003B099 /* UIKit.framework */; };
@@ -56,6 +57,8 @@
 		4013BBC818EB36C500810653 /* NSDate-Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-Utilities.m"; sourceTree = "<group>"; };
 		4013BBCB18EB3DB900810653 /* RecordsItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordsItemCell.h; sourceTree = "<group>"; };
 		4013BBCC18EB3DB900810653 /* RecordsItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsItemCell.m; sourceTree = "<group>"; };
+		4049019A18EBBDF9000B1968 /* RecordsItemCellNoTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordsItemCellNoTitle.h; sourceTree = "<group>"; };
+		4049019B18EBBDF9000B1968 /* RecordsItemCellNoTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsItemCellNoTitle.m; sourceTree = "<group>"; };
 		40ED40A418EAEAC50003B099 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40ED40A718EAEAC50003B099 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40ED40A918EAEAC50003B099 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +137,8 @@
 			children = (
 				4013BBCB18EB3DB900810653 /* RecordsItemCell.h */,
 				4013BBCC18EB3DB900810653 /* RecordsItemCell.m */,
+				4049019A18EBBDF9000B1968 /* RecordsItemCellNoTitle.h */,
+				4049019B18EBBDF9000B1968 /* RecordsItemCellNoTitle.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 			files = (
 				4013BBC918EB36C500810653 /* NSDate-Utilities.m in Sources */,
 				4013BBCD18EB3DB900810653 /* RecordsItemCell.m in Sources */,
+				4049019C18EBBDF9000B1968 /* RecordsItemCellNoTitle.m in Sources */,
 				4013BBBA18EB00A800810653 /* Photo.m in Sources */,
 				40ED40C618EAEAC50003B099 /* RecordDetailViewController.m in Sources */,
 				4013BBBD18EB00A800810653 /* Record.m in Sources */,
@@ -427,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -460,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

@@ -11,6 +11,7 @@
 #import "Record.h"
 #import "NSDate-Utilities.h"
 #import "RecordsItemCell.h"
+#import "RecordsItemCellNoTitle.h"
 
 @implementation RecordsViewController
 
@@ -25,8 +26,10 @@
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     Record *newRecord = [[Record alloc] initWithEntity:entity insertIntoManagedObjectContext:context];
-    newRecord.title = @"Test";
+//    newRecord.title = @"Test";
+    newRecord.text = @"Я думаю об утре Вашей славы,\nОб утре Ваших дней,\nКогда очнулись демоном от сна Вы\nИ богом для людей.\nЯ думаю о том, как Ваши брови\nСошлись над факелами Ваших глаз,\nО том, как лава древней крови\nПо Вашим жилам разлилась.";
     newRecord.creationDate = [self getDate];
+    newRecord.changeDate = [NSDate date];
     [self saveContext:context];
 }
 
@@ -64,11 +67,11 @@
         return @"Сегодня";
     else if (date.isYesterday)
         return @"Вчера";
+    else if (date.isThisYear) {
 //    Дату пишет не по-нашему
-//    else if (date.isThisYear) {
-//        [dateFormat setDateFormat:@"cccc dd LLL"];
-//        return [dateFormat stringFromDate:date];
-//    }
+        [dateFormat setDateFormat:@"cccc dd LLL"];
+        return [dateFormat stringFromDate:date];
+    }
     else {
         [dateFormat setDateFormat:@"dd.MM.yyyy"];
         return [dateFormat stringFromDate:date];
@@ -81,18 +84,20 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
-    return cell;
-}
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    RecordsItemCell *recordCell = (RecordsItemCell *) cell;
     Record *record = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    recordCell.title.text = record.title;
-    recordCell.preview.text = record.text;
     BOOL hasPhotos = record.photos != nil && record.photos.count > 0;
-    recordCell.statusImage.hidden = !hasPhotos;
+    if (record.title == nil || [record.title isEqualToString:@""]) {
+        RecordsItemCellNoTitle *cell = [tableView dequeueReusableCellWithIdentifier:@"RecordsCellNoTitle" forIndexPath:indexPath];
+        cell.preview.text = record.text;
+        cell.statusImage.hidden = !hasPhotos;
+        return cell;
+    } else {
+        RecordsItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecordsCell" forIndexPath:indexPath];
+        cell.title.text = record.title;
+        cell.preview.text = record.text;
+        cell.statusImage.hidden = !hasPhotos;
+        return cell;
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -109,6 +114,10 @@
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -130,10 +139,9 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Record" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
 
-    NSSortDescriptor *sortDescriptorDate = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO];
-    NSSortDescriptor *sortDescriptorTitle = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:NO];
-    NSSortDescriptor *sortDescriptorText = [[NSSortDescriptor alloc] initWithKey:@"text" ascending:NO];
-    NSArray *sortDescriptors = @[sortDescriptorDate, sortDescriptorTitle, sortDescriptorText];
+    NSSortDescriptor *sortDescriptorCreationDate = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO];
+    NSSortDescriptor *sortDescriptorChangeDate = [[NSSortDescriptor alloc] initWithKey:@"changeDate" ascending:NO];
+    NSArray *sortDescriptors = @[sortDescriptorCreationDate, sortDescriptorChangeDate];
     [fetchRequest setSortDescriptors:sortDescriptors];
 
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
@@ -183,7 +191,7 @@
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self.tableView reloadData];
             break;
         case NSFetchedResultsChangeMove:
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];

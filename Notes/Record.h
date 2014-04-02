@@ -14,6 +14,7 @@
 @interface Record : NSManagedObject
 
 @property (nonatomic, retain) NSDate * creationDate;
+@property (nonatomic, retain) NSDate * changeDate;
 @property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSSet *history;

@@ -13,6 +13,7 @@
 @implementation Record
 
 @dynamic creationDate;
+@dynamic changeDate;
 @dynamic text;
 @dynamic title;
 @dynamic history;
