@@ -14,5 +14,19 @@
 
 @property (strong, nonatomic) Record* record;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *keyboardHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textPaddingTop;
+
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIToolbar *bottomToolbar;
+@property (weak, nonatomic) IBOutlet UIToolbar *topToolbar;
+
+- (IBAction)onSearchButtonClick:(UIBarButtonItem *)sender;
+- (IBAction)onEditButtonClick:(UIBarButtonItem *)sender;
+- (IBAction)onSearchFromEditClick:(UIBarButtonItem *)sender;
+- (IBAction)onUndoButtonClick:(UIBarButtonItem *)sender;
+- (IBAction)onRedoButtonClick:(UIBarButtonItem *)sender;
+- (IBAction)onCameraButtonClick:(UIBarButtonItem *)sender;
+- (IBAction)onEditDoneButtonClick:(UIBarButtonItem *)sender;
+
 @end

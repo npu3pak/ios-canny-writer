@@ -26,7 +26,7 @@
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     Record *newRecord = [[Record alloc] initWithEntity:entity insertIntoManagedObjectContext:context];
-//    newRecord.title = @"Test";
+    //    newRecord.title = @"Test";
     newRecord.text = @"Я думаю об утре Вашей славы,\nОб утре Ваших дней,\nКогда очнулись демоном от сна Вы\nИ богом для людей.\nЯ думаю о том, как Ваши брови\nСошлись над факелами Ваших глаз,\nО том, как лава древней крови\nПо Вашим жилам разлилась.";
     newRecord.creationDate = [self getDate];
     newRecord.changeDate = [NSDate date];

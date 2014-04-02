@@ -13,6 +13,7 @@
         <relationship name="record" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Record" inverseName="photos" inverseEntity="Record" syncable="YES"/>
     </entity>
     <entity name="Record" representedClassName="Record" syncable="YES">
+        <attribute name="changeDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
