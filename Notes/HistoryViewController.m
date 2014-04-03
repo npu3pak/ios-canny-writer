@@ -10,21 +10,24 @@
 #import "Record.h"
 #import "HistoryPageContentViewController.h"
 #import "History.h"
+#import "RecordDetailViewController.h"
 
 @implementation HistoryViewController {
     NSArray *_historyArray;
+    NSUInteger _currentIndex;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HistoryPageViewController"];
     self.pageViewController.dataSource = self;
+    self.pageViewController.delegate = self;
 
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"changeDate" ascending:NO];
     _historyArray = [_record.history.allObjects sortedArrayUsingDescriptors:@[sortDescriptor]];
 
     HistoryPageContentViewController *startingViewController = [self viewControllerAtIndex:0];
-    if (startingViewController == nil)   {
+    if (startingViewController == nil) {
         _emptyHistoryLabel.hidden = NO;
         return;
     }
@@ -45,14 +48,22 @@
 - (HistoryPageContentViewController *)viewControllerAtIndex:(NSUInteger)index {
     if (_historyArray == nil || _historyArray.count == 0)
         return nil;
-
     HistoryPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HistoryPageContentViewController"];
     pageContentViewController.historyItem = [_historyArray objectAtIndex:index];
     pageContentViewController.pageIndex = index;
     return pageContentViewController;
 }
 
+#pragma mark - Page View Controller Delegate
+
+- (void)pageViewController:(UIPageViewController *)pvc didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
+    if (completed) {
+        _currentIndex = [((HistoryPageContentViewController *)[self.pageViewController.viewControllers lastObject]) pageIndex];
+    }
+}
+
 #pragma mark - Page View Controller Data Source
+
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     NSUInteger index = ((HistoryPageContentViewController *) viewController).pageIndex;
@@ -73,6 +84,7 @@
     }
 
     index++;
+
     if (index == [_historyArray count]) {
         return nil;
     }
@@ -87,4 +99,14 @@
     return 0;
 }
 
+- (IBAction)onRestoreButtonClick:(UIBarButtonItem *)sender {
+    History *currentHistoryState = [_historyArray objectAtIndex:_currentIndex];
+    currentHistoryState.changeDate = [NSDate date];
+    _recordDetailViewController.record.text = currentHistoryState.text;
+    _record.text = currentHistoryState.text;
+    _record.changeDate = currentHistoryState.changeDate;
+    [_managedObjectContext save:nil];
+    [_recordDetailViewController refreshView];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

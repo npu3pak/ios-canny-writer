@@ -245,7 +245,13 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="История" id="RaP-Mh-Lej"/>
+                    <navigationItem key="navigationItem" title="История" id="RaP-Mh-Lej">
+                        <barButtonItem key="rightBarButtonItem" title="Восстановить" id="1eM-1m-oeI">
+                            <connections>
+                                <action selector="onRestoreButtonClick:" destination="quJ-l1-xf0" id="8nH-7m-uUl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emptyHistoryLabel" destination="Sn6-R5-TQP" id="wRj-Do-ZHj"/>
                     </connections>

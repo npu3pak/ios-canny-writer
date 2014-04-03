@@ -9,13 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @class Record;
+@class RecordDetailViewController;
 
-@interface HistoryViewController : UIViewController <UIPageViewControllerDataSource>
+@interface HistoryViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (weak, nonatomic) IBOutlet UILabel *emptyHistoryLabel;
 
 @property (strong, nonatomic) Record* record;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+//Нужно, чтобы обновить текст после восстановления
+@property RecordDetailViewController *recordDetailViewController;
+
+- (IBAction)onRestoreButtonClick:(UIBarButtonItem *)sender;
 
 @end

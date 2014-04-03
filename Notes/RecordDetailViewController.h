@@ -24,6 +24,9 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *topToolbar;
 
 - (IBAction)onSearchButtonClick:(UIBarButtonItem *)sender;
+
+- (void)refreshView;
+
 - (IBAction)onEditButtonClick:(UIBarButtonItem *)sender;
 - (IBAction)onSearchFromEditClick:(UIBarButtonItem *)sender;
 - (IBAction)onUndoButtonClick:(UIBarButtonItem *)sender;

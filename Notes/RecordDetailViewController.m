@@ -9,16 +9,17 @@
 #import "RecordDetailViewController.h"
 #import "Record.h"
 #import "History.h"
+#import "HistoryViewController.h"
 
 @implementation RecordDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self observeKeyboard];
-    [self configureView];
+    [self refreshView];
 }
 
-- (void)configureView {
+- (void)refreshView {
     if (self.record) {
         _textView.text = _record.text;
     }
@@ -102,6 +103,7 @@
     if ([segue.identifier isEqualToString:@"showHistory"]) {
         [[segue destinationViewController] setRecord:_record];
         [[segue destinationViewController] setManagedObjectContext:_managedObjectContext];
+        [[segue destinationViewController] setRecordDetailViewController:self];
     }
 }
 
