@@ -13,6 +13,8 @@
 @interface RecordDetailViewController : UIViewController
 
 @property (strong, nonatomic) Record* record;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *keyboardHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textPaddingTop;
@@ -28,5 +30,6 @@
 - (IBAction)onRedoButtonClick:(UIBarButtonItem *)sender;
 - (IBAction)onCameraButtonClick:(UIBarButtonItem *)sender;
 - (IBAction)onEditDoneButtonClick:(UIBarButtonItem *)sender;
+- (IBAction)onShowHistoryButtonClick:(UIBarButtonItem *)sender;
 
 @end

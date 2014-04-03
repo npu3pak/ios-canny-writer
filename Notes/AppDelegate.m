@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "RecordsViewController.h"
+#import "Appearance.h"
 
 @implementation AppDelegate
 
@@ -17,6 +18,8 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Appearance applyTheme];
+
     UINavigationController *navigationController = (UINavigationController *) self.window.rootViewController;
     RecordsViewController *controller = (RecordsViewController *) navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;

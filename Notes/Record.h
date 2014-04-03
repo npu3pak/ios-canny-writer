@@ -19,6 +19,8 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSSet *history;
 @property (nonatomic, retain) NSSet *photos;
+
+- (void)removeOldHistoryItems;
 @end
 
 @interface Record (CoreDataGeneratedAccessors)

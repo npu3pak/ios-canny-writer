@@ -125,6 +125,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Record *record = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setRecord:record];
+        [[segue destinationViewController] setManagedObjectContext:_managedObjectContext];
     }
 }
 

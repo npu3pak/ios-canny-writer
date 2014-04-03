@@ -8,11 +8,11 @@
 
 #import "RecordDetailViewController.h"
 #import "Record.h"
+#import "History.h"
 
 @implementation RecordDetailViewController
 
 - (void)viewDidLoad {
-    NSLog(@"%@",@"ViewDidLoad");
     [super viewDidLoad];
     [self observeKeyboard];
     [self configureView];
@@ -61,7 +61,7 @@
     CGFloat topBarHeight = self.bottomToolbar.frame.size.height;
     self.textPaddingTop.constant = topBarHeight;
     //Скрываем панель навигации и вместо нее показываем панель инструментов
-    [self.navigationController setNavigationBarHidden: YES animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     self.topToolbar.hidden = NO;
     //Включаем возможность редактировать содержимое текстового поля
     self.textView.editable = true;
@@ -72,11 +72,37 @@
 }
 
 - (IBAction)onEditDoneButtonClick:(UIBarButtonItem *)sender {
+    if (![self.textView.text isEqualToString:_record.text])
+        [self saveText];
     self.bottomToolbar.hidden = NO;
     self.textView.editable = false;
     self.topToolbar.hidden = YES;
-    [self.navigationController setNavigationBarHidden: NO animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.textPaddingTop.constant = 0;
+}
+
+- (void)saveText {
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"History" inManagedObjectContext:_managedObjectContext];
+    History *history = [[History alloc] initWithEntity:entity insertIntoManagedObjectContext:_managedObjectContext];
+    history.text = _textView.text;
+    history.changeDate = [NSDate date];
+    history.record = _record;
+    _record.text = _textView.text;
+    _record.changeDate = [NSDate date];
+    [_managedObjectContext save:nil];
+    [_record removeOldHistoryItems];
+    [_managedObjectContext save:nil];
+}
+
+- (IBAction)onShowHistoryButtonClick:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"showHistory" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showHistory"]) {
+        [[segue destinationViewController] setRecord:_record];
+        [[segue destinationViewController] setManagedObjectContext:_managedObjectContext];
+    }
 }
 
 - (IBAction)onSearchButtonClick:(UIBarButtonItem *)sender {
