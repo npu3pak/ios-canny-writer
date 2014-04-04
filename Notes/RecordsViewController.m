@@ -13,7 +13,9 @@
 #import "RecordsItemCell.h"
 #import "RecordsItemCellNoTitle.h"
 
-@implementation RecordsViewController
+@implementation RecordsViewController{
+    NSIndexPath *_selectedCellIndex;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -87,12 +89,12 @@
     Record *record = [self.fetchedResultsController objectAtIndexPath:indexPath];
     BOOL hasPhotos = record.photos != nil && record.photos.count > 0;
     if (record.title == nil || [record.title isEqualToString:@""]) {
-        RecordsItemCellNoTitle *cell = [tableView dequeueReusableCellWithIdentifier:@"RecordsCellNoTitle" forIndexPath:indexPath];
+        RecordsItemCellNoTitle *cell = [self.tableView dequeueReusableCellWithIdentifier:@"RecordsCellNoTitle" forIndexPath:indexPath];
         cell.preview.text = record.text;
         cell.statusImage.hidden = !hasPhotos;
         return cell;
     } else {
-        RecordsItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecordsCell" forIndexPath:indexPath];
+        RecordsItemCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"RecordsCell" forIndexPath:indexPath];
         cell.title.text = record.title;
         cell.preview.text = record.text;
         cell.statusImage.hidden = !hasPhotos;
@@ -117,16 +119,42 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    _selectedCellIndex = indexPath;
     [self performSegueWithIdentifier:@"showDetail" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Record *record = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        Record *record = [[self fetchedResultsController] objectAtIndexPath:_selectedCellIndex];
         [[segue destinationViewController] setRecord:record];
         [[segue destinationViewController] setManagedObjectContext:_managedObjectContext];
     }
+}
+
+#pragma mark - Search
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    NSPredicate *predicate = nil;
+    if (searchString != nil && ![searchString isEqualToString:@""])
+        predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@ OR text contains[cd] %@", searchString, searchString];
+    [self.fetchedResultsController.fetchRequest setPredicate:predicate];
+
+    NSError *error = nil;
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        // Handle error
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+
+    [self.tableView reloadData];
+    return YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)aSearchBar {
+    [aSearchBar resignFirstResponder];
+    [self.fetchedResultsController.fetchRequest setPredicate:nil];
+    [[self fetchedResultsController] performFetch:nil];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Fetched results controller
@@ -148,7 +176,7 @@
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                                                 managedObjectContext:self.managedObjectContext
                                                                                                   sectionNameKeyPath:@"creationDate"
-                                                                                                           cacheName:@"Master"];
+                                                                                                           cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
 
@@ -204,5 +232,10 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 96;
+}
+
 
 @end
