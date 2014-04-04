@@ -12,9 +12,11 @@
 #import "NSDate-Utilities.h"
 #import "RecordsItemCell.h"
 #import "RecordsItemCellNoTitle.h"
+#import <math.h>
 
-@implementation RecordsViewController{
+@implementation RecordsViewController {
     NSIndexPath *_selectedCellIndex;
+    NSString *_searchString;
 }
 
 - (void)viewDidLoad {
@@ -90,16 +92,33 @@
     BOOL hasPhotos = record.photos != nil && record.photos.count > 0;
     if (record.title == nil || [record.title isEqualToString:@""]) {
         RecordsItemCellNoTitle *cell = [self.tableView dequeueReusableCellWithIdentifier:@"RecordsCellNoTitle" forIndexPath:indexPath];
-        cell.preview.text = record.text;
+        cell.preview.attributedText = [self stringWithSelectionFromString:record.text maxLength:100];
         cell.statusImage.hidden = !hasPhotos;
         return cell;
     } else {
         RecordsItemCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"RecordsCell" forIndexPath:indexPath];
-        cell.title.text = record.title;
-        cell.preview.text = record.text;
+        cell.title.attributedText = [self stringWithSelectionFromString:record.title maxLength:30];
+        cell.preview.attributedText = [self stringWithSelectionFromString:record.text maxLength:100];
         cell.statusImage.hidden = !hasPhotos;
         return cell;
     }
+}
+
+- (NSAttributedString *)stringWithSelectionFromString:(NSString *)string maxLength:(NSUInteger)maxLength {
+    if (string == nil)
+        return nil;
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
+    if (_searchString == nil) {
+        [attributedString removeAttribute:NSBackgroundColorAttributeName range:NSMakeRange(0, attributedString.length)];
+        return attributedString;
+    }
+    NSRange selectionRange = [string rangeOfString:_searchString options:NSCaseInsensitiveSearch];
+    if (selectionRange.location == NSNotFound)
+        return attributedString;
+    [attributedString addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:selectionRange];
+    NSUInteger rangeStart = MAX(0, (NSInteger)selectionRange.location - (NSInteger) (maxLength / 2) + (NSInteger) (_searchString.length / 2));
+    NSUInteger rangeLength = MIN(string.length - rangeStart, rangeStart + maxLength);
+    return [attributedString attributedSubstringFromRange:NSMakeRange(rangeStart, rangeLength)];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -134,6 +153,7 @@
 #pragma mark - Search
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    _searchString = searchString;
     NSPredicate *predicate = nil;
     if (searchString != nil && ![searchString isEqualToString:@""])
         predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@ OR text contains[cd] %@", searchString, searchString];
@@ -152,6 +172,7 @@
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)aSearchBar {
     [aSearchBar resignFirstResponder];
+    _searchString = nil;
     [self.fetchedResultsController.fetchRequest setPredicate:nil];
     [[self fetchedResultsController] performFetch:nil];
     [self.tableView reloadData];
