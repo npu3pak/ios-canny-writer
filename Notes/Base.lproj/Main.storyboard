@@ -62,7 +62,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StatusHasPhotos" translatesAutoresizingMaskIntoConstraints="NO" id="b7X-Ip-9U7">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="StatusHasPhotos" translatesAutoresizingMaskIntoConstraints="NO" id="b7X-Ip-9U7">
                                             <rect key="frame" x="250" y="70" width="31" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                         </imageView>
@@ -101,7 +101,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StatusHasPhotos" translatesAutoresizingMaskIntoConstraints="NO" id="tqP-wK-txv">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="StatusHasPhotos" translatesAutoresizingMaskIntoConstraints="NO" id="tqP-wK-txv">
                                             <rect key="frame" x="250" y="70" width="31" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                         </imageView>
@@ -176,7 +176,7 @@
                                 <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="search" id="SoZ-D9-slY">
+                                    <barButtonItem image="ToolbarSearch" id="SoZ-D9-slY">
                                         <connections>
                                             <action selector="onSearchButtonClick:" destination="Ah7-4n-0Wa" id="zi8-He-nPP"/>
                                         </connections>
@@ -192,9 +192,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="search" id="Df4-z4-bno" userLabel="Bar Button Item - Item">
+                                    <barButtonItem image="ToolbarSearch" id="Df4-z4-bno" userLabel="Bar Button Item - Item">
                                         <connections>
                                             <action selector="onSearchButtonClick:" destination="Ah7-4n-0Wa" id="NIy-dp-lzF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="ToolbarUndo" id="ruX-s9-XZo">
+                                        <connections>
+                                            <action selector="onUndoButtonClick:" destination="Ah7-4n-0Wa" id="YIn-4g-9Wa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="ToolbarRedo" id="1GD-tg-O4P">
+                                        <connections>
+                                            <action selector="onRedoButtonClick:" destination="Ah7-4n-0Wa" id="hVr-sk-Q9r"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="PLo-Iu-tCu"/>
@@ -304,6 +314,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emptyHistoryLabel" destination="Sn6-R5-TQP" id="wRj-Do-ZHj"/>
+                        <outlet property="restoreButtonItem" destination="1eM-1m-oeI" id="7Z8-n4-0lG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOx-zw-aWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -368,8 +379,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="StatusHasPhotos" width="31" height="19"/>
-        <image name="ToolbarHistory" width="22" height="22"/>
+        <image name="StatusHasPhotos" width="25" height="25"/>
+        <image name="ToolbarHistory" width="25" height="25"/>
+        <image name="ToolbarRedo" width="25" height="25"/>
+        <image name="ToolbarSearch" width="25" height="25"/>
+        <image name="ToolbarUndo" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

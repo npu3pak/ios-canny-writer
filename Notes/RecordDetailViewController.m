@@ -141,11 +141,11 @@
 }
 
 - (IBAction)onUndoButtonClick:(UIBarButtonItem *)sender {
-    [self.undoManager undo];
+    [self.textView.undoManager undo];
 }
 
 - (IBAction)onRedoButtonClick:(UIBarButtonItem *)sender {
-    [self.undoManager redo];
+    [self.textView.undoManager redo];
 }
 
 - (IBAction)onCameraButtonClick:(UIBarButtonItem *)sender {
@@ -154,7 +154,8 @@
 #pragma mark - Search
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    _titleTextField.hidden = NO;
+    if(!_textView.isEditable)
+        _titleTextField.hidden = NO;
     self.bottomToolbar.hidden = _textView.editable;
     self.topToolbar.hidden = !_textView.editable;
     self.textPaddingTop.constant = _textView.editable ? self.topToolbar.frame.size.height : _titleTextField.frame.size.height;;

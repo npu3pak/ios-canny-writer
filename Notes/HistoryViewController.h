@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 //Нужно, чтобы обновить текст после восстановления
 @property RecordDetailViewController *recordDetailViewController;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *restoreButtonItem;
 
 - (IBAction)onRestoreButtonClick:(UIBarButtonItem *)sender;
 

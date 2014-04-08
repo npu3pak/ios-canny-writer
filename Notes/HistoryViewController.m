@@ -29,9 +29,11 @@
     HistoryPageContentViewController *startingViewController = [self viewControllerAtIndex:0];
     if (startingViewController == nil) {
         _emptyHistoryLabel.hidden = NO;
+        _restoreButtonItem.enabled = NO;
         return;
     }
-
+    
+    _restoreButtonItem.enabled = YES;
     _emptyHistoryLabel.hidden = YES;
 
     NSArray *viewControllers = @[startingViewController];
