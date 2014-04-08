@@ -162,7 +162,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5t-kq-lZL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="420"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -213,16 +213,29 @@
                                     <outlet property="delegate" destination="Ah7-4n-0Wa" id="Zwk-2I-5E9"/>
                                 </connections>
                             </searchBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Укажите название" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Bq-ou-gt2">
+                                <rect key="frame" x="0.0" y="5" width="320" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="scD-tW-MQW"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3Bq-ou-gt2" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" id="1am-dy-m2b"/>
                             <constraint firstItem="onW-K8-rvf" firstAttribute="top" secondItem="G6s-mi-Uc4" secondAttribute="bottom" id="4eI-fu-9Wx"/>
                             <constraint firstAttribute="trailing" secondItem="h5t-kq-lZL" secondAttribute="trailing" id="5Je-kd-xvS"/>
                             <constraint firstItem="dGx-yZ-wcN" firstAttribute="top" secondItem="G6s-mi-Uc4" secondAttribute="bottom" id="5K1-dU-M80"/>
+                            <constraint firstAttribute="trailing" secondItem="3Bq-ou-gt2" secondAttribute="trailing" id="6o9-ZU-Gel"/>
                             <constraint firstItem="Vke-vo-2qH" firstAttribute="top" secondItem="30L-Ku-232" secondAttribute="bottom" id="EdM-Jh-Oew"/>
+                            <constraint firstItem="3Bq-ou-gt2" firstAttribute="top" secondItem="G6s-mi-Uc4" secondAttribute="bottom" id="JKy-GE-3jq"/>
                             <constraint firstItem="onW-K8-rvf" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" id="Opz-MK-zU6"/>
                             <constraint firstItem="30L-Ku-232" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" id="ZDO-cw-8Ua"/>
-                            <constraint firstItem="h5t-kq-lZL" firstAttribute="top" secondItem="G6s-mi-Uc4" secondAttribute="bottom" id="a5w-Ir-PVJ"/>
+                            <constraint firstItem="h5t-kq-lZL" firstAttribute="top" secondItem="G6s-mi-Uc4" secondAttribute="bottom" constant="40" id="a5w-Ir-PVJ"/>
                             <constraint firstAttribute="trailing" secondItem="dGx-yZ-wcN" secondAttribute="trailing" id="aZU-Ts-UjC"/>
                             <constraint firstAttribute="trailing" secondItem="30L-Ku-232" secondAttribute="trailing" id="f86-k3-Yne"/>
                             <constraint firstAttribute="trailing" secondItem="onW-K8-rvf" secondAttribute="trailing" id="i9N-tc-Pdi"/>
@@ -245,6 +258,7 @@
                         <outlet property="searchBar" destination="dGx-yZ-wcN" id="d2G-Ti-bQT"/>
                         <outlet property="textPaddingTop" destination="a5w-Ir-PVJ" id="tx4-QT-8TP"/>
                         <outlet property="textView" destination="h5t-kq-lZL" id="4vO-nT-Tci"/>
+                        <outlet property="titleTextField" destination="3Bq-ou-gt2" id="mzR-sU-aqQ"/>
                         <outlet property="topToolbar" destination="onW-K8-rvf" id="rBL-Gw-JGs"/>
                         <segue destination="quJ-l1-xf0" kind="push" identifier="showHistory" id="oox-4v-FPW"/>
                     </connections>

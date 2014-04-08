@@ -19,10 +19,16 @@
     [super viewDidLoad];
     [self observeKeyboard];
     [self refreshView];
+
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTextViewTap)];
+    [singleTap setNumberOfTapsRequired:1];
+    [self.textView addGestureRecognizer:singleTap];
 }
 
 - (void)refreshView {
     if (self.record) {
+        _textPaddingTop.constant = _titleTextField.frame.size.height;
+        _titleTextField.text = _record.title;
         _textView.text = _record.text;
         if (_textView.text != nil) {
             _lastEditRange = NSMakeRange(0, 0);
@@ -61,6 +67,8 @@
 }
 
 - (IBAction)onEditButtonClick:(UIBarButtonItem *)sender {
+    //Скрываем заголовок
+    _titleTextField.hidden = YES;
     //Прячем нижнюю панель - она скрывается за клавиатурой
     self.bottomToolbar.hidden = YES;
     //Корректируем отступ текстовой области
@@ -85,8 +93,10 @@
     self.textView.editable = false;
     self.topToolbar.hidden = YES;
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.textPaddingTop.constant = 0;
+    self.textPaddingTop.constant = _titleTextField.frame.size.height;
     _lastEditRange = _textView.selectedRange;
+    //Показываем заголовок
+    _titleTextField.hidden = NO;
 }
 
 - (void)saveText {
@@ -115,6 +125,8 @@
 }
 
 - (IBAction)onSearchButtonClick:(UIBarButtonItem *)sender {
+    //Скрываем заголовок
+    _titleTextField.hidden = YES;
     self.searchBar.text = nil;
     //Прячем нижнюю панель - она скрывается за клавиатурой
     self.bottomToolbar.hidden = YES;
@@ -142,9 +154,10 @@
 #pragma mark - Search
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    _titleTextField.hidden = NO;
     self.bottomToolbar.hidden = _textView.editable;
     self.topToolbar.hidden = !_textView.editable;
-    self.textPaddingTop.constant = _textView.editable ? self.topToolbar.frame.size.height : 0;
+    self.textPaddingTop.constant = _textView.editable ? self.topToolbar.frame.size.height : _titleTextField.frame.size.height;;
     [self.navigationController setNavigationBarHidden:_textView.editable animated:YES];
     self.searchBar.hidden = YES;
     [self cancelTextSelection];
@@ -221,6 +234,18 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     [self cancelTextSelection];
+}
+
+- (void)handleTextViewTap {
+    if (!_textView.isEditable && _searchBar.hidden)
+        [self.view endEditing:YES];
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated {
+    _record.title = _titleTextField.text;
+    [_managedObjectContext save:nil];
+    [super viewWillDisappear:animated];
 }
 
 @end
