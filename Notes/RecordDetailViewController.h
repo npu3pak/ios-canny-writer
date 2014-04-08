@@ -10,7 +10,7 @@
 
 @class Record;
 
-@interface RecordDetailViewController : UIViewController
+@interface RecordDetailViewController : UIViewController <UISearchBarDelegate, UITextViewDelegate>
 
 @property (strong, nonatomic) Record* record;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -22,13 +22,13 @@
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIToolbar *bottomToolbar;
 @property (weak, nonatomic) IBOutlet UIToolbar *topToolbar;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 - (IBAction)onSearchButtonClick:(UIBarButtonItem *)sender;
 
 - (void)refreshView;
 
 - (IBAction)onEditButtonClick:(UIBarButtonItem *)sender;
-- (IBAction)onSearchFromEditClick:(UIBarButtonItem *)sender;
 - (IBAction)onUndoButtonClick:(UIBarButtonItem *)sender;
 - (IBAction)onRedoButtonClick:(UIBarButtonItem *)sender;
 - (IBAction)onCameraButtonClick:(UIBarButtonItem *)sender;

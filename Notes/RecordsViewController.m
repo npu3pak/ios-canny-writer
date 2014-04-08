@@ -12,7 +12,6 @@
 #import "NSDate-Utilities.h"
 #import "RecordsItemCell.h"
 #import "RecordsItemCellNoTitle.h"
-#import <math.h>
 
 @implementation RecordsViewController {
     NSIndexPath *_selectedCellIndex;
