@@ -10,6 +10,7 @@
 #import "Record.h"
 #import "History.h"
 #import "HistoryViewController.h"
+#import "NSString+WordCount.h"
 
 @implementation RecordDetailViewController {
     NSRange _lastEditRange;
@@ -151,6 +152,23 @@
 - (IBAction)onCameraButtonClick:(UIBarButtonItem *)sender {
 }
 
+- (IBAction)onShareButtonClick:(UIBarButtonItem *)sender {
+    NSString *text = self.textView.text;
+    NSArray *items = @[text];
+    
+    UIActivityViewController *activity = [[UIActivityViewController alloc]
+                                          initWithActivityItems:items
+                                          applicationActivities:nil];
+    
+    [self presentViewController:activity animated:YES completion:nil];
+}
+
+- (void)textViewDidChange:(UITextView *)textView{
+    int wordsCount = textView.text.wordCount;
+    int charsCount = textView.text.length;
+    NSLog(@"%d %d", wordsCount, charsCount);
+}
+
 #pragma mark - Search
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
@@ -218,7 +236,7 @@
                 return range;
         }
     else {
-        for (NSUInteger i = array.count - 1; i >= 0; i--) {
+        for (NSInteger i = array.count - 1; i >= 0; i--) {
             NSRange range = [[array objectAtIndex:i] rangeValue];
             if (range.location <= cursorPosition)
                 return range;

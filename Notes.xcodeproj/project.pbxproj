@@ -34,6 +34,7 @@
 		40ED40D218EAEAC50003B099 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40AD18EAEAC50003B099 /* CoreData.framework */; };
 		40ED40DA18EAEAC50003B099 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40ED40D818EAEAC50003B099 /* InfoPlist.strings */; };
 		40ED40DC18EAEAC50003B099 /* NotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40DB18EAEAC50003B099 /* NotesTests.m */; };
+		DB0F3FFF18FFB8730064EC67 /* NSString+WordCount.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0F3FFE18FFB8730064EC67 /* NSString+WordCount.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		40ED40D718EAEAC50003B099 /* NotesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotesTests-Info.plist"; sourceTree = "<group>"; };
 		40ED40D918EAEAC50003B099 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40ED40DB18EAEAC50003B099 /* NotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesTests.m; sourceTree = "<group>"; };
+		DB0F3FFD18FFB8730064EC67 /* NSString+WordCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WordCount.h"; sourceTree = "<group>"; };
+		DB0F3FFE18FFB8730064EC67 /* NSString+WordCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WordCount.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,8 @@
 			children = (
 				4013BBC718EB36C500810653 /* NSDate-Utilities.h */,
 				4013BBC818EB36C500810653 /* NSDate-Utilities.m */,
+				DB0F3FFD18FFB8730064EC67 /* NSString+WordCount.h */,
+				DB0F3FFE18FFB8730064EC67 /* NSString+WordCount.m */,
 			);
 			name = "3rd-party";
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB0F3FFF18FFB8730064EC67 /* NSString+WordCount.m in Sources */,
 				4004BA4718ED8CD100E98D9F /* HistoryPageContentViewController.m in Sources */,
 				4013BBC918EB36C500810653 /* NSDate-Utilities.m in Sources */,
 				4013BBCD18EB3DB900810653 /* RecordsItemCell.m in Sources */,

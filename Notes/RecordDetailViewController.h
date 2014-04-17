@@ -33,6 +33,7 @@
 - (IBAction)onUndoButtonClick:(UIBarButtonItem *)sender;
 - (IBAction)onRedoButtonClick:(UIBarButtonItem *)sender;
 - (IBAction)onCameraButtonClick:(UIBarButtonItem *)sender;
+- (IBAction)onShareButtonClick:(UIBarButtonItem *)sender;
 - (IBAction)onEditDoneButtonClick:(UIBarButtonItem *)sender;
 - (IBAction)onShowHistoryButtonClick:(UIBarButtonItem *)sender;
 
