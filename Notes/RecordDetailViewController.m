@@ -30,11 +30,23 @@
     if (self.record) {
         _textPaddingTop.constant = _titleTextField.frame.size.height;
         _titleTextField.text = _record.title;
-        _textView.text = _record.text;
-        if (_textView.text != nil) {
+        [self setText:_record.text];
+        [self recalculateStatus];
+        if (_textView.text != nil)
             _lastEditRange = NSMakeRange(0, 0);
-        }
+        if (_record.text == nil)
+            [self startTextEditing];
     }
+}
+
+- (void)setText:(NSString *)text {
+    _textView.text = text;
+    _textView.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+}
+
+- (void)setAttributedText:(NSAttributedString *)text {
+    _textView.attributedText = text;
+    _textView.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
 }
 
 #pragma mark - Изменяем размер поля ввода при появлении и скрытии клавиатуры
@@ -68,13 +80,19 @@
 }
 
 - (IBAction)onEditButtonClick:(UIBarButtonItem *)sender {
-    //Скрываем заголовок
+    [self startTextEditing];
+}
+
+- (void)startTextEditing {
+//Скрываем заголовок
     _titleTextField.hidden = YES;
     //Прячем нижнюю панель - она скрывается за клавиатурой
     self.bottomToolbar.hidden = YES;
     //Корректируем отступ текстовой области
-    CGFloat topBarHeight = self.bottomToolbar.frame.size.height;
-    self.textPaddingTop.constant = topBarHeight;
+    self.textPaddingTop.constant = self.topToolbar.frame.size.height + self.statusMessage.frame.size.height;
+    //Корректируем отступ панели статуса
+    self.statusPaddingTop.constant = self.topToolbar.frame.size.height;
+    self.statusMessage.hidden = NO;
     //Скрываем панель навигации и вместо нее показываем панель инструментов
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     self.topToolbar.hidden = NO;
@@ -95,6 +113,8 @@
     self.topToolbar.hidden = YES;
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.textPaddingTop.constant = _titleTextField.frame.size.height;
+    self.statusPaddingTop.constant = 0;
+    self.statusMessage.hidden = YES;
     _lastEditRange = _textView.selectedRange;
     //Показываем заголовок
     _titleTextField.hidden = NO;
@@ -132,8 +152,10 @@
     //Прячем нижнюю панель - она скрывается за клавиатурой
     self.bottomToolbar.hidden = YES;
     //Корректируем отступ текстовой области
-    CGFloat topBarHeight = self.searchBar.frame.size.height;
-    self.textPaddingTop.constant = topBarHeight;
+    if (self.statusMessage.hidden)
+        self.textPaddingTop.constant = self.searchBar.frame.size.height;
+    else
+        self.textPaddingTop.constant = self.searchBar.frame.size.height + self.statusMessage.frame.size.height;
     //Скрываем панель навигации и вместо нее показываем панель поиска
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     self.topToolbar.hidden = YES;
@@ -155,29 +177,40 @@
 - (IBAction)onShareButtonClick:(UIBarButtonItem *)sender {
     NSString *text = self.textView.text;
     NSArray *items = @[text];
-    
+
     UIActivityViewController *activity = [[UIActivityViewController alloc]
-                                          initWithActivityItems:items
-                                          applicationActivities:nil];
-    
+            initWithActivityItems:items
+            applicationActivities:nil];
+
     [self presentViewController:activity animated:YES completion:nil];
 }
 
-- (void)textViewDidChange:(UITextView *)textView{
-    int wordsCount = textView.text.wordCount;
-    int charsCount = textView.text.length;
-    NSLog(@"%d %d", wordsCount, charsCount);
+- (void)textViewDidChange:(UITextView *)textView {
+    [self recalculateStatus];
+}
+
+- (void)recalculateStatus {
+    int wordsCount = (int) _textView.text.wordCount;
+    int charsCount = (int) _textView.text.length;
+    _statusMessage.text = [NSString stringWithFormat:@"Знаков:%d   Слов:%d", charsCount, wordsCount];
 }
 
 #pragma mark - Search
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    if(!_textView.isEditable)
+    if (!_textView.isEditable)
         _titleTextField.hidden = NO;
     self.bottomToolbar.hidden = _textView.editable;
     self.topToolbar.hidden = !_textView.editable;
-    self.textPaddingTop.constant = _textView.editable ? self.topToolbar.frame.size.height : _titleTextField.frame.size.height;;
+
     [self.navigationController setNavigationBarHidden:_textView.editable animated:YES];
+
+    //Корректируем отступ текстовой области
+    if (self.statusMessage.hidden)
+        self.textPaddingTop.constant = self.topToolbar.frame.size.height;
+    else
+        self.textPaddingTop.constant = self.topToolbar.frame.size.height + self.statusMessage.frame.size.height;
+
     self.searchBar.hidden = YES;
     [self cancelTextSelection];
     [self.textView becomeFirstResponder];
@@ -197,7 +230,7 @@
             [attributedString addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:range];
         }
     }
-    self.textView.attributedText = attributedString;
+    [self setAttributedText:attributedString];
 
     NSRange nearest = [self findNearestRangeFromArray:occurrences toPosition:0 forward:YES];
     [self.textView scrollRangeToVisible:nearest];
@@ -207,7 +240,7 @@
 - (void)cancelTextSelection {
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:self.textView.text];
     [attrStr removeAttribute:NSBackgroundColorAttributeName range:NSMakeRange(0, self.textView.text.length)];
-    self.textView.attributedText = attrStr;
+    [self setAttributedText:attrStr];
     return;
 }
 
@@ -261,7 +294,7 @@
 }
 
 
--(void)viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated {
     _record.title = _titleTextField.text;
     [_managedObjectContext save:nil];
     [super viewWillDisappear:animated];

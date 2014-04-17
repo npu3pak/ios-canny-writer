@@ -16,6 +16,7 @@
 @implementation RecordsViewController {
     NSIndexPath *_selectedCellIndex;
     NSString *_searchString;
+    Record *_newRecord;
 }
 
 - (void)viewDidLoad {
@@ -28,13 +29,14 @@
 - (void)addRecord:(id)sender {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    Record *newRecord = [[Record alloc] initWithEntity:entity insertIntoManagedObjectContext:context];
+    _newRecord = [[Record alloc] initWithEntity:entity insertIntoManagedObjectContext:context];
     //    newRecord.title = @"Test";
-    newRecord.text = @"Я думаю об утре Вашей славы,\nОб утре Ваших дней,\nКогда очнулись демоном от сна Вы\nИ богом для людей.\nЯ думаю о том, как Ваши брови\nСошлись над факелами Ваших глаз,\nО том, как лава древней крови\nПо Вашим жилам разлилась.";
-    newRecord.title = @"Title1" ;
-    newRecord.creationDate = [self getDate];
-    newRecord.changeDate = [NSDate date];
+//    newRecord.text = @"Я думаю об утре Вашей славы,\nОб утре Ваших дней,\nКогда очнулись демоном от сна Вы\nИ богом для людей.\nЯ думаю о том, как Ваши брови\nСошлись над факелами Ваших глаз,\nО том, как лава древней крови\nПо Вашим жилам разлилась.";
+//    newRecord.title = @"Title1" ;
+    _newRecord.creationDate = [self getDate];
+    _newRecord.changeDate = [NSDate date];
     [self saveContext:context];
+    [self performSegueWithIdentifier:@"editNewRecord" sender:self];
 }
 
 - (NSDate *)getDate {
@@ -146,6 +148,10 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         Record *record = [[self fetchedResultsController] objectAtIndexPath:_selectedCellIndex];
         [[segue destinationViewController] setRecord:record];
+        [[segue destinationViewController] setManagedObjectContext:_managedObjectContext];
+    }
+    if ([[segue identifier] isEqualToString:@"editNewRecord"]) {
+        [[segue destinationViewController] setRecord:_newRecord];
         [[segue destinationViewController] setManagedObjectContext:_managedObjectContext];
     }
 }
