@@ -26,13 +26,25 @@
     self.navigationItem.rightBarButtonItem = addButton;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    //Если после создания пользователь ничего в новую запись не добавил - удаляем ее за ненадобностью
+    if (_newRecord != nil
+            && (_newRecord.text == nil || [_newRecord.text isEqualToString:@""])
+            && (_newRecord.title == nil || [_newRecord.title isEqualToString:@""])
+            && _newRecord.history.count == 1
+            && _newRecord.photos.count == 0) {
+        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+        [context deleteObject:_newRecord];
+        [self saveContext:context];
+        [self.tableView reloadData];
+    }
+}
+
 - (void)addRecord:(id)sender {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     _newRecord = [[Record alloc] initWithEntity:entity insertIntoManagedObjectContext:context];
-    //    newRecord.title = @"Test";
-//    newRecord.text = @"Я думаю об утре Вашей славы,\nОб утре Ваших дней,\nКогда очнулись демоном от сна Вы\nИ богом для людей.\nЯ думаю о том, как Ваши брови\nСошлись над факелами Ваших глаз,\nО том, как лава древней крови\nПо Вашим жилам разлилась.";
-//    newRecord.title = @"Title1" ;
     _newRecord.creationDate = [self getDate];
     _newRecord.changeDate = [NSDate date];
     [self saveContext:context];
@@ -118,7 +130,7 @@
     if (selectionRange.location == NSNotFound)
         return attributedString;
     [attributedString addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:selectionRange];
-    NSUInteger rangeStart = MAX(0, (NSInteger)selectionRange.location - (NSInteger) (maxLength / 2) + (NSInteger) (_searchString.length / 2));
+    NSUInteger rangeStart = MAX(0, (NSInteger) selectionRange.location - (NSInteger) (maxLength / 2) + (NSInteger) (_searchString.length / 2));
     NSUInteger rangeLength = MIN(string.length - rangeStart, rangeStart + maxLength);
     return [attributedString attributedSubstringFromRange:NSMakeRange(rangeStart, rangeLength)];
 }
