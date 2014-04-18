@@ -16,6 +16,7 @@
 		4013BBC918EB36C500810653 /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBC818EB36C500810653 /* NSDate-Utilities.m */; };
 		4013BBCD18EB3DB900810653 /* RecordsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBCC18EB3DB900810653 /* RecordsItemCell.m */; };
 		4049019C18EBBDF9000B1968 /* RecordsItemCellNoTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4049019B18EBBDF9000B1968 /* RecordsItemCellNoTitle.m */; };
+		4058F39819019E0900AD7786 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4058F39719019E0900AD7786 /* Images.xcassets */; };
 		40ED40A818EAEAC50003B099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A718EAEAC50003B099 /* Foundation.framework */; };
 		40ED40AA18EAEAC50003B099 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A918EAEAC50003B099 /* CoreGraphics.framework */; };
 		40ED40AC18EAEAC50003B099 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40AB18EAEAC50003B099 /* UIKit.framework */; };
@@ -27,7 +28,6 @@
 		40ED40C018EAEAC50003B099 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40BE18EAEAC50003B099 /* Notes.xcdatamodeld */; };
 		40ED40C318EAEAC50003B099 /* RecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40C218EAEAC50003B099 /* RecordsViewController.m */; };
 		40ED40C618EAEAC50003B099 /* RecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40C518EAEAC50003B099 /* RecordDetailViewController.m */; };
-		40ED40C818EAEAC50003B099 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40ED40C718EAEAC50003B099 /* Images.xcassets */; };
 		40ED40CF18EAEAC50003B099 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40CE18EAEAC50003B099 /* XCTest.framework */; };
 		40ED40D018EAEAC50003B099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A718EAEAC50003B099 /* Foundation.framework */; };
 		40ED40D118EAEAC50003B099 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40AB18EAEAC50003B099 /* UIKit.framework */; };
@@ -69,6 +69,7 @@
 		4013BBCC18EB3DB900810653 /* RecordsItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsItemCell.m; sourceTree = "<group>"; };
 		4049019A18EBBDF9000B1968 /* RecordsItemCellNoTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordsItemCellNoTitle.h; sourceTree = "<group>"; };
 		4049019B18EBBDF9000B1968 /* RecordsItemCellNoTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsItemCellNoTitle.m; sourceTree = "<group>"; };
+		4058F39719019E0900AD7786 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		40ED40A418EAEAC50003B099 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40ED40A718EAEAC50003B099 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40ED40A918EAEAC50003B099 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -86,7 +87,6 @@
 		40ED40C218EAEAC50003B099 /* RecordsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordsViewController.m; sourceTree = "<group>"; };
 		40ED40C418EAEAC50003B099 /* RecordDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordDetailViewController.h; sourceTree = "<group>"; };
 		40ED40C518EAEAC50003B099 /* RecordDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordDetailViewController.m; sourceTree = "<group>"; };
-		40ED40C718EAEAC50003B099 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		40ED40CD18EAEAC50003B099 /* NotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40ED40CE18EAEAC50003B099 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		40ED40D718EAEAC50003B099 /* NotesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotesTests-Info.plist"; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 				4013BBC618EB368200810653 /* 3rd-party */,
 				4013BBC118EB00B800810653 /* ManagedObjects */,
 				40ED40BB18EAEAC50003B099 /* Main.storyboard */,
-				40ED40C718EAEAC50003B099 /* Images.xcassets */,
+				4058F39719019E0900AD7786 /* Images.xcassets */,
 				40ED40BE18EAEAC50003B099 /* Notes.xcdatamodeld */,
 				40ED40B018EAEAC50003B099 /* Supporting Files */,
 			);
@@ -306,6 +306,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Евгений Сафронов";
 				TargetAttributes = {
+					40ED40A318EAEAC50003B099 = {
+						DevelopmentTeam = C8EH56CX24;
+					};
 					40ED40CC18EAEAC50003B099 = {
 						TestTargetID = 40ED40A318EAEAC50003B099;
 					};
@@ -336,7 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40ED40C818EAEAC50003B099 /* Images.xcassets in Resources */,
+				4058F39819019E0900AD7786 /* Images.xcassets in Resources */,
 				40ED40B418EAEAC50003B099 /* InfoPlist.strings in Resources */,
 				40ED40BD18EAEAC50003B099 /* Main.storyboard in Resources */,
 			);
@@ -499,6 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Notes/Notes-Prefix.pch";
 				INFOPLIST_FILE = "Notes/Notes-Info.plist";
@@ -513,6 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Notes/Notes-Prefix.pch";
 				INFOPLIST_FILE = "Notes/Notes-Info.plist";

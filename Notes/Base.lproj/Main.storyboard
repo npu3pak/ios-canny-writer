@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <deployment version="1552" defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <color key="separatorColor" red="0.8826729910714286" green="0.8826729910714286" blue="0.8826729910714286" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="Umk-Q2-fgG">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -187,18 +187,19 @@
                                 <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem image="ToolbarSearch" id="SoZ-D9-slY">
+                                    <barButtonItem systemItem="search" id="SoZ-D9-slY">
                                         <connections>
                                             <action selector="onSearchButtonClick:" destination="Ah7-4n-0Wa" id="zi8-He-nPP"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="ToolbarHistory" id="qfO-Yf-Bjg">
+                                    <barButtonItem width="5" style="plain" systemItem="fixedSpace" id="oMy-8y-KU1"/>
+                                    <barButtonItem image="ToolbarTimeMachine" id="qfO-Yf-Bjg">
                                         <connections>
                                             <action selector="onShowHistoryButtonClick:" destination="Ah7-4n-0Wa" id="pkP-1V-r0E"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MMp-Iy-ooD"/>
-                                    <barButtonItem title="Share" id="j4s-Q1-31w">
+                                    <barButtonItem systemItem="action" id="j4s-Q1-31w">
                                         <connections>
                                             <action selector="onShareButtonClick:" destination="Ah7-4n-0Wa" id="Zsc-6G-SdW"/>
                                         </connections>
@@ -209,16 +210,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem image="ToolbarSearch" id="Df4-z4-bno" userLabel="Bar Button Item - Item">
+                                    <barButtonItem systemItem="search" id="Df4-z4-bno" userLabel="Bar Button Item - Item">
                                         <connections>
                                             <action selector="onSearchButtonClick:" destination="Ah7-4n-0Wa" id="NIy-dp-lzF"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="5" style="plain" systemItem="fixedSpace" id="Xg2-Jc-iwO"/>
                                     <barButtonItem image="ToolbarUndo" id="ruX-s9-XZo">
                                         <connections>
                                             <action selector="onUndoButtonClick:" destination="Ah7-4n-0Wa" id="YIn-4g-9Wa"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="5" style="plain" systemItem="fixedSpace" id="NXa-eI-Hw5"/>
                                     <barButtonItem image="ToolbarRedo" id="1GD-tg-O4P">
                                         <connections>
                                             <action selector="onRedoButtonClick:" destination="Ah7-4n-0Wa" id="hVr-sk-Q9r"/>
@@ -246,7 +249,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="scD-tW-MQW"/>
                                 </constraints>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
@@ -402,10 +405,9 @@
     </scenes>
     <resources>
         <image name="StatusHasPhotos" width="25" height="25"/>
-        <image name="ToolbarHistory" width="25" height="25"/>
-        <image name="ToolbarRedo" width="25" height="25"/>
-        <image name="ToolbarSearch" width="25" height="25"/>
-        <image name="ToolbarUndo" width="25" height="25"/>
+        <image name="ToolbarRedo" width="20" height="20"/>
+        <image name="ToolbarTimeMachine" width="20" height="20"/>
+        <image name="ToolbarUndo" width="20" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

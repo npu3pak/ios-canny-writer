@@ -20,7 +20,6 @@
     [super viewDidLoad];
     [self observeKeyboard];
     [self refreshView];
-
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTextViewTap)];
     [singleTap setNumberOfTapsRequired:1];
     [self.textView addGestureRecognizer:singleTap];
