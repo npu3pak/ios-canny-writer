@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "40ED40A318EAEAC50003B099"
-               BuildableName = "Notes.app"
-               BlueprintName = "Notes"
-               ReferencedContainer = "container:Notes.xcodeproj">
+               BuildableName = "CannyWriter.app"
+               BlueprintName = "CannyWriter"
+               ReferencedContainer = "container:CannyWriter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "40ED40CC18EAEAC50003B099"
                BuildableName = "NotesTests.xctest"
-               BlueprintName = "NotesTests"
-               ReferencedContainer = "container:Notes.xcodeproj">
+               BlueprintName = "CannyWriterTests"
+               ReferencedContainer = "container:CannyWriter.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "40ED40A318EAEAC50003B099"
             BuildableName = "Notes.app"
-            BlueprintName = "Notes"
-            ReferencedContainer = "container:Notes.xcodeproj">
+            BlueprintName = "CannyWriter"
+            ReferencedContainer = "container:CannyWriter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "40ED40A318EAEAC50003B099"
-            BuildableName = "Notes.app"
-            BlueprintName = "Notes"
-            ReferencedContainer = "container:Notes.xcodeproj">
+            BuildableName = "CannyWriter.app"
+            BlueprintName = "CannyWriter"
+            ReferencedContainer = "container:CannyWriter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "40ED40A318EAEAC50003B099"
             BuildableName = "Notes.app"
-            BlueprintName = "Notes"
-            ReferencedContainer = "container:Notes.xcodeproj">
+            BlueprintName = "CannyWriter"
+            ReferencedContainer = "container:CannyWriter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -70,12 +70,12 @@
 		4049019A18EBBDF9000B1968 /* RecordsItemCellNoTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordsItemCellNoTitle.h; sourceTree = "<group>"; };
 		4049019B18EBBDF9000B1968 /* RecordsItemCellNoTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsItemCellNoTitle.m; sourceTree = "<group>"; };
 		4058F39719019E0900AD7786 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		40ED40A418EAEAC50003B099 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40ED40A418EAEAC50003B099 /* CannyWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CannyWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40ED40A718EAEAC50003B099 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40ED40A918EAEAC50003B099 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		40ED40AB18EAEAC50003B099 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		40ED40AD18EAEAC50003B099 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		40ED40B118EAEAC50003B099 /* Notes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Notes-Info.plist"; sourceTree = "<group>"; };
+		40ED40B118EAEAC50003B099 /* CannyWriter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CannyWriter-Info.plist"; sourceTree = "<group>"; };
 		40ED40B318EAEAC50003B099 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40ED40B518EAEAC50003B099 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		40ED40B718EAEAC50003B099 /* Notes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Notes-Prefix.pch"; sourceTree = "<group>"; };
@@ -87,9 +87,9 @@
 		40ED40C218EAEAC50003B099 /* RecordsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordsViewController.m; sourceTree = "<group>"; };
 		40ED40C418EAEAC50003B099 /* RecordDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordDetailViewController.h; sourceTree = "<group>"; };
 		40ED40C518EAEAC50003B099 /* RecordDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordDetailViewController.m; sourceTree = "<group>"; };
-		40ED40CD18EAEAC50003B099 /* NotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40ED40CD18EAEAC50003B099 /* CannyWriterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CannyWriterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40ED40CE18EAEAC50003B099 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		40ED40D718EAEAC50003B099 /* NotesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotesTests-Info.plist"; sourceTree = "<group>"; };
+		40ED40D718EAEAC50003B099 /* CannyWriterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CannyWriterTests-Info.plist"; sourceTree = "<group>"; };
 		40ED40D918EAEAC50003B099 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40ED40DB18EAEAC50003B099 /* NotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesTests.m; sourceTree = "<group>"; };
 		DB0F3FFD18FFB8730064EC67 /* NSString+WordCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WordCount.h"; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		40ED409B18EAEAC50003B099 = {
 			isa = PBXGroup;
 			children = (
-				40ED40AF18EAEAC50003B099 /* Notes */,
+				40ED40AF18EAEAC50003B099 /* CannyWriter */,
 				40ED40D518EAEAC50003B099 /* NotesTests */,
 				40ED40A618EAEAC50003B099 /* Frameworks */,
 				40ED40A518EAEAC50003B099 /* Products */,
@@ -196,8 +196,8 @@
 		40ED40A518EAEAC50003B099 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				40ED40A418EAEAC50003B099 /* Notes.app */,
-				40ED40CD18EAEAC50003B099 /* NotesTests.xctest */,
+				40ED40A418EAEAC50003B099 /* CannyWriter.app */,
+				40ED40CD18EAEAC50003B099 /* CannyWriterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,7 +214,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		40ED40AF18EAEAC50003B099 /* Notes */ = {
+		40ED40AF18EAEAC50003B099 /* CannyWriter */ = {
 			isa = PBXGroup;
 			children = (
 				4013BBCF18EB3DCE00810653 /* Application */,
@@ -227,13 +227,14 @@
 				40ED40BE18EAEAC50003B099 /* Notes.xcdatamodeld */,
 				40ED40B018EAEAC50003B099 /* Supporting Files */,
 			);
+			name = CannyWriter;
 			path = Notes;
 			sourceTree = "<group>";
 		};
 		40ED40B018EAEAC50003B099 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				40ED40B118EAEAC50003B099 /* Notes-Info.plist */,
+				40ED40B118EAEAC50003B099 /* CannyWriter-Info.plist */,
 				40ED40B218EAEAC50003B099 /* InfoPlist.strings */,
 				40ED40B518EAEAC50003B099 /* main.m */,
 				40ED40B718EAEAC50003B099 /* Notes-Prefix.pch */,
@@ -253,7 +254,7 @@
 		40ED40D618EAEAC50003B099 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				40ED40D718EAEAC50003B099 /* NotesTests-Info.plist */,
+				40ED40D718EAEAC50003B099 /* CannyWriterTests-Info.plist */,
 				40ED40D818EAEAC50003B099 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -262,9 +263,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		40ED40A318EAEAC50003B099 /* Notes */ = {
+		40ED40A318EAEAC50003B099 /* CannyWriter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 40ED40DF18EAEAC50003B099 /* Build configuration list for PBXNativeTarget "Notes" */;
+			buildConfigurationList = 40ED40DF18EAEAC50003B099 /* Build configuration list for PBXNativeTarget "CannyWriter" */;
 			buildPhases = (
 				40ED40A018EAEAC50003B099 /* Sources */,
 				40ED40A118EAEAC50003B099 /* Frameworks */,
@@ -274,14 +275,14 @@
 			);
 			dependencies = (
 			);
-			name = Notes;
+			name = CannyWriter;
 			productName = Notes;
-			productReference = 40ED40A418EAEAC50003B099 /* Notes.app */;
+			productReference = 40ED40A418EAEAC50003B099 /* CannyWriter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		40ED40CC18EAEAC50003B099 /* NotesTests */ = {
+		40ED40CC18EAEAC50003B099 /* CannyWriterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 40ED40E218EAEAC50003B099 /* Build configuration list for PBXNativeTarget "NotesTests" */;
+			buildConfigurationList = 40ED40E218EAEAC50003B099 /* Build configuration list for PBXNativeTarget "CannyWriterTests" */;
 			buildPhases = (
 				40ED40C918EAEAC50003B099 /* Sources */,
 				40ED40CA18EAEAC50003B099 /* Frameworks */,
@@ -292,9 +293,9 @@
 			dependencies = (
 				40ED40D418EAEAC50003B099 /* PBXTargetDependency */,
 			);
-			name = NotesTests;
+			name = CannyWriterTests;
 			productName = NotesTests;
-			productReference = 40ED40CD18EAEAC50003B099 /* NotesTests.xctest */;
+			productReference = 40ED40CD18EAEAC50003B099 /* CannyWriterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -314,7 +315,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 40ED409F18EAEAC50003B099 /* Build configuration list for PBXProject "Notes" */;
+			buildConfigurationList = 40ED409F18EAEAC50003B099 /* Build configuration list for PBXProject "CannyWriter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -328,8 +329,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				40ED40A318EAEAC50003B099 /* Notes */,
-				40ED40CC18EAEAC50003B099 /* NotesTests */,
+				40ED40A318EAEAC50003B099 /* CannyWriter */,
+				40ED40CC18EAEAC50003B099 /* CannyWriterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -391,7 +392,7 @@
 /* Begin PBXTargetDependency section */
 		40ED40D418EAEAC50003B099 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 40ED40A318EAEAC50003B099 /* Notes */;
+			target = 40ED40A318EAEAC50003B099 /* CannyWriter */;
 			targetProxy = 40ED40D318EAEAC50003B099 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -504,10 +505,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Notes/Notes-Prefix.pch";
-				INFOPLIST_FILE = "Notes/Notes-Info.plist";
+				GCC_PREFIX_HEADER = "Notes/CannyWriter-Prefix.pch";
+				INFOPLIST_FILE = "Notes/CannyWriter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CannyWriter;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -519,10 +520,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Notes/Notes-Prefix.pch";
-				INFOPLIST_FILE = "Notes/Notes-Info.plist";
+				GCC_PREFIX_HEADER = "Notes/CannyWriter-Prefix.pch";
+				INFOPLIST_FILE = "Notes/CannyWriter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CannyWriter;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -542,8 +543,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "NotesTests/NotesTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "NotesTests/CannyWriterTests-Info.plist";
+				PRODUCT_NAME = CannyWriterTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -560,8 +561,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Notes/Notes-Prefix.pch";
-				INFOPLIST_FILE = "NotesTests/NotesTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "NotesTests/CannyWriterTests-Info.plist";
+				PRODUCT_NAME = CannyWriterTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -570,7 +571,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		40ED409F18EAEAC50003B099 /* Build configuration list for PBXProject "Notes" */ = {
+		40ED409F18EAEAC50003B099 /* Build configuration list for PBXProject "CannyWriter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				40ED40DD18EAEAC50003B099 /* Debug */,
@@ -579,7 +580,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		40ED40DF18EAEAC50003B099 /* Build configuration list for PBXNativeTarget "Notes" */ = {
+		40ED40DF18EAEAC50003B099 /* Build configuration list for PBXNativeTarget "CannyWriter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				40ED40E018EAEAC50003B099 /* Debug */,
@@ -588,7 +589,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		40ED40E218EAEAC50003B099 /* Build configuration list for PBXNativeTarget "NotesTests" */ = {
+		40ED40E218EAEAC50003B099 /* Build configuration list for PBXNativeTarget "CannyWriterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				40ED40E318EAEAC50003B099 /* Debug */,
