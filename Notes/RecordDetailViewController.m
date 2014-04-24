@@ -218,9 +218,7 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     //Ищем все вхождения введенной в панели поиска строки
     NSArray *occurrences = [self findAllOccurrences:searchText];
-
-    NSMutableAttributedString *attributedString = self.textView.attributedText.mutableCopy;
-    [attributedString removeAttribute:NSBackgroundColorAttributeName range:NSMakeRange(0, attributedString.length)];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:_textView.text];
 
     if (occurrences != nil) {
         //Если совпадения есть - отмечаем их в поле ввода
