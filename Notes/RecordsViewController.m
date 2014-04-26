@@ -183,8 +183,7 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-
-    [self.tableView reloadData];
+    
     return YES;
 }
 

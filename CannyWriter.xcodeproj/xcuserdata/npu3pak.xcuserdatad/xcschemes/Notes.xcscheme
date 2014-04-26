@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "40ED40CC18EAEAC50003B099"
-               BuildableName = "NotesTests.xctest"
+               BuildableName = "CannyWriterTests.xctest"
                BlueprintName = "CannyWriterTests"
                ReferencedContainer = "container:CannyWriter.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "40ED40A318EAEAC50003B099"
-            BuildableName = "Notes.app"
+            BuildableName = "CannyWriter.app"
             BlueprintName = "CannyWriter"
             ReferencedContainer = "container:CannyWriter.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "40ED40A318EAEAC50003B099"
-            BuildableName = "Notes.app"
+            BuildableName = "CannyWriter.app"
             BlueprintName = "CannyWriter"
             ReferencedContainer = "container:CannyWriter.xcodeproj">
          </BuildableReference>

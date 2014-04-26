@@ -216,22 +216,29 @@
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    //Ищем все вхождения введенной в панели поиска строки
-    NSArray *occurrences = [self findAllOccurrences:searchText];
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:_textView.text];
-
-    if (occurrences != nil) {
-        //Если совпадения есть - отмечаем их в поле ввода
-        for (NSValue *rangeValue in occurrences) {
-            NSRange range = rangeValue.rangeValue;
-            [attributedString addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:range];
+    NSString *searchSource = _textView.text;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^() {
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:searchSource];
+        NSRange nearest = NSMakeRange(NSNotFound, 0);
+        UIColor *yellowColor = [UIColor yellowColor];
+        NSRange textRange = NSMakeRange(0, 0);
+        while (textRange.location != NSNotFound) {
+            NSRange searchRange = NSMakeRange(textRange.location + textRange.length, searchSource.length - textRange.location - textRange.length);
+            textRange = [searchSource rangeOfString:searchText options:NSCaseInsensitiveSearch range:searchRange];
+            if (textRange.location != NSNotFound) {
+                [attributedString addAttribute:NSBackgroundColorAttributeName value:yellowColor range:textRange];
+                if(nearest.length == 0 && nearest.location == NSNotFound)
+                    nearest = textRange;
+            }
         }
-    }
-    [self setAttributedText:attributedString];
-
-    NSRange nearest = [self findNearestRangeFromArray:occurrences toPosition:0 forward:YES];
-    [self.textView scrollRangeToVisible:nearest];
-    _lastEditRange = NSMakeRange(nearest.location, 0);
+        _lastEditRange = NSMakeRange(nearest.location, 0);
+        
+        dispatch_async(dispatch_get_main_queue(), ^() {
+            [self setAttributedText:attributedString];
+            if (nearest.location != NSNotFound && nearest.length != 0)
+                [self.textView scrollRangeToVisible:nearest];
+        });
+    });
 }
 
 - (void)cancelTextSelection {
@@ -239,40 +246,6 @@
     [attrStr removeAttribute:NSBackgroundColorAttributeName range:NSMakeRange(0, self.textView.text.length)];
     [self setAttributedText:attrStr];
     return;
-}
-
-- (NSArray *)findAllOccurrences:(NSString *)string {
-    NSRange textRange = NSMakeRange(0, 0);
-    NSMutableArray *occurrences = [[NSMutableArray alloc] init];
-    if (string == nil || [string isEqualToString:@""])
-        return occurrences;
-    while (textRange.location != NSNotFound) {
-        NSRange searchRange = NSMakeRange(textRange.location + textRange.length, _textView.text.length - textRange.location - textRange.length);
-        textRange = [_textView.text rangeOfString:string options:NSCaseInsensitiveSearch range:searchRange];
-        if (textRange.location != NSNotFound)
-            [occurrences addObject:[NSValue valueWithRange:textRange]];
-    }
-    return occurrences; // NSRange r = [[a objectAtIndex:4] rangeValue];
-}
-
-- (NSRange)findNearestRangeFromArray:(NSArray *)array toPosition:(NSUInteger)cursorPosition forward:(BOOL)forward {
-    if (array == nil || array.count == 0)
-        return NSMakeRange(NSNotFound, 0);
-    //Массив получается упорядоченный, так что нужно выбрать первый подходящий NSRange
-    if (forward)
-        for (NSUInteger i = 0; i < array.count; i--) {
-            NSRange range = [[array objectAtIndex:i] rangeValue];
-            if (range.location >= cursorPosition)
-                return range;
-        }
-    else {
-        for (NSInteger i = array.count - 1; i >= 0; i--) {
-            NSRange range = [[array objectAtIndex:i] rangeValue];
-            if (range.location <= cursorPosition)
-                return range;
-        }
-    }
-    return NSMakeRange(NSNotFound, 0);
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
