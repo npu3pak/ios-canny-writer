@@ -169,7 +169,12 @@
 
 #pragma mark - Search
 
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchString{
+    [self filterTableView:searchString];
+
+}
+
+- (void)filterTableView:(NSString *)searchString {
     _searchString = searchString;
     NSPredicate *predicate = nil;
     if (searchString != nil && ![searchString isEqualToString:@""])
@@ -182,16 +187,22 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
-    return YES;
+    [self.tableView reloadData];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)aSearchBar {
     [aSearchBar resignFirstResponder];
+    _searchBar.showsCancelButton = NO;
+    _searchBar.text = nil;
     _searchString = nil;
     [self.fetchedResultsController.fetchRequest setPredicate:nil];
     [[self fetchedResultsController] performFetch:nil];
     [self.tableView reloadData];
+}
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    _searchBar.showsCancelButton = YES;
+    if(_searchBar.text != nil)
+        [self filterTableView:_searchBar.text];
 }
 
 #pragma mark - Fetched results controller

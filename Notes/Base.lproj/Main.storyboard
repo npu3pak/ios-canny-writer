@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Umk-Q2-fgG">
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Поиск" id="Umk-Q2-fgG">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -132,21 +132,12 @@
                         <barButtonItem key="backBarButtonItem" title="Назад" id="H6N-36-x88"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchDisplayController" destination="gk8-EU-EhG" id="fy3-NT-fVf"/>
+                        <outlet property="searchBar" destination="Umk-Q2-fgG" id="MzL-Kb-abN"/>
                         <segue destination="Ah7-4n-0Wa" kind="push" identifier="showDetail" id="t95-oL-HrT"/>
                         <segue destination="Ah7-4n-0Wa" kind="push" identifier="editNewRecord" id="jjO-qP-LzF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="gk8-EU-EhG">
-                    <connections>
-                        <outlet property="delegate" destination="pGg-6v-bdr" id="Zhq-gb-19N"/>
-                        <outlet property="searchBar" destination="Umk-Q2-fgG" id="oRq-4D-vzb"/>
-                        <outlet property="searchContentsController" destination="pGg-6v-bdr" id="uGB-EO-UYD"/>
-                        <outlet property="searchResultsDataSource" destination="pGg-6v-bdr" id="iLQ-Y9-Amr"/>
-                        <outlet property="searchResultsDelegate" destination="pGg-6v-bdr" id="83J-fg-dOv"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="448" y="30"/>
         </scene>
