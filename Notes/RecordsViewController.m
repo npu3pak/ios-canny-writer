@@ -86,7 +86,6 @@
     else if (date.isYesterday)
         return @"Вчера";
     else if (date.isThisYear) {
-//    Дату пишет не по-нашему
         [dateFormat setDateFormat:@"cccc dd LLL"];
         return [dateFormat stringFromDate:date];
     }
