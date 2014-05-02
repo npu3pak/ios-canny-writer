@@ -17,13 +17,14 @@
 		4013BBCD18EB3DB900810653 /* RecordsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBCC18EB3DB900810653 /* RecordsItemCell.m */; };
 		4049019C18EBBDF9000B1968 /* RecordsItemCellNoTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4049019B18EBBDF9000B1968 /* RecordsItemCellNoTitle.m */; };
 		4058F39819019E0900AD7786 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4058F39719019E0900AD7786 /* Images.xcassets */; };
+		407517011913534B005E181F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 407516FE1913534B005E181F /* MBProgressHUD.m */; };
+		407517021913534B005E181F /* VKontakteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 407517001913534B005E181F /* VKontakteActivity.m */; };
 		40ED40A818EAEAC50003B099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A718EAEAC50003B099 /* Foundation.framework */; };
 		40ED40AA18EAEAC50003B099 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A918EAEAC50003B099 /* CoreGraphics.framework */; };
 		40ED40AC18EAEAC50003B099 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40AB18EAEAC50003B099 /* UIKit.framework */; };
 		40ED40AE18EAEAC50003B099 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40AD18EAEAC50003B099 /* CoreData.framework */; };
 		40ED40B418EAEAC50003B099 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40ED40B218EAEAC50003B099 /* InfoPlist.strings */; };
 		40ED40B618EAEAC50003B099 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40B518EAEAC50003B099 /* main.m */; };
-		40ED40BA18EAEAC50003B099 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40B918EAEAC50003B099 /* AppDelegate.m */; };
 		40ED40BD18EAEAC50003B099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40ED40BB18EAEAC50003B099 /* Main.storyboard */; };
 		40ED40C018EAEAC50003B099 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40BE18EAEAC50003B099 /* Notes.xcdatamodeld */; };
 		40ED40C318EAEAC50003B099 /* RecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40C218EAEAC50003B099 /* RecordsViewController.m */; };
@@ -34,6 +35,9 @@
 		40ED40D218EAEAC50003B099 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40AD18EAEAC50003B099 /* CoreData.framework */; };
 		40ED40DA18EAEAC50003B099 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40ED40D818EAEAC50003B099 /* InfoPlist.strings */; };
 		40ED40DC18EAEAC50003B099 /* NotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40DB18EAEAC50003B099 /* NotesTests.m */; };
+		8095D4829F4C2FACCCE35027 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8095D929F23932B7B4CE781A /* Podfile */; };
+		8095DBF4FDDB138EEA2CB5F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095DB24A5D1A14E6F25E68D /* AppDelegate.m */; };
+		84819BC5CD4E4107A251D19F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 263E637B58F74546AEC50179 /* libPods.a */; };
 		DB0F3FFF18FFB8730064EC67 /* NSString+WordCount.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0F3FFE18FFB8730064EC67 /* NSString+WordCount.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		065577CAE4D14A44A515589A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		263E637B58F74546AEC50179 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4004944818ED55A0000DC4B5 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		4004944918ED55A0000DC4B5 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		4004BA4518ED8CD100E98D9F /* HistoryPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryPageContentViewController.h; sourceTree = "<group>"; };
@@ -70,6 +76,10 @@
 		4049019A18EBBDF9000B1968 /* RecordsItemCellNoTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordsItemCellNoTitle.h; sourceTree = "<group>"; };
 		4049019B18EBBDF9000B1968 /* RecordsItemCellNoTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsItemCellNoTitle.m; sourceTree = "<group>"; };
 		4058F39719019E0900AD7786 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		407516FD1913534B005E181F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		407516FE1913534B005E181F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		407516FF1913534B005E181F /* VKontakteActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKontakteActivity.h; sourceTree = "<group>"; };
+		407517001913534B005E181F /* VKontakteActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKontakteActivity.m; sourceTree = "<group>"; };
 		40ED40A418EAEAC50003B099 /* CannyWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CannyWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40ED40A718EAEAC50003B099 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40ED40A918EAEAC50003B099 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,8 +89,6 @@
 		40ED40B318EAEAC50003B099 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40ED40B518EAEAC50003B099 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		40ED40B718EAEAC50003B099 /* Notes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Notes-Prefix.pch"; sourceTree = "<group>"; };
-		40ED40B818EAEAC50003B099 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		40ED40B918EAEAC50003B099 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		40ED40BC18EAEAC50003B099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40ED40BF18EAEAC50003B099 /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 		40ED40C118EAEAC50003B099 /* RecordsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordsViewController.h; sourceTree = "<group>"; };
@@ -92,6 +100,9 @@
 		40ED40D718EAEAC50003B099 /* CannyWriterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CannyWriterTests-Info.plist"; sourceTree = "<group>"; };
 		40ED40D918EAEAC50003B099 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40ED40DB18EAEAC50003B099 /* NotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesTests.m; sourceTree = "<group>"; };
+		8095D929F23932B7B4CE781A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		8095DB24A5D1A14E6F25E68D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8095DD6A36EABE10D5250BAD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB0F3FFD18FFB8730064EC67 /* NSString+WordCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WordCount.h"; sourceTree = "<group>"; };
 		DB0F3FFE18FFB8730064EC67 /* NSString+WordCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WordCount.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +116,7 @@
 				40ED40AE18EAEAC50003B099 /* CoreData.framework in Frameworks */,
 				40ED40AC18EAEAC50003B099 /* UIKit.framework in Frameworks */,
 				40ED40A818EAEAC50003B099 /* Foundation.framework in Frameworks */,
+				84819BC5CD4E4107A251D19F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +150,10 @@
 		4013BBC618EB368200810653 /* 3rd-party */ = {
 			isa = PBXGroup;
 			children = (
+				407516FD1913534B005E181F /* MBProgressHUD.h */,
+				407516FE1913534B005E181F /* MBProgressHUD.m */,
+				407516FF1913534B005E181F /* VKontakteActivity.h */,
+				407517001913534B005E181F /* VKontakteActivity.m */,
 				4013BBC718EB36C500810653 /* NSDate-Utilities.h */,
 				4013BBC818EB36C500810653 /* NSDate-Utilities.m */,
 				DB0F3FFD18FFB8730064EC67 /* NSString+WordCount.h */,
@@ -175,8 +191,8 @@
 		4013BBCF18EB3DCE00810653 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				40ED40B818EAEAC50003B099 /* AppDelegate.h */,
-				40ED40B918EAEAC50003B099 /* AppDelegate.m */,
+				8095DB24A5D1A14E6F25E68D /* AppDelegate.m */,
+				8095DD6A36EABE10D5250BAD /* AppDelegate.h */,
 				4004BA4818ED959F00E98D9F /* Appearance.h */,
 				4004BA4918ED959F00E98D9F /* Appearance.m */,
 			);
@@ -190,6 +206,8 @@
 				40ED40D518EAEAC50003B099 /* NotesTests */,
 				40ED40A618EAEAC50003B099 /* Frameworks */,
 				40ED40A518EAEAC50003B099 /* Products */,
+				8095D929F23932B7B4CE781A /* Podfile */,
+				065577CAE4D14A44A515589A /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +228,7 @@
 				40ED40AB18EAEAC50003B099 /* UIKit.framework */,
 				40ED40AD18EAEAC50003B099 /* CoreData.framework */,
 				40ED40CE18EAEAC50003B099 /* XCTest.framework */,
+				263E637B58F74546AEC50179 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -267,9 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40ED40DF18EAEAC50003B099 /* Build configuration list for PBXNativeTarget "CannyWriter" */;
 			buildPhases = (
+				30EC4057E51543768B819F97 /* Check Pods Manifest.lock */,
 				40ED40A018EAEAC50003B099 /* Sources */,
 				40ED40A118EAEAC50003B099 /* Frameworks */,
 				40ED40A218EAEAC50003B099 /* Resources */,
+				78FBA729E0A94BC4BF0AC04F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -327,6 +348,8 @@
 			mainGroup = 40ED409B18EAEAC50003B099;
 			productRefGroup = 40ED40A518EAEAC50003B099 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				40ED40A318EAEAC50003B099 /* CannyWriter */,
@@ -343,6 +366,7 @@
 				4058F39819019E0900AD7786 /* Images.xcassets in Resources */,
 				40ED40B418EAEAC50003B099 /* InfoPlist.strings in Resources */,
 				40ED40BD18EAEAC50003B099 /* Main.storyboard in Resources */,
+				8095D4829F4C2FACCCE35027 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +379,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30EC4057E51543768B819F97 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		78FBA729E0A94BC4BF0AC04F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		40ED40A018EAEAC50003B099 /* Sources */ = {
@@ -370,12 +427,14 @@
 				40ED40C618EAEAC50003B099 /* RecordDetailViewController.m in Sources */,
 				4013BBBD18EB00A800810653 /* Record.m in Sources */,
 				40ED40C318EAEAC50003B099 /* RecordsViewController.m in Sources */,
-				40ED40BA18EAEAC50003B099 /* AppDelegate.m in Sources */,
 				40ED40C018EAEAC50003B099 /* Notes.xcdatamodeld in Sources */,
 				4013BBC018EB00A900810653 /* History.m in Sources */,
 				40ED40B618EAEAC50003B099 /* main.m in Sources */,
 				4004944A18ED55A0000DC4B5 /* HistoryViewController.m in Sources */,
 				4004BA4A18ED959F00E98D9F /* Appearance.m in Sources */,
+				8095DBF4FDDB138EEA2CB5F2 /* AppDelegate.m in Sources */,
+				407517021913534B005E181F /* VKontakteActivity.m in Sources */,
+				407517011913534B005E181F /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +559,7 @@
 		};
 		40ED40E018EAEAC50003B099 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 065577CAE4D14A44A515589A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -508,6 +568,7 @@
 				GCC_PREFIX_HEADER = "Notes/CannyWriter-Prefix.pch";
 				INFOPLIST_FILE = "Notes/CannyWriter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = CannyWriter;
 				WRAPPER_EXTENSION = app;
 			};
@@ -515,6 +576,7 @@
 		};
 		40ED40E118EAEAC50003B099 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 065577CAE4D14A44A515589A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -523,6 +585,7 @@
 				GCC_PREFIX_HEADER = "Notes/CannyWriter-Prefix.pch";
 				INFOPLIST_FILE = "Notes/CannyWriter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = CannyWriter;
 				WRAPPER_EXTENSION = app;
 			};

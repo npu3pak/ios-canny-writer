@@ -11,6 +11,7 @@
 #import "History.h"
 #import "HistoryViewController.h"
 #import "NSString+WordCount.h"
+#import "VKontakteActivity.h"
 
 @implementation RecordDetailViewController {
     NSRange _lastEditRange;
@@ -177,11 +178,15 @@
     NSString *text = self.textView.text;
     NSArray *items = @[text];
 
+    VKontakteActivity *vkontakteActivity = [[VKontakteActivity alloc] initWithParent:self];
+
     UIActivityViewController *activity = [[UIActivityViewController alloc]
             initWithActivityItems:items
-            applicationActivities:nil];
+            applicationActivities:@[vkontakteActivity]];
 
     [self presentViewController:activity animated:YES completion:nil];
+    
+    
 }
 
 - (void)textViewDidChange:(UITextView *)textView {

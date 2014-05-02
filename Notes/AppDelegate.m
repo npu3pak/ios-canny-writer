@@ -10,6 +10,7 @@
 
 #import "RecordsViewController.h"
 #import "Appearance.h"
+#import "VKSdk.h"
 
 @implementation AppDelegate
 
@@ -23,6 +24,13 @@
     UINavigationController *navigationController = (UINavigationController *) self.window.rootViewController;
     RecordsViewController *controller = (RecordsViewController *) navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    return YES;
+}
+
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    [VKSdk processOpenURL:url fromApplication:sourceApplication];
+
     return YES;
 }
 
