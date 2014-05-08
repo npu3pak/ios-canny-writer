@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *keyboardHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textPaddingTop;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *statusPaddingTop;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *keyboardExtensionToolbarItem;
 
 @property (strong, nonatomic) IBOutlet UILabel *statusMessage;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -38,5 +39,6 @@
 - (IBAction)onShareButtonClick:(UIBarButtonItem *)sender;
 - (IBAction)onEditDoneButtonClick:(UIBarButtonItem *)sender;
 - (IBAction)onShowHistoryButtonClick:(UIBarButtonItem *)sender;
+- (IBAction)onSwitchKeyboardExtensionClick:(UIBarButtonItem *)sender;
 
 @end

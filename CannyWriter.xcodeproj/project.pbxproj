@@ -348,8 +348,6 @@
 			mainGroup = 40ED409B18EAEAC50003B099;
 			productRefGroup = 40ED40A518EAEAC50003B099 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				40ED40A318EAEAC50003B099 /* CannyWriter */,

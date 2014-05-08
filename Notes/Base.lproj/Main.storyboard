@@ -216,7 +216,13 @@
                                             <action selector="onRedoButtonClick:" destination="Ah7-4n-0Wa" id="hVr-sk-Q9r"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="flexibleSpace" id="PLo-Iu-tCu"/>
+                                    <barButtonItem width="5" style="plain" systemItem="fixedSpace" id="UCh-nv-J7M"/>
+                                    <barButtonItem image="ToolbarPunctuation" id="apT-aw-9Vs">
+                                        <connections>
+                                            <action selector="onSwitchKeyboardExtensionClick:" destination="Ah7-4n-0Wa" id="GA7-E9-O6M"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="Uuw-2h-5qK"/>
                                     <barButtonItem style="done" systemItem="done" id="jZc-05-S7y">
                                         <connections>
                                             <action selector="onEditDoneButtonClick:" destination="Ah7-4n-0Wa" id="ZU0-tL-aFY"/>
@@ -276,6 +282,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bottomToolbar" destination="30L-Ku-232" id="6Xa-Pi-QrP"/>
+                        <outlet property="keyboardExtensionToolbarItem" destination="apT-aw-9Vs" id="iEZ-p4-Irl"/>
                         <outlet property="keyboardHeight" destination="ne3-3L-tP9" id="hGU-gc-cO4"/>
                         <outlet property="searchBar" destination="dGx-yZ-wcN" id="d2G-Ti-bQT"/>
                         <outlet property="statusMessage" destination="SKM-es-tHx" id="dWg-kR-oli"/>
@@ -394,6 +401,7 @@
     </scenes>
     <resources>
         <image name="StatusHasPhotos" width="25" height="25"/>
+        <image name="ToolbarPunctuation" width="20" height="20"/>
         <image name="ToolbarRedo" width="20" height="20"/>
         <image name="ToolbarTimeMachine" width="20" height="20"/>
         <image name="ToolbarUndo" width="20" height="20"/>

@@ -13,6 +13,8 @@
 #import "NSString+WordCount.h"
 #import "VKontakteActivity.h"
 
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
 @implementation RecordDetailViewController {
     NSRange _lastEditRange;
 }
@@ -42,6 +44,45 @@
 - (void)setText:(NSString *)text {
     _textView.text = text;
     _textView.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+}
+
+- (void)switchKeyboardExtensions {
+    if (_textView.inputAccessoryView != nil) {
+        _textView.inputAccessoryView = nil;
+        return;
+    }
+
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.window.frame.size.width, 44.0f)];
+
+    toolBar.tintColor = SYSTEM_VERSION_LESS_THAN(@"7.0")
+            ? [UIColor colorWithRed:0.56f green:0.59f blue:0.63f alpha:1.0f]
+            : [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
+
+
+    toolBar.translucent = NO;
+    toolBar.items = [self keyboardButtonsWithSymbols:@[@".", @",", @"!", @"?", @"'", @"\"", @":", @";", @"-"]];
+    _textView.inputAccessoryView = toolBar;
+}
+
+- (NSArray *)keyboardButtonsWithSymbols:(NSArray *)symbols {
+    NSMutableArray *buttons = [[NSMutableArray alloc] init];
+    UIBarButtonItem *separator = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    for (NSString *symbol in symbols) {
+        [buttons addObject:separator];
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:symbol
+                                                                   style:UIBarButtonItemStyleBordered
+                                                                  target:self
+                                                                  action:@selector(barButtonAddText:)];
+        [buttons addObject:button];
+    }
+    [buttons addObject:separator];
+    return buttons;
+}
+
+- (IBAction)barButtonAddText:(UIBarButtonItem *)sender {
+    if (_textView.isFirstResponder) {
+        [_textView insertText:sender.title];
+    }
 }
 
 - (void)setAttributedText:(NSAttributedString *)text {
@@ -137,6 +178,11 @@
     [self performSegueWithIdentifier:@"showHistory" sender:self];
 }
 
+- (IBAction)onSwitchKeyboardExtensionClick:(UIBarButtonItem *)sender {
+    [self switchKeyboardExtensions];
+    [_textView reloadInputViews];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showHistory"]) {
         [[segue destinationViewController] setRecord:_record];
@@ -185,8 +231,6 @@
             applicationActivities:@[vkontakteActivity]];
 
     [self presentViewController:activity animated:YES completion:nil];
-    
-    
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
@@ -232,12 +276,12 @@
             textRange = [searchSource rangeOfString:searchText options:NSCaseInsensitiveSearch range:searchRange];
             if (textRange.location != NSNotFound) {
                 [attributedString addAttribute:NSBackgroundColorAttributeName value:yellowColor range:textRange];
-                if(nearest.length == 0 && nearest.location == NSNotFound)
+                if (nearest.length == 0 && nearest.location == NSNotFound)
                     nearest = textRange;
             }
         }
         _lastEditRange = NSMakeRange(nearest.location, 0);
-        
+
         dispatch_async(dispatch_get_main_queue(), ^() {
             [self setAttributedText:attributedString];
             if (nearest.location != NSNotFound && nearest.length != 0)
