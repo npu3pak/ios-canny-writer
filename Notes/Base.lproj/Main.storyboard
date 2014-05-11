@@ -25,11 +25,11 @@
             <objects>
                 <tableViewController id="pGg-6v-bdr" customClass="RecordsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="mLL-gJ-YKr">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Поиск" id="Umk-Q2-fgG">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <textInputTraits key="textInputTraits"/>
@@ -39,7 +39,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordsCell" rowHeight="96" id="m0d-ak-lc9" customClass="RecordsItemCell">
-                                <rect key="frame" x="0.0" y="99" width="320" height="96"/>
+                                <rect key="frame" x="0.0" y="163" width="320" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0d-ak-lc9" id="c9V-do-GNQ">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="95"/>
@@ -85,7 +85,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordsCellNoTitle" rowHeight="96" id="fmx-W2-z8e" customClass="RecordsItemCellNoTitle">
-                                <rect key="frame" x="0.0" y="195" width="320" height="96"/>
+                                <rect key="frame" x="0.0" y="259" width="320" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fmx-W2-z8e" id="Xd2-cB-Eyl">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="95"/>
@@ -127,7 +127,6 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Записи" id="tQt-TN-PWz">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="H6N-36-x88"/>
                     </navigationItem>
@@ -150,22 +149,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Vke-vo-2qH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MMQ-IT-qOo">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5t-kq-lZL">
-                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Ah7-4n-0Wa" id="APh-to-mjB"/>
-                                </connections>
-                            </textView>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Знаков: Слов:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKM-es-tHx">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="17"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -173,7 +161,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30L-Ku-232">
-                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem systemItem="search" id="SoZ-D9-slY">
@@ -196,7 +184,7 @@
                                 </items>
                             </toolbar>
                             <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onW-K8-rvf">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem systemItem="search" id="Df4-z4-bno" userLabel="Bar Button Item - Item">
@@ -231,7 +219,7 @@
                                 </items>
                             </toolbar>
                             <searchBar hidden="YES" contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGx-yZ-wcN">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -239,7 +227,7 @@
                                 </connections>
                             </searchBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Укажите название" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Bq-ou-gt2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="scD-tW-MQW"/>
@@ -248,31 +236,41 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bx9-3G-Cwb">
+                                <rect key="frame" x="0.0" y="108" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ah7-4n-0Wa" id="RCe-75-P8a"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SKM-es-tHx" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" id="1PM-2G-p7n"/>
                             <constraint firstItem="3Bq-ou-gt2" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" id="1am-dy-m2b"/>
+                            <constraint firstAttribute="trailing" secondItem="Bx9-3G-Cwb" secondAttribute="trailing" id="34O-4Y-5sb"/>
                             <constraint firstItem="onW-K8-rvf" firstAttribute="top" secondItem="G6s-mi-Uc4" secondAttribute="bottom" id="4eI-fu-9Wx"/>
-                            <constraint firstAttribute="trailing" secondItem="h5t-kq-lZL" secondAttribute="trailing" id="5Je-kd-xvS"/>
                             <constraint firstItem="dGx-yZ-wcN" firstAttribute="top" secondItem="G6s-mi-Uc4" secondAttribute="bottom" id="5K1-dU-M80"/>
                             <constraint firstAttribute="trailing" secondItem="3Bq-ou-gt2" secondAttribute="trailing" id="6o9-ZU-Gel"/>
                             <constraint firstItem="Vke-vo-2qH" firstAttribute="top" secondItem="30L-Ku-232" secondAttribute="bottom" id="EdM-Jh-Oew"/>
+                            <constraint firstItem="Bx9-3G-Cwb" firstAttribute="top" secondItem="G6s-mi-Uc4" secondAttribute="bottom" constant="44" id="Ehe-EO-qMl"/>
+                            <constraint firstItem="Bx9-3G-Cwb" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" id="JDw-Gu-B4K"/>
                             <constraint firstItem="3Bq-ou-gt2" firstAttribute="top" secondItem="G6s-mi-Uc4" secondAttribute="bottom" id="JKy-GE-3jq"/>
                             <constraint firstAttribute="trailing" secondItem="SKM-es-tHx" secondAttribute="trailing" id="L60-WJ-GRS"/>
                             <constraint firstItem="onW-K8-rvf" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" id="Opz-MK-zU6"/>
                             <constraint firstItem="SKM-es-tHx" firstAttribute="top" secondItem="G6s-mi-Uc4" secondAttribute="bottom" id="TFA-BP-WOy"/>
                             <constraint firstItem="30L-Ku-232" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" id="ZDO-cw-8Ua"/>
-                            <constraint firstItem="h5t-kq-lZL" firstAttribute="top" secondItem="G6s-mi-Uc4" secondAttribute="bottom" constant="44" id="a5w-Ir-PVJ"/>
                             <constraint firstAttribute="trailing" secondItem="dGx-yZ-wcN" secondAttribute="trailing" id="aZU-Ts-UjC"/>
+                            <constraint firstItem="Vke-vo-2qH" firstAttribute="top" secondItem="Bx9-3G-Cwb" secondAttribute="bottom" constant="44" id="b2J-DM-Q3N"/>
                             <constraint firstAttribute="trailing" secondItem="30L-Ku-232" secondAttribute="trailing" id="f86-k3-Yne"/>
                             <constraint firstAttribute="trailing" secondItem="onW-K8-rvf" secondAttribute="trailing" id="i9N-tc-Pdi"/>
-                            <constraint firstItem="h5t-kq-lZL" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" id="lke-VB-xV5"/>
-                            <constraint firstItem="Vke-vo-2qH" firstAttribute="top" secondItem="h5t-kq-lZL" secondAttribute="bottom" constant="44" id="ne3-3L-tP9"/>
                             <constraint firstItem="dGx-yZ-wcN" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" id="tw1-nd-zp6"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="cra-N8-TIN">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Hte-R5-piU">
                             <connections>
@@ -283,12 +281,12 @@
                     <connections>
                         <outlet property="bottomToolbar" destination="30L-Ku-232" id="6Xa-Pi-QrP"/>
                         <outlet property="keyboardExtensionToolbarItem" destination="apT-aw-9Vs" id="iEZ-p4-Irl"/>
-                        <outlet property="keyboardHeight" destination="ne3-3L-tP9" id="hGU-gc-cO4"/>
+                        <outlet property="keyboardHeight" destination="b2J-DM-Q3N" id="epe-MI-k3v"/>
                         <outlet property="searchBar" destination="dGx-yZ-wcN" id="d2G-Ti-bQT"/>
                         <outlet property="statusMessage" destination="SKM-es-tHx" id="dWg-kR-oli"/>
                         <outlet property="statusPaddingTop" destination="TFA-BP-WOy" id="sJz-Au-CHn"/>
-                        <outlet property="textPaddingTop" destination="a5w-Ir-PVJ" id="tx4-QT-8TP"/>
-                        <outlet property="textView" destination="h5t-kq-lZL" id="4vO-nT-Tci"/>
+                        <outlet property="textPaddingTop" destination="Ehe-EO-qMl" id="jvh-sy-4KI"/>
+                        <outlet property="textView" destination="Bx9-3G-Cwb" id="kSw-k5-E9B"/>
                         <outlet property="titleTextField" destination="3Bq-ou-gt2" id="mzR-sU-aqQ"/>
                         <outlet property="topToolbar" destination="onW-K8-rvf" id="rBL-Gw-JGs"/>
                         <segue destination="quJ-l1-xf0" kind="push" identifier="showHistory" id="oox-4v-FPW"/>
@@ -307,11 +305,11 @@
                         <viewControllerLayoutGuide type="bottom" id="nbd-U4-Jgd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jf1-Jj-ude">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="У записи нет истории" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn6-R5-TQP">
-                                <rect key="frame" x="0.0" y="241" width="320" height="21"/>
+                                <rect key="frame" x="0.0" y="273" width="320" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -325,7 +323,6 @@
                             <constraint firstItem="Sn6-R5-TQP" firstAttribute="leading" secondItem="jf1-Jj-ude" secondAttribute="leading" id="lET-3G-1Is"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="История" id="RaP-Mh-Lej">
                         <barButtonItem key="rightBarButtonItem" title="Восстановить" id="1eM-1m-oeI">
                             <connections>
@@ -345,7 +342,9 @@
         <!--Page View Controller-->
         <scene sceneID="NuT-hm-Tea">
             <objects>
-                <pageViewController storyboardIdentifier="HistoryPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="bv1-uf-mdx" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="HistoryPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="bv1-uf-mdx" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ced-pK-tq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1200" y="1370"/>
@@ -363,7 +362,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8K-tI-lDy">
-                                <rect key="frame" x="0.0" y="20" width="320" height="520"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="476"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -383,12 +382,14 @@
                             <constraint firstItem="Ag3-Ag-IdB" firstAttribute="top" secondItem="J8K-tI-lDy" secondAttribute="bottom" constant="8" symbolic="YES" id="1pZ-rP-evC"/>
                             <constraint firstItem="J8K-tI-lDy" firstAttribute="leading" secondItem="xUl-gU-hap" secondAttribute="leading" id="9qe-XB-x6e"/>
                             <constraint firstItem="iA8-vy-bch" firstAttribute="top" secondItem="Ag3-Ag-IdB" secondAttribute="bottom" id="ACB-6Z-PS5"/>
-                            <constraint firstItem="J8K-tI-lDy" firstAttribute="top" secondItem="HO5-R5-XxH" secondAttribute="bottom" id="MhU-Li-BIh"/>
                             <constraint firstItem="Ag3-Ag-IdB" firstAttribute="leading" secondItem="xUl-gU-hap" secondAttribute="leading" id="cgx-UQ-cny"/>
                             <constraint firstAttribute="trailing" secondItem="J8K-tI-lDy" secondAttribute="trailing" id="ieJ-Z0-YoU"/>
                             <constraint firstAttribute="trailing" secondItem="Ag3-Ag-IdB" secondAttribute="trailing" id="oCY-W6-EUM"/>
+                            <constraint firstItem="J8K-tI-lDy" firstAttribute="top" secondItem="HO5-R5-XxH" secondAttribute="bottom" constant="44" id="wjw-DD-2gP"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="kyl-QL-hE9"/>
                     <connections>
                         <outlet property="textView" destination="J8K-tI-lDy" id="qcG-lc-IAb"/>
                         <outlet property="timeStampText" destination="Ag3-Ag-IdB" id="SAY-YB-6zN"/>

@@ -240,7 +240,7 @@
 - (void)recalculateStatus {
     int wordsCount = (int) _textView.text.wordCount;
     int charsCount = (int) _textView.text.length;
-    _statusMessage.text = [NSString stringWithFormat:@"Знаков:%d   Слов:%d", charsCount, wordsCount];
+    _statusMessage.text = [NSString stringWithFormat:NSLocalizedString(@"StatisticsTemplate", @"Знаков:%d   Слов:%d"), charsCount, wordsCount];
 }
 
 #pragma mark - Search

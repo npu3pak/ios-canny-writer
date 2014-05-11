@@ -1,9 +1,9 @@
 
 /* Class = "IBUIBarButtonItem"; title = "Восстановить"; ObjectID = "1eM-1m-oeI"; */
-"1eM-1m-oeI.title" = "Восстановить";
+"1eM-1m-oeI.title" = "Recover";
 
 /* Class = "IBUITextField"; placeholder = "Укажите название"; ObjectID = "3Bq-ou-gt2"; */
-"3Bq-ou-gt2.placeholder" = "Укажите название";
+"3Bq-ou-gt2.placeholder" = "Untitled";
 
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "Ag3-Ag-IdB"; */
 "Ag3-Ag-IdB.text" = "Label";
@@ -12,22 +12,22 @@
 "H3J-HM-zqM.text" = "ПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревьюПревью";
 
 /* Class = "IBUIBarButtonItem"; title = "Назад"; ObjectID = "H6N-36-x88"; */
-"H6N-36-x88.title" = "Назад";
+"H6N-36-x88.title" = "Back";
 
 /* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "J8K-tI-lDy"; */
 "J8K-tI-lDy.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
 
 /* Class = "IBUINavigationItem"; title = "История"; ObjectID = "RaP-Mh-Lej"; */
-"RaP-Mh-Lej.title" = "История";
+"RaP-Mh-Lej.title" = "History";
 
 /* Class = "IBUILabel"; text = "Знаков: Слов:"; ObjectID = "SKM-es-tHx"; */
-"SKM-es-tHx.text" = "Знаков: Слов:";
+"SKM-es-tHx.text" = "Characters: Words:";
 
 /* Class = "IBUILabel"; text = "У записи нет истории"; ObjectID = "Sn6-R5-TQP"; */
-"Sn6-R5-TQP.text" = "У записи нет истории";
+"Sn6-R5-TQP.text" = "Record has no history";
 
 /* Class = "IBUISearchBar"; placeholder = "Поиск"; ObjectID = "Umk-Q2-fgG"; */
-"Umk-Q2-fgG.placeholder" = "Поиск";
+"Umk-Q2-fgG.placeholder" = "Search";
 
 /* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "h5t-kq-lZL"; */
 "h5t-kq-lZL.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
@@ -42,4 +42,4 @@
 "quJ-l1-xf0.title" = "showHistory";
 
 /* Class = "IBUINavigationItem"; title = "Записи"; ObjectID = "tQt-TN-PWz"; */
-"tQt-TN-PWz.title" = "Записи";
+"tQt-TN-PWz.title" = "Records";
