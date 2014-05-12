@@ -3,3 +3,6 @@
 
 
 "StatisticsTemplate" = "Знаков:%d   Слов:%d";
+"ErrorDialogTitle" = "Ошибка";
+"ErrorDialogButtonClose" = "Закрыть";
+"HudLabelLoading" = "Загрузка...";

@@ -3,3 +3,6 @@
 
 
 "StatisticsTemplate" = "Characters:%d   Words:%d";
+"ErrorDialogTitle" = "Error";
+"ErrorDialogButtonClose" = "Close";
+"HudLabelLoading" = "Please Wait...";
