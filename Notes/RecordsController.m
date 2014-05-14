@@ -1,19 +1,19 @@
 //
-//  RecordsViewController.m
+//  RecordsController.m
 //  Notes
 //
 //  Created by Евгений Сафронов on 01.04.14.
 //  Copyright (c) 2014 Евгений Сафронов. All rights reserved.
 //
 
-#import "RecordsViewController.h"
-#import "RecordDetailViewController.h"
+#import "RecordsController.h"
+#import "RecordPreviewController.h"
 #import "Record.h"
 #import "NSDate-Utilities.h"
 #import "RecordsItemCell.h"
 #import "RecordsItemCellNoTitle.h"
 
-@implementation RecordsViewController {
+@implementation RecordsController {
     NSIndexPath *_selectedCellIndex;
     NSString *_searchString;
     Record *_newRecord;

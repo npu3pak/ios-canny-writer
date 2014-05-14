@@ -6,3 +6,6 @@
 "ErrorDialogTitle" = "Ошибка";
 "ErrorDialogButtonClose" = "Закрыть";
 "HudLabelLoading" = "Загрузка...";
+"SearchKeyboardCancel" = "Готово";
+"SearchKeyboardNext" = "Следующее";
+"SearchKeyboardPrevious" = "Предыдущее";

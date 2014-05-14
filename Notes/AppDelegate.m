@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "RecordsViewController.h"
+#import "RecordsController.h"
 #import "Appearance.h"
 #import "VKSdk.h"
 
@@ -22,7 +22,7 @@
     [Appearance applyTheme];
 
     UINavigationController *navigationController = (UINavigationController *) self.window.rootViewController;
-    RecordsViewController *controller = (RecordsViewController *) navigationController.topViewController;
+    RecordsController *controller = (RecordsController *) navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     return YES;
 }

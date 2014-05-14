@@ -1,5 +1,5 @@
 //
-//  HistoryPageContentViewController.h
+//  HistoryPageContentController.h
 //  Notes
 //
 //  Created by Евгений Сафронов on 03.04.14.
@@ -10,7 +10,7 @@
 
 @class History;
 
-@interface HistoryPageContentViewController : UIViewController
+@interface HistoryPageContentController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UILabel *timeStampText;

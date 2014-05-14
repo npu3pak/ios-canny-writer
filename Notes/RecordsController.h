@@ -1,5 +1,5 @@
 //
-//  RecordsViewController.h
+//  RecordsController.h
 //  Notes
 //
 //  Created by Евгений Сафронов on 01.04.14.
@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface RecordsViewController : UITableViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate>
+@interface RecordsController : UITableViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate>
 
 @property(strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;

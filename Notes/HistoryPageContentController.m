@@ -1,15 +1,15 @@
 //
-//  HistoryPageContentViewController.m
+//  HistoryPageContentController.m
 //  Notes
 //
 //  Created by Евгений Сафронов on 03.04.14.
 //  Copyright (c) 2014 Евгений Сафронов. All rights reserved.
 //
 
-#import "HistoryPageContentViewController.h"
+#import "HistoryPageContentController.h"
 #import "History.h"
 
-@implementation HistoryPageContentViewController
+@implementation HistoryPageContentController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

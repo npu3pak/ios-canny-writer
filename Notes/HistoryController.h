@@ -1,5 +1,5 @@
 //
-//  HistoryViewController.h
+//  HistoryController.h
 //  Notes
 //
 //  Created by Евгений Сафронов on 03.04.14.
@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @class Record;
-@class RecordDetailViewController;
+@class RecordPreviewController;
 
-@interface HistoryViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate>
+@interface HistoryController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (weak, nonatomic) IBOutlet UILabel *emptyHistoryLabel;
@@ -19,7 +19,7 @@
 @property (strong, nonatomic) Record* record;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 //Нужно, чтобы обновить текст после восстановления
-@property RecordDetailViewController *recordDetailViewController;
+@property RecordPreviewController *recordPreviewController;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *restoreButtonItem;
 
 - (IBAction)onRestoreButtonClick:(UIBarButtonItem *)sender;

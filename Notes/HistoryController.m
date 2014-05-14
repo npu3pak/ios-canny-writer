@@ -1,20 +1,24 @@
 //
-//  HistoryViewController.m
+//  HistoryController.m
 //  Notes
 //
 //  Created by Евгений Сафронов on 03.04.14.
 //  Copyright (c) 2014 Евгений Сафронов. All rights reserved.
 //
 
-#import "HistoryViewController.h"
+#import "HistoryController.h"
 #import "Record.h"
-#import "HistoryPageContentViewController.h"
+#import "HistoryPageContentController.h"
 #import "History.h"
-#import "RecordDetailViewController.h"
+#import "RecordPreviewController.h"
 
-@implementation HistoryViewController {
+@implementation HistoryController {
     NSArray *_historyArray;
     NSUInteger _currentIndex;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setToolbarHidden:YES animated:animated];
 }
 
 - (void)viewDidLoad {
@@ -26,7 +30,7 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"changeDate" ascending:NO];
     _historyArray = [_record.history.allObjects sortedArrayUsingDescriptors:@[sortDescriptor]];
 
-    HistoryPageContentViewController *startingViewController = [self viewControllerAtIndex:0];
+    HistoryPageContentController *startingViewController = [self viewControllerAtIndex:0];
     if (startingViewController == nil) {
         _emptyHistoryLabel.hidden = NO;
         _restoreButtonItem.enabled = NO;
@@ -47,10 +51,10 @@
 }
 
 
-- (HistoryPageContentViewController *)viewControllerAtIndex:(NSUInteger)index {
+- (HistoryPageContentController *)viewControllerAtIndex:(NSUInteger)index {
     if (_historyArray == nil || _historyArray.count == 0)
         return nil;
-    HistoryPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HistoryPageContentViewController"];
+    HistoryPageContentController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HistoryPageContentController"];
     pageContentViewController.historyItem = [_historyArray objectAtIndex:index];
     pageContentViewController.pageIndex = index;
     return pageContentViewController;
@@ -60,7 +64,7 @@
 
 - (void)pageViewController:(UIPageViewController *)pvc didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     if (completed) {
-        _currentIndex = [((HistoryPageContentViewController *)[self.pageViewController.viewControllers lastObject]) pageIndex];
+        _currentIndex = [((HistoryPageContentController *)[self.pageViewController.viewControllers lastObject]) pageIndex];
     }
 }
 
@@ -68,7 +72,7 @@
 
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    NSUInteger index = ((HistoryPageContentViewController *) viewController).pageIndex;
+    NSUInteger index = ((HistoryPageContentController *) viewController).pageIndex;
 
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
@@ -79,7 +83,7 @@
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    NSUInteger index = ((HistoryPageContentViewController *) viewController).pageIndex;
+    NSUInteger index = ((HistoryPageContentController *) viewController).pageIndex;
 
     if (index == NSNotFound) {
         return nil;
@@ -104,11 +108,11 @@
 - (IBAction)onRestoreButtonClick:(UIBarButtonItem *)sender {
     History *currentHistoryState = [_historyArray objectAtIndex:_currentIndex];
     currentHistoryState.changeDate = [NSDate date];
-    _recordDetailViewController.record.text = currentHistoryState.text;
+    _recordPreviewController.record.text = currentHistoryState.text;
     _record.text = currentHistoryState.text;
     _record.changeDate = currentHistoryState.changeDate;
     [_managedObjectContext save:nil];
-    [_recordDetailViewController refreshView];
+    [_recordPreviewController showRecord];
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end

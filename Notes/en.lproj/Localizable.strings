@@ -6,3 +6,6 @@
 "ErrorDialogTitle" = "Error";
 "ErrorDialogButtonClose" = "Close";
 "HudLabelLoading" = "Please Wait...";
+"SearchKeyboardCancel" = "Done";
+"SearchKeyboardNext" = "Next";
+"SearchKeyboardPrevious" = "Previous";

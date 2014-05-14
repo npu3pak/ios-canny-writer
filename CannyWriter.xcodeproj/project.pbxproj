@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4004944A18ED55A0000DC4B5 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4004944918ED55A0000DC4B5 /* HistoryViewController.m */; };
-		4004BA4718ED8CD100E98D9F /* HistoryPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4004BA4618ED8CD100E98D9F /* HistoryPageContentViewController.m */; };
+		148FA04216916A511DDA3083 /* TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148FAB88D118D36A83F44679 /* TextView.m */; };
+		148FA21799F07CF24D72AE32 /* KeyboardLettersExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 148FA8B1DB8A2C96E971271C /* KeyboardLettersExtension.m */; };
+		148FAEFC823685FA773F3FE3 /* KeyboardSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 148FAED9B3306D432C8226DD /* KeyboardSearchExtension.m */; };
+		4004944A18ED55A0000DC4B5 /* HistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4004944918ED55A0000DC4B5 /* HistoryController.m */; };
+		4004BA4718ED8CD100E98D9F /* HistoryPageContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4004BA4618ED8CD100E98D9F /* HistoryPageContentController.m */; };
 		4004BA4A18ED959F00E98D9F /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 4004BA4918ED959F00E98D9F /* Appearance.m */; };
 		4013BBBA18EB00A800810653 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBB918EB00A800810653 /* Photo.m */; };
 		4013BBBD18EB00A800810653 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBBC18EB00A800810653 /* Record.m */; };
@@ -19,6 +22,8 @@
 		4058F39819019E0900AD7786 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4058F39719019E0900AD7786 /* Images.xcassets */; };
 		407517011913534B005E181F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 407516FE1913534B005E181F /* MBProgressHUD.m */; };
 		407517021913534B005E181F /* VKontakteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 407517001913534B005E181F /* VKontakteActivity.m */; };
+		40DE4E5F192132260044A5EC /* RecordTextEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DE4E5E192132260044A5EC /* RecordTextEditorController.m */; };
+		40DE4E62192145BB0044A5EC /* RecordSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DE4E61192145BB0044A5EC /* RecordSearchController.m */; };
 		40ED40A818EAEAC50003B099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A718EAEAC50003B099 /* Foundation.framework */; };
 		40ED40AA18EAEAC50003B099 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A918EAEAC50003B099 /* CoreGraphics.framework */; };
 		40ED40AC18EAEAC50003B099 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40AB18EAEAC50003B099 /* UIKit.framework */; };
@@ -26,8 +31,8 @@
 		40ED40B618EAEAC50003B099 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40B518EAEAC50003B099 /* main.m */; };
 		40ED40BD18EAEAC50003B099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40ED40BB18EAEAC50003B099 /* Main.storyboard */; };
 		40ED40C018EAEAC50003B099 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40BE18EAEAC50003B099 /* Notes.xcdatamodeld */; };
-		40ED40C318EAEAC50003B099 /* RecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40C218EAEAC50003B099 /* RecordsViewController.m */; };
-		40ED40C618EAEAC50003B099 /* RecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40C518EAEAC50003B099 /* RecordDetailViewController.m */; };
+		40ED40C318EAEAC50003B099 /* RecordsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40C218EAEAC50003B099 /* RecordsController.m */; };
+		40ED40C618EAEAC50003B099 /* RecordPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40C518EAEAC50003B099 /* RecordPreviewController.m */; };
 		40ED40CF18EAEAC50003B099 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40CE18EAEAC50003B099 /* XCTest.framework */; };
 		40ED40D018EAEAC50003B099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A718EAEAC50003B099 /* Foundation.framework */; };
 		40ED40D118EAEAC50003B099 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40AB18EAEAC50003B099 /* UIKit.framework */; };
@@ -36,6 +41,7 @@
 		40F208C3191FEF9800B798FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40F208C5191FEF9800B798FB /* Localizable.strings */; };
 		8095D4829F4C2FACCCE35027 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8095D929F23932B7B4CE781A /* Podfile */; };
 		8095DBF4FDDB138EEA2CB5F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095DB24A5D1A14E6F25E68D /* AppDelegate.m */; };
+		8095DE7399AAE65989B04E80 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095D7597353DECEE5DB0D76 /* Preferences.m */; };
 		84819BC5CD4E4107A251D19F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 263E637B58F74546AEC50179 /* libPods.a */; };
 		DB0F3FFF18FFB8730064EC67 /* NSString+WordCount.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0F3FFE18FFB8730064EC67 /* NSString+WordCount.m */; };
 /* End PBXBuildFile section */
@@ -52,11 +58,17 @@
 
 /* Begin PBXFileReference section */
 		065577CAE4D14A44A515589A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		148FA5BA3D62F403AA93536A /* TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextView.h; sourceTree = "<group>"; };
+		148FA7DF711531546BA9B393 /* KeyboardSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardSearchExtension.h; sourceTree = "<group>"; };
+		148FA8B1DB8A2C96E971271C /* KeyboardLettersExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardLettersExtension.m; sourceTree = "<group>"; };
+		148FAB88D118D36A83F44679 /* TextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextView.m; sourceTree = "<group>"; };
+		148FABFF37B51DE5C1D7E538 /* KeyboardLettersExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardLettersExtension.h; sourceTree = "<group>"; };
+		148FAED9B3306D432C8226DD /* KeyboardSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardSearchExtension.m; sourceTree = "<group>"; };
 		263E637B58F74546AEC50179 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4004944818ED55A0000DC4B5 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
-		4004944918ED55A0000DC4B5 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
-		4004BA4518ED8CD100E98D9F /* HistoryPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryPageContentViewController.h; sourceTree = "<group>"; };
-		4004BA4618ED8CD100E98D9F /* HistoryPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryPageContentViewController.m; sourceTree = "<group>"; };
+		4004944818ED55A0000DC4B5 /* HistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryController.h; sourceTree = "<group>"; };
+		4004944918ED55A0000DC4B5 /* HistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryController.m; sourceTree = "<group>"; };
+		4004BA4518ED8CD100E98D9F /* HistoryPageContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryPageContentController.h; sourceTree = "<group>"; };
+		4004BA4618ED8CD100E98D9F /* HistoryPageContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryPageContentController.m; sourceTree = "<group>"; };
 		4004BA4818ED959F00E98D9F /* Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appearance.h; sourceTree = "<group>"; };
 		4004BA4918ED959F00E98D9F /* Appearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appearance.m; sourceTree = "<group>"; };
 		4013BBB818EB00A800810653 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
@@ -76,6 +88,10 @@
 		407516FE1913534B005E181F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		407516FF1913534B005E181F /* VKontakteActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKontakteActivity.h; sourceTree = "<group>"; };
 		407517001913534B005E181F /* VKontakteActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKontakteActivity.m; sourceTree = "<group>"; };
+		40DE4E5D192132260044A5EC /* RecordTextEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordTextEditorController.h; sourceTree = "<group>"; };
+		40DE4E5E192132260044A5EC /* RecordTextEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTextEditorController.m; sourceTree = "<group>"; };
+		40DE4E60192145BB0044A5EC /* RecordSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSearchController.h; sourceTree = "<group>"; };
+		40DE4E61192145BB0044A5EC /* RecordSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordSearchController.m; sourceTree = "<group>"; };
 		40ED40A418EAEAC50003B099 /* CannyWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CannyWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40ED40A718EAEAC50003B099 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40ED40A918EAEAC50003B099 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -86,10 +102,10 @@
 		40ED40B718EAEAC50003B099 /* Notes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Notes-Prefix.pch"; sourceTree = "<group>"; };
 		40ED40BC18EAEAC50003B099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40ED40BF18EAEAC50003B099 /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
-		40ED40C118EAEAC50003B099 /* RecordsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordsViewController.h; sourceTree = "<group>"; };
-		40ED40C218EAEAC50003B099 /* RecordsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordsViewController.m; sourceTree = "<group>"; };
-		40ED40C418EAEAC50003B099 /* RecordDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordDetailViewController.h; sourceTree = "<group>"; };
-		40ED40C518EAEAC50003B099 /* RecordDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordDetailViewController.m; sourceTree = "<group>"; };
+		40ED40C118EAEAC50003B099 /* RecordsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordsController.h; sourceTree = "<group>"; };
+		40ED40C218EAEAC50003B099 /* RecordsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordsController.m; sourceTree = "<group>"; };
+		40ED40C418EAEAC50003B099 /* RecordPreviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordPreviewController.h; sourceTree = "<group>"; };
+		40ED40C518EAEAC50003B099 /* RecordPreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordPreviewController.m; sourceTree = "<group>"; };
 		40ED40CD18EAEAC50003B099 /* CannyWriterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CannyWriterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40ED40CE18EAEAC50003B099 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		40ED40D718EAEAC50003B099 /* CannyWriterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CannyWriterTests-Info.plist"; sourceTree = "<group>"; };
@@ -99,6 +115,8 @@
 		40F208C4191FEF9800B798FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		40F208C6191FEF9D00B798FB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		40F208C7191FEF9E00B798FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8095D4FF1B8064EFDAC816D8 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		8095D7597353DECEE5DB0D76 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		8095D929F23932B7B4CE781A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8095DB24A5D1A14E6F25E68D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8095DD6A36EABE10D5250BAD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,6 +151,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		148FA83E943194ABC78810A1 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				148FAB88D118D36A83F44679 /* TextView.m */,
+				148FA5BA3D62F403AA93536A /* TextView.h */,
+				148FA8B1DB8A2C96E971271C /* KeyboardLettersExtension.m */,
+				148FABFF37B51DE5C1D7E538 /* KeyboardLettersExtension.h */,
+				148FAED9B3306D432C8226DD /* KeyboardSearchExtension.m */,
+				148FA7DF711531546BA9B393 /* KeyboardSearchExtension.h */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
 		4013BBC118EB00B800810653 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,14 +206,18 @@
 		4013BBCE18EB3DC100810653 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				40ED40C118EAEAC50003B099 /* RecordsViewController.h */,
-				40ED40C218EAEAC50003B099 /* RecordsViewController.m */,
-				40ED40C418EAEAC50003B099 /* RecordDetailViewController.h */,
-				40ED40C518EAEAC50003B099 /* RecordDetailViewController.m */,
-				4004944818ED55A0000DC4B5 /* HistoryViewController.h */,
-				4004944918ED55A0000DC4B5 /* HistoryViewController.m */,
-				4004BA4518ED8CD100E98D9F /* HistoryPageContentViewController.h */,
-				4004BA4618ED8CD100E98D9F /* HistoryPageContentViewController.m */,
+				40ED40C118EAEAC50003B099 /* RecordsController.h */,
+				40ED40C218EAEAC50003B099 /* RecordsController.m */,
+				40ED40C418EAEAC50003B099 /* RecordPreviewController.h */,
+				40ED40C518EAEAC50003B099 /* RecordPreviewController.m */,
+				4004944818ED55A0000DC4B5 /* HistoryController.h */,
+				4004944918ED55A0000DC4B5 /* HistoryController.m */,
+				4004BA4518ED8CD100E98D9F /* HistoryPageContentController.h */,
+				4004BA4618ED8CD100E98D9F /* HistoryPageContentController.m */,
+				40DE4E5D192132260044A5EC /* RecordTextEditorController.h */,
+				40DE4E5E192132260044A5EC /* RecordTextEditorController.m */,
+				40DE4E60192145BB0044A5EC /* RecordSearchController.h */,
+				40DE4E61192145BB0044A5EC /* RecordSearchController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -245,6 +280,8 @@
 				40ED40BE18EAEAC50003B099 /* Notes.xcdatamodeld */,
 				40ED40B018EAEAC50003B099 /* Supporting Files */,
 				40F208C5191FEF9800B798FB /* Localizable.strings */,
+				8095D643D1095F96B055B8A0 /* Utils */,
+				148FA83E943194ABC78810A1 /* Controls */,
 			);
 			name = CannyWriter;
 			path = Notes;
@@ -275,6 +312,15 @@
 				40ED40D718EAEAC50003B099 /* CannyWriterTests-Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8095D643D1095F96B055B8A0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8095D7597353DECEE5DB0D76 /* Preferences.m */,
+				8095D4FF1B8064EFDAC816D8 /* Preferences.h */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,22 +460,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB0F3FFF18FFB8730064EC67 /* NSString+WordCount.m in Sources */,
-				4004BA4718ED8CD100E98D9F /* HistoryPageContentViewController.m in Sources */,
+				4004BA4718ED8CD100E98D9F /* HistoryPageContentController.m in Sources */,
 				4013BBC918EB36C500810653 /* NSDate-Utilities.m in Sources */,
 				4013BBCD18EB3DB900810653 /* RecordsItemCell.m in Sources */,
 				4049019C18EBBDF9000B1968 /* RecordsItemCellNoTitle.m in Sources */,
 				4013BBBA18EB00A800810653 /* Photo.m in Sources */,
-				40ED40C618EAEAC50003B099 /* RecordDetailViewController.m in Sources */,
+				40ED40C618EAEAC50003B099 /* RecordPreviewController.m in Sources */,
 				4013BBBD18EB00A800810653 /* Record.m in Sources */,
-				40ED40C318EAEAC50003B099 /* RecordsViewController.m in Sources */,
+				40DE4E5F192132260044A5EC /* RecordTextEditorController.m in Sources */,
+				40ED40C318EAEAC50003B099 /* RecordsController.m in Sources */,
 				40ED40C018EAEAC50003B099 /* Notes.xcdatamodeld in Sources */,
 				4013BBC018EB00A900810653 /* History.m in Sources */,
 				40ED40B618EAEAC50003B099 /* main.m in Sources */,
-				4004944A18ED55A0000DC4B5 /* HistoryViewController.m in Sources */,
+				4004944A18ED55A0000DC4B5 /* HistoryController.m in Sources */,
+				40DE4E62192145BB0044A5EC /* RecordSearchController.m in Sources */,
 				4004BA4A18ED959F00E98D9F /* Appearance.m in Sources */,
 				8095DBF4FDDB138EEA2CB5F2 /* AppDelegate.m in Sources */,
 				407517021913534B005E181F /* VKontakteActivity.m in Sources */,
 				407517011913534B005E181F /* MBProgressHUD.m in Sources */,
+				8095DE7399AAE65989B04E80 /* Preferences.m in Sources */,
+				148FA04216916A511DDA3083 /* TextView.m in Sources */,
+				148FA21799F07CF24D72AE32 /* KeyboardLettersExtension.m in Sources */,
+				148FAEFC823685FA773F3FE3 /* KeyboardSearchExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
