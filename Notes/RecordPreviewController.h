@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WYPopoverController/WYPopoverController.h>
 #import "RecordSearchController.h"
 
 @class Record;
 @class TextView;
 
-@interface RecordPreviewController : UIViewController <UITextFieldDelegate, SearchDelegate>
+@interface RecordPreviewController : UIViewController <UITextFieldDelegate, SearchDelegate, WYPopoverControllerDelegate>
 
 @property(strong, nonatomic) Record *record;
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;

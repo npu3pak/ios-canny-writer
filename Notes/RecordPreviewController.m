@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Евгений Сафронов. All rights reserved.
 //
 
+#import <WYPopoverController/WYStoryboardPopoverSegue.h>
 #import "RecordPreviewController.h"
 #import "Record.h"
 #import "History.h"
@@ -13,6 +14,7 @@
 #import "VKontakteActivity.h"
 #import "TextView.h"
 #import "RecordTextEditorController.h"
+#import "TextViewAppearancePopoverViewController.h"
 
 static NSInteger const kToolbarItemWidth = 10;
 
@@ -22,6 +24,7 @@ static NSString *const kSegueShowHistory = @"showHistory";
 
 @implementation RecordPreviewController {
     NSValue *_selectedRangeValue;
+    WYPopoverController *_wyPopoverController;
 }
 
 - (void)viewDidLoad {
@@ -88,14 +91,19 @@ static NSString *const kSegueShowHistory = @"showHistory";
 }
 
 - (void)showBottomToolbar:(BOOL)animated {
-    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(onSearchButtonClick:)];
+    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarSearch"] style:UIBarButtonItemStylePlain target:self action:@selector(onSearchButtonClick:)];
     UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     [fixedSpace setWidth:kToolbarItemWidth];
     UIBarButtonItem *history = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarTimeMachine"] style:UIBarButtonItemStylePlain target:self action:@selector(onShowHistoryButtonClick:)];
     UIBarButtonItem *separator = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *share = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(onShareButtonClick:)];
-    [self setToolbarItems:@[search, fixedSpace, history, separator, share]];
+    UIBarButtonItem *share = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarShare"] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonClick:)];
+    UIBarButtonItem *changeAppearance = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarFontSize"] style:UIBarButtonItemStylePlain target:self action:@selector(onChangeTextViewAppearance:) ];
+    [self setToolbarItems:@[search, fixedSpace, history, fixedSpace, changeAppearance, separator, share]];
     [self.navigationController setToolbarHidden:NO animated:animated];
+}
+
+- (void)onChangeTextViewAppearance:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"showAppearancePopover" sender:sender];
 }
 
 - (IBAction)onEditButtonClick:(UIBarButtonItem *)sender {
@@ -126,6 +134,13 @@ static NSString *const kSegueShowHistory = @"showHistory";
     } else if ([segue.identifier isEqualToString:kSegueFindText]) {
         [[segue destinationViewController] setDelegate:self];
         [[segue destinationViewController] setText:self.textView.text];
+    } else if ([segue.identifier isEqualToString:@"showAppearancePopover"]) {
+        WYStoryboardPopoverSegue *popoverSegue = (WYStoryboardPopoverSegue *) segue;
+        TextViewAppearancePopoverViewController *destinationViewController = (TextViewAppearancePopoverViewController *) segue.destinationViewController;
+        destinationViewController.textView = self.textView;
+        destinationViewController.contentSizeForViewInPopover = CGSizeMake(100, 44);
+        _wyPopoverController = [popoverSegue popoverControllerWithSender:sender permittedArrowDirections:WYPopoverArrowDirectionAny animated:YES];
+        _wyPopoverController.delegate = self;
     }
 }
 

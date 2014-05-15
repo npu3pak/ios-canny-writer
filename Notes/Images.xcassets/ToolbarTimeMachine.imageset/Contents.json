@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "History1-1.png"
+      "filename" : "toolbar_history.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "watch-50.png"
+      "filename" : "toolbar_history@2x.png"
     }
   ],
   "info" : {

@@ -6,15 +6,35 @@
 #import "Preferences.h"
 
 
+static NSString *const kFontName = @"HelveticaNeue";
+static NSString *const kDefaultsKeyTextViewFontSize = @"TextViewFontSize";
+
+static const int kDefaultTextViewSize = 16;
+
 @implementation Preferences {
-
-}
-- (NSString *)fontName {
-    return @"HelveticaNeue";
+    NSUserDefaults *_userDefaults;
 }
 
-- (CGFloat)fontSize {
-    return 16;
+- (id)init {
+    self = [super init];
+    if (self) {
+        _userDefaults = [NSUserDefaults standardUserDefaults];
+    }
+    return self;
+}
+
+- (NSString *)textViewFontName {
+    return kFontName;
+}
+
+- (CGFloat)textViewFontSize {
+    float size = [_userDefaults floatForKey:kDefaultsKeyTextViewFontSize];
+    return size == 0 ? kDefaultTextViewSize : size;
+}
+
+- (void)setTextViewFontSize:(CGFloat)size {
+    [_userDefaults setFloat:size forKey:kDefaultsKeyTextViewFontSize];
+    _userDefaults.synchronize;
 }
 
 @end

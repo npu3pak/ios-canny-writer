@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		148FA04216916A511DDA3083 /* TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148FAB88D118D36A83F44679 /* TextView.m */; };
 		148FA21799F07CF24D72AE32 /* KeyboardLettersExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 148FA8B1DB8A2C96E971271C /* KeyboardLettersExtension.m */; };
+		148FAEBB21CD41700514C553 /* TextViewAppearancePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148FAD537AB9872B7FD82DDD /* TextViewAppearancePopoverViewController.m */; };
 		148FAEFC823685FA773F3FE3 /* KeyboardSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 148FAED9B3306D432C8226DD /* KeyboardSearchExtension.m */; };
 		4004944A18ED55A0000DC4B5 /* HistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4004944918ED55A0000DC4B5 /* HistoryController.m */; };
 		4004BA4718ED8CD100E98D9F /* HistoryPageContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4004BA4618ED8CD100E98D9F /* HistoryPageContentController.m */; };
@@ -58,11 +59,13 @@
 
 /* Begin PBXFileReference section */
 		065577CAE4D14A44A515589A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		148FA1CA57C05C81DB6BFE46 /* TextViewAppearancePopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewAppearancePopoverViewController.h; sourceTree = "<group>"; };
 		148FA5BA3D62F403AA93536A /* TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextView.h; sourceTree = "<group>"; };
 		148FA7DF711531546BA9B393 /* KeyboardSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardSearchExtension.h; sourceTree = "<group>"; };
 		148FA8B1DB8A2C96E971271C /* KeyboardLettersExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardLettersExtension.m; sourceTree = "<group>"; };
 		148FAB88D118D36A83F44679 /* TextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextView.m; sourceTree = "<group>"; };
 		148FABFF37B51DE5C1D7E538 /* KeyboardLettersExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardLettersExtension.h; sourceTree = "<group>"; };
+		148FAD537AB9872B7FD82DDD /* TextViewAppearancePopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewAppearancePopoverViewController.m; sourceTree = "<group>"; };
 		148FAED9B3306D432C8226DD /* KeyboardSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardSearchExtension.m; sourceTree = "<group>"; };
 		263E637B58F74546AEC50179 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4004944818ED55A0000DC4B5 /* HistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryController.h; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 				40DE4E5E192132260044A5EC /* RecordTextEditorController.m */,
 				40DE4E60192145BB0044A5EC /* RecordSearchController.h */,
 				40DE4E61192145BB0044A5EC /* RecordSearchController.m */,
+				148FAD537AB9872B7FD82DDD /* TextViewAppearancePopoverViewController.m */,
+				148FA1CA57C05C81DB6BFE46 /* TextViewAppearancePopoverViewController.h */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				148FA04216916A511DDA3083 /* TextView.m in Sources */,
 				148FA21799F07CF24D72AE32 /* KeyboardLettersExtension.m in Sources */,
 				148FAEFC823685FA773F3FE3 /* KeyboardSearchExtension.m in Sources */,
+				148FAEBB21CD41700514C553 /* TextViewAppearancePopoverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

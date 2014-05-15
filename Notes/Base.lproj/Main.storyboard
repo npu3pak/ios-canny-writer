@@ -169,7 +169,6 @@
                                 <rect key="frame" x="0.0" y="30" width="320" height="474"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
@@ -199,8 +198,9 @@
                         <outlet property="textView" destination="Bx9-3G-Cwb" id="kSw-k5-E9B"/>
                         <outlet property="titleTextField" destination="3Bq-ou-gt2" id="mzR-sU-aqQ"/>
                         <segue destination="quJ-l1-xf0" kind="push" identifier="showHistory" id="oox-4v-FPW"/>
-                        <segue destination="fQV-8d-P1u" kind="modal" identifier="editText" modalTransitionStyle="crossDissolve" animates="NO" id="CFp-sY-PcG"/>
-                        <segue destination="dx1-oF-eKb" kind="modal" identifier="findText" animates="NO" id="rdC-vj-Q6v"/>
+                        <segue destination="fQV-8d-P1u" kind="modal" identifier="editText" id="CFp-sY-PcG"/>
+                        <segue destination="dx1-oF-eKb" kind="modal" identifier="findText" id="rdC-vj-Q6v"/>
+                        <segue destination="qaI-qz-yqZ" kind="custom" identifier="showAppearancePopover" customClass="WYStoryboardPopoverSegue" id="jxv-6W-nrh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
@@ -223,7 +223,6 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
@@ -280,9 +279,9 @@
                                     <constraint firstAttribute="height" constant="44" id="vh7-qM-byo"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="search" id="OJt-uv-8fa" userLabel="Bar Button Item - Item">
+                                    <barButtonItem image="ToolbarSearch" style="plain" id="OJt-uv-8fa" userLabel="Bar Button Item - Item">
                                         <connections>
-                                            <segue destination="dx1-oF-eKb" kind="modal" identifier="findText" animates="NO" id="i2p-XV-ucv"/>
+                                            <segue destination="dx1-oF-eKb" kind="modal" identifier="findText" id="i2p-XV-ucv"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="Xbm-Jx-G20"/>
@@ -301,6 +300,12 @@
                                     <barButtonItem image="ToolbarPunctuation" style="plain" id="zZk-bx-G2d">
                                         <connections>
                                             <action selector="onSwitchKeyboardExtensionClick:" destination="fQV-8d-P1u" id="6QE-2S-tJF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="wBg-K7-OKO"/>
+                                    <barButtonItem image="ToolbarFontSize" style="plain" id="bix-jJ-5y8">
+                                        <connections>
+                                            <segue destination="qaI-qz-yqZ" kind="custom" identifier="showAppearancePopover" customClass="WYStoryboardPopoverSegue" id="gj9-F1-gna"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="7vn-bK-TPa"/>
@@ -326,8 +331,7 @@
                                 <rect key="frame" x="0.0" y="61" width="320" height="487"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="fQV-8d-P1u" id="PL9-pS-xFA"/>
@@ -349,6 +353,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appearanceToolbarItem" destination="bix-jJ-5y8" id="X1G-Bl-YSX"/>
                         <outlet property="statusLabel" destination="Kuz-KT-sPf" id="eWh-py-rQj"/>
                         <outlet property="textPaddingBottom" destination="qON-Ti-OlO" id="fWJ-GI-Pw2"/>
                         <outlet property="textView" destination="bU8-0u-wdf" id="hC1-lx-Ir6"/>
@@ -358,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gt-es-AMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="402" y="-1338"/>
+            <point key="canvasLocation" x="402" y="-1370"/>
         </scene>
         <!--History Controller - showHistory-->
         <scene sceneID="oTX-t0-oZf">
@@ -402,7 +407,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOx-zw-aWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="402" y="-654"/>
+            <point key="canvasLocation" x="410" y="-352"/>
+        </scene>
+        <!--Text View Appearance Popover View Controller-->
+        <scene sceneID="BJe-ef-FSp">
+            <objects>
+                <viewController storyboardIdentifier="TextViewAppearancePopoverViewController" id="qaI-qz-yqZ" customClass="TextViewAppearancePopoverViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m6y-vR-9Pm"/>
+                        <viewControllerLayoutGuide type="bottom" id="8bG-Rz-zmg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tMd-qS-TKo">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nD-h6-3TM">
+                                <rect key="frame" x="0.0" y="0.0" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="35"/>
+                                <state key="normal" title="T">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.88267299109999997" green="0.88267299109999997" blue="0.88267299109999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onMakeBiggerClick:" destination="qaI-qz-yqZ" eventType="touchUpInside" id="WOd-Xg-95v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkU-u1-LAY">
+                                <rect key="frame" x="57" y="0.0" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
+                                <state key="normal" title="T">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.88267299109999997" green="0.88267299109999997" blue="0.88267299109999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onMakeSmallerClick:" destination="qaI-qz-yqZ" eventType="touchUpInside" id="t71-7L-MOA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="100" height="44"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6z-3y-rNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="-450"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="NuT-hm-Tea">
@@ -426,11 +484,10 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8K-tI-lDy">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8K-tI-lDy" customClass="TextView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="520"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -467,8 +524,10 @@
     </scenes>
     <resources>
         <image name="StatusHasPhotos" width="25" height="25"/>
+        <image name="ToolbarFontSize" width="20" height="20"/>
         <image name="ToolbarPunctuation" width="20" height="20"/>
         <image name="ToolbarRedo" width="20" height="20"/>
+        <image name="ToolbarSearch" width="20" height="20"/>
         <image name="ToolbarUndo" width="20" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -477,7 +536,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="i2p-XV-ucv"/>
+        <segue reference="gj9-F1-gna"/>
         <segue reference="jjO-qP-LzF"/>
+        <segue reference="i2p-XV-ucv"/>
     </inferredMetricsTieBreakers>
 </document>

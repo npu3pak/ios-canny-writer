@@ -11,12 +11,18 @@
 #import "Record.h"
 #import "KeyboardLettersExtension.h"
 #import "History.h"
+#import "TextView.h"
+#import "TextViewAppearancePopoverViewController.h"
+#import "FPPopoverController.h"
+#import "WYPopoverController.h"
+#import "WYStoryboardPopoverSegue.h"
 
 static NSString *const kSegueFindText = @"findText";
 
 @implementation RecordTextEditorController {
     KeyboardLettersExtension *_keyboardExtension;
     NSValue *_selectedRangeValue;
+    WYPopoverController *_wyPopoverController;
 }
 
 - (void)viewDidLoad {
@@ -37,6 +43,11 @@ static NSString *const kSegueFindText = @"findText";
     [self scrollToSearchResult];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.textView.becomeFirstResponder;
+}
+
 //Если мы перешли сюда из окна поиска - показываем результат поиска
 - (void)scrollToSearchResult {
     if (_selectedRangeValue) {
@@ -48,7 +59,6 @@ static NSString *const kSegueFindText = @"findText";
 }
 
 - (void)startEditing {
-    self.textView.becomeFirstResponder;
     self.textView.selectedRange = NSMakeRange(0, 0);
 }
 
@@ -113,7 +123,7 @@ static NSString *const kSegueFindText = @"findText";
 - (IBAction)onDoneButtonClick:(UIBarButtonItem *)sender {
     if (![self.textView.text isEqualToString:self.record.text])
         [self saveText];
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)saveText {
@@ -146,6 +156,13 @@ static NSString *const kSegueFindText = @"findText";
     if ([segue.identifier isEqualToString:kSegueFindText]) {
         [[segue destinationViewController] setDelegate:self];
         [[segue destinationViewController] setText:self.textView.text];
+    } else if ([segue.identifier isEqualToString:@"showAppearancePopover"]) {
+        WYStoryboardPopoverSegue *popoverSegue = (WYStoryboardPopoverSegue *) segue;
+        TextViewAppearancePopoverViewController *destinationViewController = (TextViewAppearancePopoverViewController *) segue.destinationViewController;
+        destinationViewController.textView = self.textView;
+        destinationViewController.contentSizeForViewInPopover = CGSizeMake(100, 44);
+        _wyPopoverController = [popoverSegue popoverControllerWithSender:sender permittedArrowDirections:WYPopoverArrowDirectionAny animated:YES];
+        _wyPopoverController.delegate = self;
     }
 }
 

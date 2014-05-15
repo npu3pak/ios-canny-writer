@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "punctuation.png"
+      "filename" : "toolbar_punctuation-1.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "punctuation@2x5.png"
+      "filename" : "toolbar_punctuation@2x.png"
     }
   ],
   "info" : {

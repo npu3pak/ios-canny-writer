@@ -44,7 +44,7 @@
                                                             target:self
                                                             action:@selector(onNextClick)];
     UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"SearchKeyboardCancel", @"Готово")
-                                                               style:UIBarButtonItemStyleBordered
+                                                               style:UIBarButtonItemStyleDone
                                                               target:self
                                                               action:@selector(onCancelClick)];
     return @[previous, next, flexSeparator, cancel];

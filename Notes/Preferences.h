@@ -7,7 +7,11 @@
 
 
 @interface Preferences : NSObject
-- (NSString *)fontName;
 
-- (CGFloat)fontSize;
+- (NSString *)textViewFontName;
+
+- (CGFloat)textViewFontSize;
+
+- (void)setTextViewFontSize:(CGFloat)size;
+
 @end

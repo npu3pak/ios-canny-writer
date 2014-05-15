@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WYPopoverController/WYPopoverController.h>
 #import "RecordSearchController.h"
 
 @class Record;
 
-@interface RecordTextEditorController : UIViewController <UITextViewDelegate, SearchDelegate>
+@interface RecordTextEditorController : UIViewController <UITextViewDelegate, SearchDelegate, WYPopoverControllerDelegate>
 
 @property Record *record;
 @property NSManagedObjectContext *managedObjectContext;
@@ -20,7 +21,8 @@
 @property(weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHeight;
 @property(weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property(weak, nonatomic) IBOutlet UILabel *statusLabel;
-@property(weak, nonatomic) IBOutlet UITextView *textView;
+@property(weak, nonatomic) IBOutlet TextView *textView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *appearanceToolbarItem;
 
 - (IBAction)onUndoButtonClick:(UIBarButtonItem *)sender;
 

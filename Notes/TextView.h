@@ -8,5 +8,11 @@
 
 @interface TextView : UITextView
 - (void)setText:(NSString *)text;
+
 - (void)setAttributedText:(NSAttributedString *)attributedString;
+
+- (void)makeFontBigger;
+
+- (void)makeFontSmaller;
+
 @end
