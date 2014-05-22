@@ -97,9 +97,14 @@ static NSString *const kSegueShowHistory = @"showHistory";
     UIBarButtonItem *history = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarTimeMachine"] style:UIBarButtonItemStylePlain target:self action:@selector(onShowHistoryButtonClick:)];
     UIBarButtonItem *separator = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *share = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarShare"] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonClick:)];
-    UIBarButtonItem *changeAppearance = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarFontSize"] style:UIBarButtonItemStylePlain target:self action:@selector(onChangeTextViewAppearance:) ];
-    [self setToolbarItems:@[search, fixedSpace, history, fixedSpace, changeAppearance, separator, share]];
+    UIBarButtonItem *changeAppearance = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarFontSize"] style:UIBarButtonItemStylePlain target:self action:@selector(onChangeTextViewAppearance:)];
+    UIBarButtonItem *showImages = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(onShowImages)];;
+    [self setToolbarItems:@[search, fixedSpace, history, fixedSpace, changeAppearance, fixedSpace, showImages, separator, share]];
     [self.navigationController setToolbarHidden:NO animated:animated];
+}
+
+- (void)onShowImages {
+    [self performSegueWithIdentifier:@"showImages" sender:self];
 }
 
 - (void)onChangeTextViewAppearance:(UIBarButtonItem *)sender {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <deployment version="1552" defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -201,11 +201,87 @@
                         <segue destination="fQV-8d-P1u" kind="modal" identifier="editText" id="CFp-sY-PcG"/>
                         <segue destination="dx1-oF-eKb" kind="modal" identifier="findText" id="rdC-vj-Q6v"/>
                         <segue destination="qaI-qz-yqZ" kind="custom" identifier="showAppearancePopover" customClass="WYStoryboardPopoverSegue" id="jxv-6W-nrh"/>
+                        <segue destination="8dk-Mg-wWj" kind="push" identifier="showImages" id="7Ec-Tx-Uge"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-388" y="-1338"/>
+        </scene>
+        <!--Images Controller-->
+        <scene sceneID="bpo-Z3-vaK">
+            <objects>
+                <viewController id="8dk-Mg-wWj" customClass="ImagesController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qSw-H7-ci2"/>
+                        <viewControllerLayoutGuide type="bottom" id="8O3-mk-VRx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="srp-e7-xoK">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет прикрепленных фотографий" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="174" translatesAutoresizingMaskIntoConstraints="NO" id="OJl-Jm-4cR">
+                                <rect key="frame" x="73" y="231" width="174" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="OJl-Jm-4cR" secondAttribute="centerX" id="7Gk-rf-jqu"/>
+                            <constraint firstAttribute="centerY" secondItem="OJl-Jm-4cR" secondAttribute="centerY" constant="0.5" id="MiX-la-EVG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iAZ-Yd-2lB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QJX-sJ-0Ce">
+                            <connections>
+                                <action selector="onAddButtonClick:" destination="8dk-Mg-wWj" id="aSf-fg-yW0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emptyImagesLabel" destination="OJl-Jm-4cR" id="zed-ye-HFP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WUn-xl-dPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="-2373"/>
+        </scene>
+        <!--Images Page Content Controller-->
+        <scene sceneID="OqD-F5-40i">
+            <objects>
+                <viewController storyboardIdentifier="ImagesPageContentViewController" id="ayR-qs-Apg" customClass="ImagesPageContentController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cFz-IT-99y"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jwi-KF-dgY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B9K-vY-9tR">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lIe-dD-mGc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lIe-dD-mGc" firstAttribute="top" secondItem="cFz-IT-99y" secondAttribute="bottom" id="SiO-cn-mnW"/>
+                            <constraint firstItem="Jwi-KF-dgY" firstAttribute="top" secondItem="lIe-dD-mGc" secondAttribute="bottom" id="TDq-ge-iNk"/>
+                            <constraint firstAttribute="trailing" secondItem="lIe-dD-mGc" secondAttribute="trailing" id="phr-H3-Z8p"/>
+                            <constraint firstItem="lIe-dD-mGc" firstAttribute="leading" secondItem="B9K-vY-9tR" secondAttribute="leading" id="xWX-sP-cqz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="lIe-dD-mGc" id="KXd-cJ-Z6f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BiT-XA-piP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="593" y="-2826"/>
         </scene>
         <!--Record Search Controller-->
         <scene sceneID="zwc-wQ-WOx">
@@ -259,6 +335,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PjF-fd-cSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="941" y="-2082"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Lf7-10-3bg">
+            <objects>
+                <pageViewController storyboardIdentifier="ImagesPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="7gp-Yv-n5p" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPV-Hw-qFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278" y="-2815"/>
         </scene>
         <!--Record Text Editor Controller-->
         <scene sceneID="LBy-9a-2NZ">
@@ -407,7 +491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOx-zw-aWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="410" y="-352"/>
+            <point key="canvasLocation" x="146" y="-344"/>
         </scene>
         <!--Text View Appearance Popover View Controller-->
         <scene sceneID="BJe-ef-FSp">
@@ -470,7 +554,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ced-pK-tq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-630" y="-506"/>
+            <point key="canvasLocation" x="-114" y="354"/>
         </scene>
         <!--History Page Content Controller-->
         <scene sceneID="TLf-9o-Ov2">
@@ -519,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlz-wj-SNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146" y="-506"/>
+            <point key="canvasLocation" x="370" y="354"/>
         </scene>
     </scenes>
     <resources>
@@ -536,8 +620,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gj9-F1-gna"/>
-        <segue reference="jjO-qP-LzF"/>
         <segue reference="i2p-XV-ucv"/>
+        <segue reference="jjO-qP-LzF"/>
+        <segue reference="jxv-6W-nrh"/>
     </inferredMetricsTieBreakers>
 </document>
