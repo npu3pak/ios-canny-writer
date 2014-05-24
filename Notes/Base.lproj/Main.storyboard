@@ -339,7 +339,9 @@
         <!--Page View Controller-->
         <scene sceneID="Lf7-10-3bg">
             <objects>
-                <pageViewController storyboardIdentifier="ImagesPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="7gp-Yv-n5p" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="ImagesPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="7gp-Yv-n5p" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPV-Hw-qFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-278" y="-2815"/>
@@ -620,8 +622,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="i2p-XV-ucv"/>
         <segue reference="jjO-qP-LzF"/>
-        <segue reference="jxv-6W-nrh"/>
+        <segue reference="gj9-F1-gna"/>
+        <segue reference="i2p-XV-ucv"/>
     </inferredMetricsTieBreakers>
 </document>

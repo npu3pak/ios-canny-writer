@@ -21,6 +21,7 @@ static NSInteger const kToolbarItemWidth = 10;
 static NSString *const kSegueEditText = @"editText";
 static NSString *const kSegueFindText = @"findText";
 static NSString *const kSegueShowHistory = @"showHistory";
+static NSString *const kSegueShowImages = @"showImages";
 
 @implementation RecordPreviewController {
     NSValue *_selectedRangeValue;
@@ -134,6 +135,9 @@ static NSString *const kSegueShowHistory = @"showHistory";
         [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
         [[segue destinationViewController] setRecordPreviewController:self];
     } else if ([segue.identifier isEqualToString:kSegueEditText]) {
+        [[segue destinationViewController] setRecord:self.record];
+        [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
+    } else if ([segue.identifier isEqualToString:kSegueShowImages]) {
         [[segue destinationViewController] setRecord:self.record];
         [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
     } else if ([segue.identifier isEqualToString:kSegueFindText]) {

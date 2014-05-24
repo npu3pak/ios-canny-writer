@@ -9,7 +9,7 @@
 #import "ImagesController.h"
 #import "Record.h"
 #import "ImagesPageContentController.h"
-
+#import "Photo.h"
 
 @implementation ImagesController {
     NSArray *_photosArray;
@@ -17,12 +17,31 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setToolbarHidden:YES animated:animated];
+    [self showBottomToolbar:animated];
 }
 
 
+- (void)showBottomToolbar:(BOOL)animated {
+    UIBarButtonItem *delete = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteItem)];;
+    [self setToolbarItems:@[delete]];
+
+    BOOL hasImages = _photosArray != nil && _photosArray.count > 0;
+    [self.navigationController setToolbarHidden:!hasImages animated:animated];
+}
+
+- (void)deleteItem {
+    Photo *photo = _photosArray[_currentIndex];
+    if (photo) {
+        [_record removePhotosObject:photo];
+        [self.managedObjectContext save:nil];
+        [self showPhotos];
+        [self showBottomToolbar:YES];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ImagesPageViewController"];
     self.pageViewController.dataSource = self;
     self.pageViewController.delegate = self;
@@ -32,6 +51,11 @@
 }
 
 - (void)showPhotos {
+
+    [self.pageViewController.view removeFromSuperview];
+    [self.pageViewController removeFromParentViewController];
+
+
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO];
     _photosArray = [_record.photos.allObjects sortedArrayUsingDescriptors:@[sortDescriptor]];
 
@@ -48,8 +72,8 @@
 
     self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 
-    [self addChildViewController:_pageViewController];
-    [self.view addSubview:_pageViewController.view];
+    [self addChildViewController:self.pageViewController];
+    [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
 }
 
@@ -107,7 +131,40 @@
 }
 
 - (IBAction)onAddButtonClick:(UIBarButtonItem *)sender {
+    [self pickPhotoFromLibrary];
+}
 
+- (void)pickPhotoFromLibrary {
+    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+}
+
+
+- (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType {
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
+    imagePickerController.sourceType = sourceType;
+    imagePickerController.delegate = self;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
+
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Photo" inManagedObjectContext:self.managedObjectContext];
+    Photo *photo = [[Photo alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
+
+    photo.creationDate = [NSDate date];
+    photo.photo = UIImagePNGRepresentation(image);
+
+    [self.record addPhotosObject:photo];
+    [self.managedObjectContext save:nil];//TODO Если кончилось место - тут будет ошибка. Надо ловить
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self showPhotos];
+    [self showBottomToolbar:YES];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

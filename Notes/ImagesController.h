@@ -10,7 +10,7 @@
 
 @class Record;
 
-@interface ImagesController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@interface ImagesController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property(strong, nonatomic) UIPageViewController *pageViewController;
 @property(strong, nonatomic) Record *record;
