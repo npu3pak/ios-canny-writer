@@ -10,13 +10,11 @@
 
 @class Record;
 
-@interface ImagesController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ImagesController : UICollectionViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property(strong, nonatomic) UIPageViewController *pageViewController;
 @property(strong, nonatomic) Record *record;
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-@property(weak, nonatomic) IBOutlet UILabel *emptyImagesLabel;
+- (IBAction)onAddClick:(id)sender;
 
-- (IBAction)onAddButtonClick:(UIBarButtonItem *)sender;
 @end

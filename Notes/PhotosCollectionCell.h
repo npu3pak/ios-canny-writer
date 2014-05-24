@@ -1,8 +1,8 @@
 //
-//  ImagesPageContentController.h
+//  PhotosCollectionCell.h
 //  CannyWriter
 //
-//  Created by Евгений Сафронов on 18.05.14.
+//  Created by Евгений Сафронов on 24.05.14.
 //  Copyright (c) 2014 Евгений Сафронов. All rights reserved.
 //
 
@@ -10,11 +10,10 @@
 
 @class Photo;
 
-@interface ImagesPageContentController : UIViewController
+@interface PhotosCollectionCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
-@property NSUInteger pageIndex;
-@property Photo *photo;
+-(void)showPhoto:(Photo *)photo;
 
 @end

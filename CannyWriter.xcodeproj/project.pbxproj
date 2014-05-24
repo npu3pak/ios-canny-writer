@@ -24,7 +24,7 @@
 		407517011913534B005E181F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 407516FE1913534B005E181F /* MBProgressHUD.m */; };
 		407517021913534B005E181F /* VKontakteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 407517001913534B005E181F /* VKontakteActivity.m */; };
 		408A43EE1928FF3800E2F2F7 /* ImagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 408A43ED1928FF3800E2F2F7 /* ImagesController.m */; };
-		408A43F11929000200E2F2F7 /* ImagesPageContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 408A43F01929000200E2F2F7 /* ImagesPageContentController.m */; };
+		40A406091930DC2B009CBA3A /* PhotosCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A406081930DC2B009CBA3A /* PhotosCollectionCell.m */; };
 		40DE4E5F192132260044A5EC /* RecordTextEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DE4E5E192132260044A5EC /* RecordTextEditorController.m */; };
 		40DE4E62192145BB0044A5EC /* RecordSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DE4E61192145BB0044A5EC /* RecordSearchController.m */; };
 		40ED40A818EAEAC50003B099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A718EAEAC50003B099 /* Foundation.framework */; };
@@ -43,7 +43,9 @@
 		40ED40DC18EAEAC50003B099 /* NotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40DB18EAEAC50003B099 /* NotesTests.m */; };
 		40F208C3191FEF9800B798FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40F208C5191FEF9800B798FB /* Localizable.strings */; };
 		8095D4829F4C2FACCCE35027 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8095D929F23932B7B4CE781A /* Podfile */; };
+		8095DAE98A60903F2336977E /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095D8B7F77C18856B291634 /* UIImage+Resize.m */; };
 		8095DBF4FDDB138EEA2CB5F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095DB24A5D1A14E6F25E68D /* AppDelegate.m */; };
+		8095DC643DA6E38602D25DEA /* ImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095DBBB9D56C8F99515AFF8 /* ImageController.m */; };
 		8095DE7399AAE65989B04E80 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095D7597353DECEE5DB0D76 /* Preferences.m */; };
 		84819BC5CD4E4107A251D19F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 263E637B58F74546AEC50179 /* libPods.a */; };
 		DB0F3FFF18FFB8730064EC67 /* NSString+WordCount.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0F3FFE18FFB8730064EC67 /* NSString+WordCount.m */; };
@@ -95,8 +97,8 @@
 		407517001913534B005E181F /* VKontakteActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKontakteActivity.m; sourceTree = "<group>"; };
 		408A43EC1928FF3800E2F2F7 /* ImagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesController.h; sourceTree = "<group>"; };
 		408A43ED1928FF3800E2F2F7 /* ImagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesController.m; sourceTree = "<group>"; };
-		408A43EF1929000200E2F2F7 /* ImagesPageContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesPageContentController.h; sourceTree = "<group>"; };
-		408A43F01929000200E2F2F7 /* ImagesPageContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesPageContentController.m; sourceTree = "<group>"; };
+		40A406071930DC2B009CBA3A /* PhotosCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionCell.h; sourceTree = "<group>"; };
+		40A406081930DC2B009CBA3A /* PhotosCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionCell.m; sourceTree = "<group>"; };
 		40DE4E5D192132260044A5EC /* RecordTextEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordTextEditorController.h; sourceTree = "<group>"; };
 		40DE4E5E192132260044A5EC /* RecordTextEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTextEditorController.m; sourceTree = "<group>"; };
 		40DE4E60192145BB0044A5EC /* RecordSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSearchController.h; sourceTree = "<group>"; };
@@ -124,10 +126,15 @@
 		40F208C4191FEF9800B798FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		40F208C6191FEF9D00B798FB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		40F208C7191FEF9E00B798FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		40F56C5D1931061A006DB460 /* Notes 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Notes 2.xcdatamodel"; sourceTree = "<group>"; };
+		8095D372EA3A03857114DBD8 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		8095D4FF1B8064EFDAC816D8 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		8095D682004B1F35C8F7E797 /* ImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageController.h; sourceTree = "<group>"; };
 		8095D7597353DECEE5DB0D76 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
+		8095D8B7F77C18856B291634 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		8095D929F23932B7B4CE781A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8095DB24A5D1A14E6F25E68D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8095DBBB9D56C8F99515AFF8 /* ImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageController.m; sourceTree = "<group>"; };
 		8095DD6A36EABE10D5250BAD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB0F3FFD18FFB8730064EC67 /* NSString+WordCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WordCount.h"; sourceTree = "<group>"; };
 		DB0F3FFE18FFB8730064EC67 /* NSString+WordCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WordCount.m"; sourceTree = "<group>"; };
@@ -197,6 +204,8 @@
 				4013BBC818EB36C500810653 /* NSDate-Utilities.m */,
 				DB0F3FFD18FFB8730064EC67 /* NSString+WordCount.h */,
 				DB0F3FFE18FFB8730064EC67 /* NSString+WordCount.m */,
+				8095D8B7F77C18856B291634 /* UIImage+Resize.m */,
+				8095D372EA3A03857114DBD8 /* UIImage+Resize.h */,
 			);
 			name = "3rd-party";
 			sourceTree = "<group>";
@@ -208,6 +217,8 @@
 				4013BBCC18EB3DB900810653 /* RecordsItemCell.m */,
 				4049019A18EBBDF9000B1968 /* RecordsItemCellNoTitle.h */,
 				4049019B18EBBDF9000B1968 /* RecordsItemCellNoTitle.m */,
+				40A406071930DC2B009CBA3A /* PhotosCollectionCell.h */,
+				40A406081930DC2B009CBA3A /* PhotosCollectionCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -231,8 +242,8 @@
 				148FA1CA57C05C81DB6BFE46 /* TextViewAppearancePopoverViewController.h */,
 				408A43EC1928FF3800E2F2F7 /* ImagesController.h */,
 				408A43ED1928FF3800E2F2F7 /* ImagesController.m */,
-				408A43EF1929000200E2F2F7 /* ImagesPageContentController.h */,
-				408A43F01929000200E2F2F7 /* ImagesPageContentController.m */,
+				8095DBBB9D56C8F99515AFF8 /* ImageController.m */,
+				8095D682004B1F35C8F7E797 /* ImageController.h */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -496,10 +507,12 @@
 				407517011913534B005E181F /* MBProgressHUD.m in Sources */,
 				8095DE7399AAE65989B04E80 /* Preferences.m in Sources */,
 				148FA04216916A511DDA3083 /* TextView.m in Sources */,
+				40A406091930DC2B009CBA3A /* PhotosCollectionCell.m in Sources */,
 				148FA21799F07CF24D72AE32 /* KeyboardLettersExtension.m in Sources */,
 				148FAEFC823685FA773F3FE3 /* KeyboardSearchExtension.m in Sources */,
-				408A43F11929000200E2F2F7 /* ImagesPageContentController.m in Sources */,
 				148FAEBB21CD41700514C553 /* TextViewAppearancePopoverViewController.m in Sources */,
+				8095DAE98A60903F2336977E /* UIImage+Resize.m in Sources */,
+				8095DC643DA6E38602D25DEA /* ImageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,9 +738,10 @@
 		40ED40BE18EAEAC50003B099 /* Notes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				40F56C5D1931061A006DB460 /* Notes 2.xcdatamodel */,
 				40ED40BF18EAEAC50003B099 /* Notes.xcdatamodel */,
 			);
-			currentVersion = 40ED40BF18EAEAC50003B099 /* Notes.xcdatamodel */;
+			currentVersion = 40F56C5D1931061A006DB460 /* Notes 2.xcdatamodel */;
 			path = Notes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
