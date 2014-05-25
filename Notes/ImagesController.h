@@ -10,7 +10,7 @@
 
 @class Record;
 
-@interface ImagesController : UICollectionViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ImagesController : UICollectionViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property(strong, nonatomic) Record *record;
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;

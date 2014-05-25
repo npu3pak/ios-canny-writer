@@ -45,7 +45,20 @@
 
 
 - (IBAction)onAddClick:(id)sender {
-    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    UIActionSheet *actSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"actionSheetAddTitle", @"Прикрепить изображение")
+                                                          delegate:self
+                                                 cancelButtonTitle:NSLocalizedString(@"actionSheetAddCancel", @"Отмена")
+                                            destructiveButtonTitle:nil
+                                                 otherButtonTitles:NSLocalizedString(@"actionSheetAddFromCamera", @"Из камеры"),
+                                                                   NSLocalizedString(@"actionSheetAddFromLibrary", @"Из библиотеки"), nil];
+    [actSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0)
+        [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
+    else if (buttonIndex == 1)
+        [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
 - (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType {
@@ -82,7 +95,7 @@
     if ([segue.identifier isEqualToString:@"showImage"]) {
         NSIndexPath *selectedPath = self.collectionView.indexPathsForSelectedItems[0];
         Photo *selected = _photos[selectedPath.row];
-        ImageController * photoController = segue.destinationViewController;
+        ImageController *photoController = segue.destinationViewController;
         [photoController setPhoto:selected];
     }
 }

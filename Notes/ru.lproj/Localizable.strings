@@ -9,3 +9,7 @@
 "SearchKeyboardCancel" = "Готово";
 "SearchKeyboardNext" = "Следующее";
 "SearchKeyboardPrevious" = "Предыдущее";
+"actionSheetAddTitle" = "Прикрепить изображение";
+"actionSheetAddCancel" = "Отмена";
+"actionSheetAddFromCamera" = "Из камеры";
+"actionSheetAddFromLibrary" = "Из библиотеки";
