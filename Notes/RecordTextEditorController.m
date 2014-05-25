@@ -32,6 +32,7 @@ static NSString *const kSegueFindText = @"findText";
     [self observeKeyboardSizeChanges];
     [self initializeKeyboardExtension];
     [self startEditing];
+    [self resizeToolbars:0];
 }
 
 - (void)showText {
@@ -141,6 +142,10 @@ static NSString *const kSegueFindText = @"findText";
 
 //Меняем размер панелей при повороте экрана
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [self resizeToolbars:duration];
+}
+
+- (void)resizeToolbars:(NSTimeInterval)duration {
     CGFloat newHeight = self.toolbarHeightForCurrentOrientation;
     [UIView animateWithDuration:duration animations:^{
         self.toolbarHeight.constant = newHeight; //Похоже, единственный способ изменить размер панели инструментов
