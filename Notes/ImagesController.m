@@ -17,8 +17,8 @@
     NSMutableArray *_photos;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self showPhotos];
 }
 
@@ -96,7 +96,9 @@
         NSIndexPath *selectedPath = self.collectionView.indexPathsForSelectedItems[0];
         Photo *selected = _photos[selectedPath.row];
         ImageController *photoController = segue.destinationViewController;
-        [photoController setPhoto:selected];
+        photoController.photo = selected;
+        photoController.record = self.record;
+        photoController.managedObjectContext = self.managedObjectContext;
     }
 }
 

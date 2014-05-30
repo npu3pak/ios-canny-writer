@@ -6,12 +6,15 @@
 #import <Foundation/Foundation.h>
 
 @class Photo;
+@class Record;
 
 
 @interface ImageController : UIViewController{}
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+@property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property Photo *photo;
+@property Record *record;
 
 @end

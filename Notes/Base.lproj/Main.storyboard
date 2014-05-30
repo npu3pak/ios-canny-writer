@@ -208,7 +208,7 @@
             </objects>
             <point key="canvasLocation" x="-1344" y="-1498"/>
         </scene>
-        <!--Images Controller - Вложения-->
+        <!--Images Controller - Изображения-->
         <scene sceneID="mKk-Do-5Co">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="qJY-eR-uO2" customClass="ImagesController" sceneMemberID="viewController">
@@ -245,7 +245,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="HVu-dY-tDu" id="mST-aI-QR2"/>
-                                    <segue destination="sRh-dd-eI8" kind="modal" identifier="showImage" customClass="WYStoryboardPopoverSegue" modalTransitionStyle="crossDissolve" id="2dr-2J-ctY"/>
+                                    <segue destination="sRh-dd-eI8" kind="push" identifier="showImage" customClass="WYStoryboardPopoverSegue" id="2dr-2J-ctY"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -254,7 +254,7 @@
                             <outlet property="delegate" destination="qJY-eR-uO2" id="dSR-dG-Ihd"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Вложения" id="lKt-gV-iOQ">
+                    <navigationItem key="navigationItem" title="Изображения" id="lKt-gV-iOQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PDh-SK-6X7">
                             <connections>
                                 <action selector="onAddClick:" destination="qJY-eR-uO2" id="BYT-1A-eah"/>
@@ -264,7 +264,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cvx-4o-68E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-779" y="-2461"/>
+            <point key="canvasLocation" x="-791" y="-2912"/>
         </scene>
         <!--Image Controller-->
         <scene sceneID="Tqp-FM-Rty">
@@ -275,11 +275,11 @@
                         <viewControllerLayoutGuide type="bottom" id="a96-Ti-9Nn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="erY-sC-WAP">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rmh-OZ-c7C">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
