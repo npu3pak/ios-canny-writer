@@ -100,8 +100,26 @@ static NSString *const kSegueShowImages = @"showImages";
     UIBarButtonItem *share = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarShare"] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonClick:)];
     UIBarButtonItem *changeAppearance = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarFontSize"] style:UIBarButtonItemStylePlain target:self action:@selector(onChangeTextViewAppearance:)];
     UIBarButtonItem *showImages = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(onShowImages)];;
-    [self setToolbarItems:@[search, fixedSpace, history, fixedSpace, changeAppearance, fixedSpace, showImages, separator, share]];
+    UIBarButtonItem *delete = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(askRecordDeletion)];;
+    [self setToolbarItems:@[search, fixedSpace, history, fixedSpace, changeAppearance, fixedSpace, showImages, fixedSpace, delete, separator, share]];
     [self.navigationController setToolbarHidden:NO animated:animated];
+}
+
+- (void)askRecordDeletion {
+    UIActionSheet *actSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                          delegate:self
+                                                 cancelButtonTitle:NSLocalizedString(@"actionSheetAddCancel", @"Отмена")
+                                            destructiveButtonTitle:NSLocalizedString(@"actionSheetDeleteRecord", @"Удалить запись")
+                                                 otherButtonTitles:nil];
+    [actSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [self.managedObjectContext deleteObject:self.record];
+        [self.managedObjectContext save:nil];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)onShowImages {

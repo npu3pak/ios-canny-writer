@@ -13,7 +13,7 @@
 @class Record;
 @class TextView;
 
-@interface RecordPreviewController : UIViewController <UITextFieldDelegate, SearchDelegate, WYPopoverControllerDelegate>
+@interface RecordPreviewController : UIViewController <UITextFieldDelegate, SearchDelegate, WYPopoverControllerDelegate, UIActionSheetDelegate>
 
 @property(strong, nonatomic) Record *record;
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;

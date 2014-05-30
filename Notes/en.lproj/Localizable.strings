@@ -9,7 +9,8 @@
 "SearchKeyboardCancel" = "Done";
 "SearchKeyboardNext" = "Next";
 "SearchKeyboardPrevious" = "Previous";
-"actionSheetAddTitle" = "Прикрепить изображение";
-"actionSheetAddCancel" = "Отмена";
-"actionSheetAddFromCamera" = "Из камеры";
-"actionSheetAddFromLibrary" = "Из библиотеки";
+"actionSheetAddTitle" = "Attach Image";
+"actionSheetAddCancel" = "Cancel";
+"actionSheetAddFromCamera" = "From Camera";
+"actionSheetAddFromLibrary" = "From Library";
+"actionSheetDeleteRecord" = "Remove Record";

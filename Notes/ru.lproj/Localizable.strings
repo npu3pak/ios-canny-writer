@@ -13,3 +13,4 @@
 "actionSheetAddCancel" = "Отмена";
 "actionSheetAddFromCamera" = "Из камеры";
 "actionSheetAddFromLibrary" = "Из библиотеки";
+"actionSheetDeleteRecord" = "Удалить запись";

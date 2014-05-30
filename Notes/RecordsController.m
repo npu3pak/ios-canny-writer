@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addRecord:)];
     self.navigationItem.rightBarButtonItem = addButton;
 }
@@ -37,8 +37,8 @@
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         [context deleteObject:_newRecord];
         [self saveContext:context];
-        [self.tableView reloadData];
     }
+    [self.tableView reloadData];
 }
 
 - (void)addRecord:(id)sender {
@@ -141,9 +141,14 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        [self saveContext:context];
+        NSManagedObject *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self removeItem:context item:item];
     }
+}
+
+- (void)removeItem:(NSManagedObjectContext *)context item:(NSManagedObject *)item {
+    [context deleteObject:item];
+    [self saveContext:context];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
