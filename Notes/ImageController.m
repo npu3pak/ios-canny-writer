@@ -22,9 +22,21 @@
 }
 
 - (void)deleteImage:(id)sender {
-    [self.record removePhotosObject:self.photo];
-    [self.managedObjectContext save:nil];
-    [self.navigationController popViewControllerAnimated:YES];
+    UIActionSheet *actSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                          delegate:self
+                                                 cancelButtonTitle:NSLocalizedString(@"actionSheetAddCancel", @"Отмена")
+                                            destructiveButtonTitle:NSLocalizedString(@"actionSheetDeleteRecord", @"Удалить изображение")
+                                                 otherButtonTitles:nil];
+    [actSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [self.record removeFromDiskPhoto:self.photo];
+        [self.record removePhotosObject:self.photo];
+        [self.managedObjectContext save:nil];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)addTapRecognizer {
@@ -40,7 +52,8 @@
 }
 
 - (void)showImage {
-    self.imageView.image = [UIImage imageWithData:self.photo.photo];
+    NSData *jpegData = [NSData dataWithContentsOfFile:self.photo.uri];
+    self.imageView.image = [UIImage imageWithData:jpegData];
 }
 
 

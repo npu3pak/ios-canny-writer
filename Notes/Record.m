@@ -7,6 +7,7 @@
 //
 
 #import "Record.h"
+#import "Photo.h"
 
 
 @implementation Record
@@ -26,4 +27,16 @@
         self.history = [NSSet setWithArray:[historyArray subarrayWithRange:NSMakeRange(0, maxHistoryItems)]];
     }
 }
+
+- (void)removeFromDiskPhoto:(Photo *)photo {
+    [[NSFileManager defaultManager] removeItemAtPath:photo.uri error:nil];
+}
+
+- (void)removeAllPhotosFromDisk {
+    if (self.photos.count > 0) {
+        for (Photo *photo in self.photos)
+            [self removeFromDiskPhoto:photo];
+    }
+}
+
 @end

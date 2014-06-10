@@ -17,5 +17,6 @@
 @dynamic photo;
 @dynamic thumbnail;
 @dynamic record;
+@dynamic uri;
 
 @end

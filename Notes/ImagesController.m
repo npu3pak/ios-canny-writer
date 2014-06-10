@@ -17,7 +17,7 @@
     NSMutableArray *_photos;
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self showPhotos];
 }
@@ -73,18 +73,38 @@
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     UIImage *thumbnail = [image resizedImageWithContentMode:UIViewContentModeScaleAspectFit bounds:CGSizeMake(155, 155) interpolationQuality:kCGInterpolationDefault];
 
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:self.generateFileName];
 
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Photo" inManagedObjectContext:self.managedObjectContext];
-    Photo *photo = [[Photo alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
+    NSData *photoData = UIImageJPEGRepresentation(image, 1.0);
+    BOOL writeSuccess = [photoData writeToFile:filePath atomically:YES];
 
-    photo.creationDate = [NSDate date];
-    photo.photo = UIImageJPEGRepresentation(image, 1.0);
-    photo.thumbnail = UIImageJPEGRepresentation(thumbnail, 1.0);
+    if (writeSuccess) {
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Photo" inManagedObjectContext:self.managedObjectContext];
+        Photo *photo = [[Photo alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
+        photo.creationDate = [NSDate date];
 
-    [self.record addPhotosObject:photo];
-    [self.managedObjectContext save:nil];//TODO Если кончилось место - тут будет ошибка. Надо ловить
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [self showPhotos];
+        photo.thumbnail = UIImageJPEGRepresentation(thumbnail, 1.0);
+        photo.uri = filePath;
+
+        [self.record addPhotosObject:photo];
+        [self.managedObjectContext save:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [self showPhotos];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                        message:@"Не удалось сохранить изображение. Возможно закончилось свободное место"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Закрыть"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (NSString *)generateFileName {
+    double millis = [NSDate date].timeIntervalSince1970;
+    return [NSString stringWithFormat:@"%f.jpg", millis];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

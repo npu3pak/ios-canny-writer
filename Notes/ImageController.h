@@ -9,7 +9,7 @@
 @class Record;
 
 
-@interface ImageController : UIViewController{}
+@interface ImageController : UIViewController <UIActionSheetDelegate> {}
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 

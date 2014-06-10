@@ -141,14 +141,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        NSManagedObject *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [self removeItem:context item:item];
+        Record *record = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [record removeAllPhotosFromDisk];
+        [context deleteObject:record];
+        [self saveContext:context];
     }
-}
-
-- (void)removeItem:(NSManagedObjectContext *)context item:(NSManagedObject *)item {
-    [context deleteObject:item];
-    [self saveContext:context];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {

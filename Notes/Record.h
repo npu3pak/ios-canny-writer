@@ -21,6 +21,10 @@
 @property (nonatomic, retain) NSSet *photos;
 
 - (void)removeOldHistoryItems;
+
+- (void)removeFromDiskPhoto:(Photo *)photo;
+- (void)removeAllPhotosFromDisk;
+
 @end
 
 @interface Record (CoreDataGeneratedAccessors)

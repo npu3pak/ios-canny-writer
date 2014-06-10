@@ -116,6 +116,7 @@ static NSString *const kSegueShowImages = @"showImages";
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
+        [self.record removeAllPhotosFromDisk];
         [self.managedObjectContext deleteObject:self.record];
         [self.managedObjectContext save:nil];
         [self.navigationController popViewControllerAnimated:YES];

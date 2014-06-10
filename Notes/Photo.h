@@ -13,6 +13,7 @@
 @interface Photo : NSManagedObject
 
 @property (nonatomic, retain) NSString * comment;
+@property (nonatomic, retain) NSString * uri;
 @property (nonatomic, retain) NSDate * creationDate;
 @property (nonatomic, retain) NSData * photo;
 @property (nonatomic, retain) NSData * thumbnail;
