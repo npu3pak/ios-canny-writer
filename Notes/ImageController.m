@@ -8,12 +8,27 @@
 #import "Record.h"
 
 
-@implementation ImageController
+@implementation ImageController {
+    UIColor *_defaultNavBarColor;
+}
 
 - (void)viewDidLoad {
     [self showButtons];
     [self addTapRecognizer];
     [self showImage];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    _defaultNavBarColor = self.navigationController.navigationBar.tintColor;
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.translucent = YES;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.tintColor = _defaultNavBarColor;
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)showButtons {

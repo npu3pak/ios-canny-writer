@@ -269,7 +269,7 @@
         <!--Image Controller-->
         <scene sceneID="Tqp-FM-Rty">
             <objects>
-                <viewController id="sRh-dd-eI8" customClass="ImageController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="sRh-dd-eI8" customClass="ImageController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Er8-UC-088"/>
                         <viewControllerLayoutGuide type="bottom" id="a96-Ti-9Nn"/>
@@ -285,10 +285,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Rmh-OZ-c7C" firstAttribute="top" secondItem="Er8-UC-088" secondAttribute="bottom" id="0J8-y3-PWy"/>
-                            <constraint firstItem="Rmh-OZ-c7C" firstAttribute="leading" secondItem="erY-sC-WAP" secondAttribute="leading" id="EkW-Fr-Khm"/>
-                            <constraint firstAttribute="trailing" secondItem="Rmh-OZ-c7C" secondAttribute="trailing" id="J3p-7t-FC1"/>
-                            <constraint firstItem="a96-Ti-9Nn" firstAttribute="top" secondItem="Rmh-OZ-c7C" secondAttribute="bottom" id="Q29-oi-JhL"/>
+                            <constraint firstItem="Rmh-OZ-c7C" firstAttribute="leading" secondItem="erY-sC-WAP" secondAttribute="leading" id="31r-in-rTU"/>
+                            <constraint firstAttribute="trailing" secondItem="Rmh-OZ-c7C" secondAttribute="trailing" id="E1F-fR-g6k"/>
+                            <constraint firstItem="a96-Ti-9Nn" firstAttribute="top" secondItem="Rmh-OZ-c7C" secondAttribute="bottom" id="Pnc-8A-fMd"/>
+                            <constraint firstItem="Rmh-OZ-c7C" firstAttribute="top" secondItem="Er8-UC-088" secondAttribute="bottom" id="UQ6-Oa-l7B"/>
                         </constraints>
                     </view>
                     <connections>
