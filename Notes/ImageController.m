@@ -67,7 +67,7 @@
 }
 
 - (void)showImage {
-    NSData *jpegData = [NSData dataWithContentsOfFile:self.photo.uri];
+    NSData *jpegData = [NSData dataWithContentsOfFile:self.photo.photoUri];
     self.imageView.image = [UIImage imageWithData:jpegData];
 }
 

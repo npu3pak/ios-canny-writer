@@ -12,7 +12,8 @@
 @implementation PhotosCollectionCell
 
 - (void)showPhoto:(Photo *)photo {
-    self.imageView.image = [UIImage imageWithData:photo.thumbnail];
+    NSData *jpegData = [NSData dataWithContentsOfFile:photo.thumbnailUri];
+    self.imageView.image = [UIImage imageWithData:jpegData];
 }
 
 

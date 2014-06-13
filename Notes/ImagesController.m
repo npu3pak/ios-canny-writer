@@ -75,18 +75,25 @@
 
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsPath = [paths objectAtIndex:0];
-    NSString *filePath = [documentsPath stringByAppendingPathComponent:self.generateFileName];
+
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:self.generateImageFileName];
+    NSString *thumbnailPath = [documentsPath stringByAppendingPathComponent:self.generateThumbnailFileName];
 
     NSData *photoData = UIImageJPEGRepresentation(image, 1.0);
-    BOOL writeSuccess = [photoData writeToFile:filePath atomically:YES];
+    BOOL imageWriteSuccess = [photoData writeToFile:filePath atomically:YES];
+    BOOL thumbnailWriteSuccess = NO;
 
-    if (writeSuccess) {
+    if(imageWriteSuccess){
+        NSData *thumbnailData = UIImageJPEGRepresentation(thumbnail, 1.0);
+        thumbnailWriteSuccess = [thumbnailData writeToFile:thumbnailPath atomically:YES];
+    }
+
+    if (thumbnailWriteSuccess) {
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Photo" inManagedObjectContext:self.managedObjectContext];
         Photo *photo = [[Photo alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
         photo.creationDate = [NSDate date];
-
-        photo.thumbnail = UIImageJPEGRepresentation(thumbnail, 1.0);
-        photo.uri = filePath;
+        photo.thumbnailUri = thumbnailPath;
+        photo.photoUri = filePath;
 
         [self.record addPhotosObject:photo];
         [self.managedObjectContext save:nil];
@@ -102,9 +109,14 @@
     }
 }
 
-- (NSString *)generateFileName {
+- (NSString *)generateImageFileName {
     double millis = [NSDate date].timeIntervalSince1970;
     return [NSString stringWithFormat:@"%f.jpg", millis];
+}
+
+- (NSString *)generateThumbnailFileName {
+    double millis = [NSDate date].timeIntervalSince1970;
+    return [NSString stringWithFormat:@"%f-thumb.jpg", millis];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

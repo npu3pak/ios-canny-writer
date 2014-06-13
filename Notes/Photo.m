@@ -14,9 +14,8 @@
 
 @dynamic comment;
 @dynamic creationDate;
-@dynamic photo;
-@dynamic thumbnail;
 @dynamic record;
-@dynamic uri;
+@dynamic photoUri;
+@dynamic thumbnailUri;
 
 @end

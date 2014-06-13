@@ -29,7 +29,8 @@
 }
 
 - (void)removeFromDiskPhoto:(Photo *)photo {
-    [[NSFileManager defaultManager] removeItemAtPath:photo.uri error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:photo.photoUri error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:photo.thumbnailUri error:nil];
 }
 
 - (void)removeAllPhotosFromDisk {
