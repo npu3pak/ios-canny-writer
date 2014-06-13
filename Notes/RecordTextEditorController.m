@@ -13,7 +13,6 @@
 #import "History.h"
 #import "TextView.h"
 #import "TextViewAppearancePopoverViewController.h"
-#import "FPPopoverController.h"
 #import "WYPopoverController.h"
 #import "WYStoryboardPopoverSegue.h"
 

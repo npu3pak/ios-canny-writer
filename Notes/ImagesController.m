@@ -123,6 +123,15 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    Photo *selected = _photos[indexPath.row];
+    ImageController *photoController = [[ImageController alloc] initWithNibName:@"ImagePreview" bundle:nil];
+    photoController.photo = selected;
+    photoController.record = self.record;
+    photoController.managedObjectContext = self.managedObjectContext;
+    [self.navigationController pushViewController:photoController animated:YES];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showImage"]) {
         NSIndexPath *selectedPath = self.collectionView.indexPathsForSelectedItems[0];

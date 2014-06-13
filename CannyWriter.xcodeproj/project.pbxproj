@@ -14,6 +14,7 @@
 		4004944A18ED55A0000DC4B5 /* HistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4004944918ED55A0000DC4B5 /* HistoryController.m */; };
 		4004BA4718ED8CD100E98D9F /* HistoryPageContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4004BA4618ED8CD100E98D9F /* HistoryPageContentController.m */; };
 		4004BA4A18ED959F00E98D9F /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 4004BA4918ED959F00E98D9F /* Appearance.m */; };
+		4005B743194AE103000E4B51 /* ImagePreview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4005B742194AE103000E4B51 /* ImagePreview.xib */; };
 		4013BBBA18EB00A800810653 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBB918EB00A800810653 /* Photo.m */; };
 		4013BBBD18EB00A800810653 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBBC18EB00A800810653 /* Record.m */; };
 		4013BBC018EB00A900810653 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013BBBF18EB00A900810653 /* History.m */; };
@@ -78,6 +79,7 @@
 		4004BA4618ED8CD100E98D9F /* HistoryPageContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryPageContentController.m; sourceTree = "<group>"; };
 		4004BA4818ED959F00E98D9F /* Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appearance.h; sourceTree = "<group>"; };
 		4004BA4918ED959F00E98D9F /* Appearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appearance.m; sourceTree = "<group>"; };
+		4005B742194AE103000E4B51 /* ImagePreview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagePreview.xib; sourceTree = "<group>"; };
 		4013BBB818EB00A800810653 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		4013BBB918EB00A800810653 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		4013BBBB18EB00A800810653 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				40F208C5191FEF9800B798FB /* Localizable.strings */,
 				8095D643D1095F96B055B8A0 /* Utils */,
 				148FA83E943194ABC78810A1 /* Controls */,
+				4005B742194AE103000E4B51 /* ImagePreview.xib */,
 			);
 			name = CannyWriter;
 			path = Notes;
@@ -433,6 +436,7 @@
 			files = (
 				4058F39819019E0900AD7786 /* Images.xcassets in Resources */,
 				40ED40BD18EAEAC50003B099 /* Main.storyboard in Resources */,
+				4005B743194AE103000E4B51 /* ImagePreview.xib in Resources */,
 				8095D4829F4C2FACCCE35027 /* Podfile in Resources */,
 				40F208C3191FEF9800B798FB /* Localizable.strings in Resources */,
 			);

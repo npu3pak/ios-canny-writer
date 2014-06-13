@@ -245,7 +245,6 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="HVu-dY-tDu" id="mST-aI-QR2"/>
-                                    <segue destination="sRh-dd-eI8" kind="push" identifier="showImage" customClass="WYStoryboardPopoverSegue" id="2dr-2J-ctY"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -265,39 +264,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cvx-4o-68E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-791" y="-2912"/>
-        </scene>
-        <!--Image Controller-->
-        <scene sceneID="Tqp-FM-Rty">
-            <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="sRh-dd-eI8" customClass="ImageController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Er8-UC-088"/>
-                        <viewControllerLayoutGuide type="bottom" id="a96-Ti-9Nn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="erY-sC-WAP">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rmh-OZ-c7C">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Rmh-OZ-c7C" firstAttribute="leading" secondItem="erY-sC-WAP" secondAttribute="leading" id="31r-in-rTU"/>
-                            <constraint firstAttribute="trailing" secondItem="Rmh-OZ-c7C" secondAttribute="trailing" id="E1F-fR-g6k"/>
-                            <constraint firstItem="a96-Ti-9Nn" firstAttribute="top" secondItem="Rmh-OZ-c7C" secondAttribute="bottom" id="Pnc-8A-fMd"/>
-                            <constraint firstItem="Rmh-OZ-c7C" firstAttribute="top" secondItem="Er8-UC-088" secondAttribute="bottom" id="UQ6-Oa-l7B"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="imageView" destination="Rmh-OZ-c7C" id="Upz-hM-MDc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8J7-x4-zEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-239" y="-2912"/>
         </scene>
         <!--Record Search Controller-->
         <scene sceneID="zwc-wQ-WOx">
