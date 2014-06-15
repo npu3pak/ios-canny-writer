@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <WYPopoverController/WYPopoverController.h>
 #import "RecordSearchController.h"
+#import "MWPhotoBrowser.h"
 
 @class Record;
 @class TextView;
 
-@interface RecordPreviewController : UIViewController <UITextFieldDelegate, SearchDelegate, WYPopoverControllerDelegate, UIActionSheetDelegate>
+@interface RecordPreviewController : UIViewController <UITextFieldDelegate, SearchDelegate, WYPopoverControllerDelegate, UIActionSheetDelegate, MWPhotoBrowserDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property(strong, nonatomic) Record *record;
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;

@@ -8,6 +8,7 @@
 
 #import "Record.h"
 #import "Photo.h"
+#import "SDImageCache.h"
 
 
 @implementation Record
@@ -28,16 +29,24 @@
     }
 }
 
-- (void)removeFromDiskPhoto:(Photo *)photo {
+- (void)removeFromDiskPhoto:(Photo *)photo clearCache:(BOOL)clearCache {
     [[NSFileManager defaultManager] removeItemAtPath:photo.photoUri error:nil];
     [[NSFileManager defaultManager] removeItemAtPath:photo.thumbnailUri error:nil];
+    if (clearCache)
+        [self clearCache];
+}
+
+- (void)clearCache {
+    [[SDImageCache sharedImageCache] clearMemory];
+    [[SDImageCache sharedImageCache] clearDisk];
 }
 
 - (void)removeAllPhotosFromDisk {
     if (self.photos.count > 0) {
         for (Photo *photo in self.photos)
-            [self removeFromDiskPhoto:photo];
+            [self removeFromDiskPhoto:photo clearCache:NO];
     }
+    [self clearCache];
 }
 
 @end

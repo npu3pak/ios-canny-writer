@@ -22,7 +22,8 @@
 
 - (void)removeOldHistoryItems;
 
-- (void)removeFromDiskPhoto:(Photo *)photo;
+- (void)removeFromDiskPhoto:(Photo *)photo clearCache:(BOOL)clearCache;
+
 - (void)removeAllPhotosFromDisk;
 
 @end

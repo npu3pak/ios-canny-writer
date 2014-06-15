@@ -15,6 +15,8 @@
 #import "TextView.h"
 #import "RecordTextEditorController.h"
 #import "TextViewAppearancePopoverViewController.h"
+#import "Photo.h"
+#import "UIImage+Resize.h"
 
 static NSInteger const kToolbarItemWidth = 10;
 
@@ -26,6 +28,8 @@ static NSString *const kSegueShowImages = @"showImages";
 @implementation RecordPreviewController {
     NSValue *_selectedRangeValue;
     WYPopoverController *_wyPopoverController;
+    NSArray *_photos;
+    MWPhotoBrowser *_photoBrowser;
 }
 
 - (void)viewDidLoad {
@@ -87,8 +91,14 @@ static NSString *const kSegueShowImages = @"showImages";
 }
 
 - (void)showRecord {
+    [self updatePhotos];
     [self.titleTextField setText:self.record.title];
     [self.textView setText:self.record.text];
+}
+
+- (void)updatePhotos {
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO];
+    _photos = [self.record.photos.allObjects sortedArrayUsingDescriptors:@[sortDescriptor]];
 }
 
 - (void)showBottomToolbar:(BOOL)animated {
@@ -124,7 +134,21 @@ static NSString *const kSegueShowImages = @"showImages";
 }
 
 - (void)onShowImages {
-    [self performSegueWithIdentifier:@"showImages" sender:self];
+    _photoBrowser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    _photoBrowser.displayActionButton = YES;
+    _photoBrowser.displayNavArrows = NO;
+    _photoBrowser.displaySelectionButtons = NO;
+    _photoBrowser.alwaysShowControls = NO;
+    _photoBrowser.zoomPhotosToFill = YES;
+    _photoBrowser.showAddButton = YES;
+    _photoBrowser.showRemoveButton = YES;
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
+    _photoBrowser.wantsFullScreenLayout = YES;
+#endif
+    _photoBrowser.enableGrid = NO;
+    _photoBrowser.enableSwipeToDismiss = NO;
+    [_photoBrowser setCurrentPhotoIndex:0];
+    [self.navigationController pushViewController:_photoBrowser animated:YES];
 }
 
 - (void)onChangeTextViewAppearance:(UIBarButtonItem *)sender {
@@ -186,5 +210,102 @@ static NSString *const kSegueShowImages = @"showImages";
     //Сохраняем позицию найденного текста. Потом, в viewWillAppear мы отмотаем туда наш textView и перетащим туда курсор
     _selectedRangeValue = [NSValue valueWithRange:range];
 }
+
+#pragma mark Обработка событий просмотрщика фотографий
+
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    return _photos == nil ? 0 : _photos.count;
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photo_photoBrowser photoAtIndex:(NSUInteger)index {
+    Photo *photo = _photos[index];
+    MWPhoto *_photoBrowserPhoto = [[MWPhoto alloc] initWithURL:[NSURL fileURLWithPath:photo.photoUri]];
+    _photoBrowserPhoto.caption = photo.comment;
+    return _photoBrowserPhoto;
+}
+
+- (void)addImageFromCamera {
+    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
+}
+
+- (void)addImageFromLibrary {
+    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+}
+
+- (void)removeImageWithIndex:(NSUInteger)index {
+    Photo *photo = _photos[index];
+    [self.record removeFromDiskPhoto:photo clearCache:YES];
+    [self.record removePhotosObject:photo];
+    [self.managedObjectContext save:nil];
+    [self refreshPhotosInBrowser];
+}
+
+- (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType {
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
+    imagePickerController.sourceType = sourceType;
+    imagePickerController.delegate = self;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    UIImage *thumbnail = [image resizedImageWithContentMode:UIViewContentModeScaleAspectFit bounds:CGSizeMake(155, 155) interpolationQuality:kCGInterpolationDefault];
+
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:self.generateImageFileName];
+    NSString *thumbnailPath = [documentsPath stringByAppendingPathComponent:self.generateThumbnailFileName];
+
+    NSData *photoData = UIImageJPEGRepresentation(image, 1.0);
+    BOOL imageWriteSuccess = [photoData writeToFile:filePath atomically:YES];
+    BOOL thumbnailWriteSuccess = NO;
+
+    if (imageWriteSuccess) {
+        NSData *thumbnailData = UIImageJPEGRepresentation(thumbnail, 1.0);
+        thumbnailWriteSuccess = [thumbnailData writeToFile:thumbnailPath atomically:YES];
+    }
+
+    if (thumbnailWriteSuccess) {
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Photo" inManagedObjectContext:self.managedObjectContext];
+        Photo *photo = [[Photo alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
+        photo.creationDate = [NSDate date];
+        photo.thumbnailUri = thumbnailPath;
+        photo.photoUri = filePath;
+
+        [self.record addPhotosObject:photo];
+        [self.managedObjectContext save:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [self refreshPhotosInBrowser];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                        message:@"Не удалось сохранить изображение. Возможно закончилось свободное место"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Закрыть"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (void)refreshPhotosInBrowser {
+    [self updatePhotos];
+    [_photoBrowser reloadData];
+}
+
+- (NSString *)generateImageFileName {
+    double millis = [NSDate date].timeIntervalSince1970;
+    return [NSString stringWithFormat:@"%f.jpg", millis];
+}
+
+- (NSString *)generateThumbnailFileName {
+    double millis = [NSDate date].timeIntervalSince1970;
+    return [NSString stringWithFormat:@"%f-thumb.jpg", millis];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end
