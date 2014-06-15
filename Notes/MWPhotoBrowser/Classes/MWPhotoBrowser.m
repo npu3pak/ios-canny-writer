@@ -18,6 +18,7 @@
 @implementation MWPhotoBrowser {
     UIActionSheet *_addActionSheet;
     UIActionSheet *_removeActionSheet;
+    UIView *_noImagesView;
 }
 
 #pragma mark - Init
@@ -148,6 +149,8 @@
     // View
     self.view.backgroundColor = [UIColor blackColor];
     self.view.clipsToBounds = YES;
+
+    _noImagesView = [[[NSBundle mainBundle] loadNibNamed:@"Views" owner:self options:nil] objectAtIndex:0];
 
     // Setup paging scrolling view
     CGRect pagingScrollViewFrame = [self frameForPagingScrollView];
@@ -359,15 +362,17 @@
 
     // Content offset
     _pagingScrollView.contentOffset = [self contentOffsetForPageAtIndex:_currentPageIndex];
-    [self tilePages];
+    if (numberOfPhotos > 0)
+        [self tilePages];
+    else
+        [self showNoImagesMessage];
     _performingLayout = NO;
 
 }
 
-//TODO Вот тут
 - (void)showNoImagesMessage {
-    UIView *noImagesView = [[[NSBundle mainBundle] loadNibNamed:@"Views" owner:self options:nil] objectAtIndex:0];
-    self.view = noImagesView;
+    [self.view addSubview:_noImagesView];
+    _noImagesView.frame = self.view.frame;
 }
 
 #pragma clang diagnostic push
@@ -866,6 +871,9 @@
 #pragma mark - Paging
 
 - (void)tilePages {
+
+    if([self.view.subviews containsObject:_noImagesView])
+        [_noImagesView removeFromSuperview];
 
     // Calculate which pages should be visible
     // Ignore padding as paging bounces encroach on that
