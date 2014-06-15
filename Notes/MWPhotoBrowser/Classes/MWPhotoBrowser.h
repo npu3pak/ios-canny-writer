@@ -48,6 +48,7 @@
 @interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet id<MWPhotoBrowserDelegate> delegate;
+@property (nonatomic) BOOL hideControlsAfterDelayEnabled;
 @property (nonatomic) BOOL showAddButton;
 @property (nonatomic) BOOL showRemoveButton;
 @property (nonatomic) BOOL zoomPhotosToFill;
@@ -63,6 +64,8 @@
 
 // Init
 - (id)initWithDelegate:(id <MWPhotoBrowserDelegate>)delegate;
+
+- (void)reloadDataAndShowFirst;
 
 // Reloads the photo browser and refetches data
 - (void)reloadData;

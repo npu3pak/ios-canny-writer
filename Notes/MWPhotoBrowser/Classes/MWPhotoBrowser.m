@@ -296,6 +296,10 @@
     UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     NSMutableArray *items = [[NSMutableArray alloc] init];
 
+    // Если нет картинок - отключаем кнопки в тулбаре
+    _actionButton.enabled = numberOfPhotos > 0;
+    _removeButton.enabled = numberOfPhotos > 0;
+
     // Left button - Grid
     if (_enableGrid) {
         hasItems = YES;
@@ -358,6 +362,12 @@
     [self tilePages];
     _performingLayout = NO;
 
+}
+
+//TODO Вот тут
+- (void)showNoImagesMessage {
+    UIView *noImagesView = [[[NSBundle mainBundle] loadNibNamed:@"Views" owner:self options:nil] objectAtIndex:0];
+    self.view = noImagesView;
 }
 
 #pragma clang diagnostic push
@@ -676,6 +686,13 @@
 
 - (NSUInteger)currentIndex {
     return _currentPageIndex;
+}
+
+- (void)reloadDataAndShowFirst {
+    NSUInteger numberOfPhotos = [self numberOfPhotos];
+    if (numberOfPhotos > 0)
+        _currentPageIndex = 0;
+    [self reloadData];
 }
 
 - (void)reloadData {
@@ -1469,7 +1486,7 @@
 
 // Enable/disable control visiblity timer
 - (void)hideControlsAfterDelay {
-    if (![self areControlsHidden]) {
+    if (_hideControlsAfterDelayEnabled && ![self areControlsHidden]) {
         [self cancelControlHiding];
         _controlVisibilityTimer = [NSTimer scheduledTimerWithTimeInterval:self.delayToHideElements target:self selector:@selector(hideControls) userInfo:nil repeats:NO];
     }

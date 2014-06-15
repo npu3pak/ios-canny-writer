@@ -290,7 +290,7 @@ static NSString *const kSegueShowImages = @"showImages";
 
 - (void)refreshPhotosInBrowser {
     [self updatePhotos];
-    [_photoBrowser reloadData];
+    [_photoBrowser reloadDataAndShowFirst];
 }
 
 - (NSString *)generateImageFileName {

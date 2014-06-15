@@ -40,6 +40,7 @@
 		40ED40D218EAEAC50003B099 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40AD18EAEAC50003B099 /* CoreData.framework */; };
 		40ED40DC18EAEAC50003B099 /* NotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ED40DB18EAEAC50003B099 /* NotesTests.m */; };
 		40F208C3191FEF9800B798FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40F208C5191FEF9800B798FB /* Localizable.strings */; };
+		40F84D1A194DE99700F1A672 /* Views.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40F84D19194DE99700F1A672 /* Views.xib */; };
 		8095D019B13EE7BA39A4B5F7 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095D0316D7A37549CCCB473 /* UIImage+WebP.m */; };
 		8095D05E9236CDEB34FC97E7 /* ImageSelectedOn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8095D211FB08806289942E54 /* ImageSelectedOn@2x.png */; };
 		8095D0B68F9F189BFF7FECA6 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095DA8DD8D211116FB71AF4 /* UIImageView+WebCache.m */; };
@@ -183,6 +184,7 @@
 		40F208C6191FEF9D00B798FB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		40F208C7191FEF9E00B798FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		40F56C5D1931061A006DB460 /* Notes 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Notes 2.xcdatamodel"; sourceTree = "<group>"; };
+		40F84D19194DE99700F1A672 /* Views.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Views.xib; sourceTree = "<group>"; };
 		8095D006B202DC8F4D95301B /* PSTCollectionViewLayout+Internals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTCollectionViewLayout+Internals.h"; sourceTree = "<group>"; };
 		8095D0202E1AC94687D5EBBC /* UIBarButtonItemArrowRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIBarButtonItemArrowRight@2x.png"; sourceTree = "<group>"; };
 		8095D0207747CB7672990794 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 				4013BBC618EB368200810653 /* 3rd-party */,
 				4013BBC118EB00B800810653 /* ManagedObjects */,
 				40ED40BB18EAEAC50003B099 /* Main.storyboard */,
+				40F84D19194DE99700F1A672 /* Views.xib */,
 				4058F39719019E0900AD7786 /* Images.xcassets */,
 				40ED40BE18EAEAC50003B099 /* Notes.xcdatamodeld */,
 				40ED40B018EAEAC50003B099 /* Supporting Files */,
@@ -779,6 +782,7 @@
 				8095DACEEBBD3CF6B6FC18E8 /* ImageSelectedOff@2x.png in Resources */,
 				8095D8856B82FACE0AA90693 /* UIBarButtonItemGrid.png in Resources */,
 				8095D0C04BFF2DF0F2FE608D /* ImageSelectedSmallOn.png in Resources */,
+				40F84D1A194DE99700F1A672 /* Views.xib in Resources */,
 				8095D28E5C8339D30BBC5C30 /* ImageSelectedSmallOff.png in Resources */,
 				8095DF69D7B0499E67CF7FE8 /* UIBarButtonItemGrid@2x.png in Resources */,
 				8095D589C88100D864A7C400 /* ImageSelectedSmallOn@2x.png in Resources */,
