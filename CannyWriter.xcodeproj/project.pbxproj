@@ -23,6 +23,7 @@
 		4058F39819019E0900AD7786 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4058F39719019E0900AD7786 /* Images.xcassets */; };
 		407517021913534B005E181F /* VKontakteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 407517001913534B005E181F /* VKontakteActivity.m */; };
 		40A406091930DC2B009CBA3A /* PhotosCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A406081930DC2B009CBA3A /* PhotosCollectionCell.m */; };
+		40AA1D011955DE1A00CC2277 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40AA1D001955DE1A00CC2277 /* MobileCoreServices.framework */; };
 		40DE4E5F192132260044A5EC /* RecordTextEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DE4E5E192132260044A5EC /* RecordTextEditorController.m */; };
 		40DE4E62192145BB0044A5EC /* RecordSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DE4E61192145BB0044A5EC /* RecordSearchController.m */; };
 		40ED40A818EAEAC50003B099 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ED40A718EAEAC50003B099 /* Foundation.framework */; };
@@ -51,8 +52,10 @@
 		8095D170718A1E1491410AB5 /* MWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095D1B63A1A73D898B44878 /* MWPhoto.m */; };
 		8095D17260EBB917C7B53977 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095DBB9F3923456A725980F /* SDWebImageManager.m */; };
 		8095D1795940B61781285FB9 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095D6201D0B35E4984AC53F /* MKAnnotationView+WebCache.m */; };
+		8095D214B33847E9C78A1FD7 /* CopyAllActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095DABD7DF9F7236ABE71E2 /* CopyAllActivity.m */; };
 		8095D2368AE4739024673F1E /* PSTGridLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095D657D04A2A9C8E14FF4E /* PSTGridLayoutSection.m */; };
 		8095D28E5C8339D30BBC5C30 /* ImageSelectedSmallOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 8095D35C47394614B96EAE04 /* ImageSelectedSmallOff.png */; };
+		8095D29840C036C657C05740 /* CopyTextOnlyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095D1D7B11A2C3CB333CA33 /* CopyTextOnlyActivity.m */; };
 		8095D3CDBFBEC593EEE6E676 /* PSTCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095DFFD62D4D12AA5768558 /* PSTCollectionViewLayout.m */; };
 		8095D406C04783C14C1C443C /* ImageSelectedOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8095D15F1D90666BC1A6E1A7 /* ImageSelectedOn.png */; };
 		8095D40ECC41002F569CA68C /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8095DE99FFCCD85FA8915ABE /* Checkmark.png */; };
@@ -156,6 +159,7 @@
 		407517001913534B005E181F /* VKontakteActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKontakteActivity.m; sourceTree = "<group>"; };
 		40A406071930DC2B009CBA3A /* PhotosCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionCell.h; sourceTree = "<group>"; };
 		40A406081930DC2B009CBA3A /* PhotosCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionCell.m; sourceTree = "<group>"; };
+		40AA1D001955DE1A00CC2277 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		40DE4E5D192132260044A5EC /* RecordTextEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordTextEditorController.h; sourceTree = "<group>"; };
 		40DE4E5E192132260044A5EC /* RecordTextEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTextEditorController.m; sourceTree = "<group>"; };
 		40DE4E60192145BB0044A5EC /* RecordSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSearchController.h; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 		8095D1B9325B6571C8B11FD3 /* UIBarButtonItemArrowLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIBarButtonItemArrowLeft@2x.png"; sourceTree = "<group>"; };
 		8095D1C55E3971EA5F1533B9 /* PSTCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewController.h; sourceTree = "<group>"; };
 		8095D1CB5A3F5E8D4F552BAA /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
+		8095D1D7B11A2C3CB333CA33 /* CopyTextOnlyActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyTextOnlyActivity.m; sourceTree = "<group>"; };
+		8095D1DCCCF08F46688061B1 /* CopyTextOnlyActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyTextOnlyActivity.h; sourceTree = "<group>"; };
 		8095D211FB08806289942E54 /* ImageSelectedOn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ImageSelectedOn@2x.png"; sourceTree = "<group>"; };
 		8095D2232A453BE14017461A /* PSTCollectionViewCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTCollectionViewCommon.h; sourceTree = "<group>"; };
 		8095D24C41159A1503B99F4E /* UIBarButtonItemGrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIBarButtonItemGrid.png; sourceTree = "<group>"; };
@@ -269,6 +275,7 @@
 		8095DA347EFF2AF887F5587E /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
 		8095DA8DD8D211116FB71AF4 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		8095DA90DCDB3BBAC77286D6 /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
+		8095DABD7DF9F7236ABE71E2 /* CopyAllActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyAllActivity.m; sourceTree = "<group>"; };
 		8095DB24A5D1A14E6F25E68D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8095DB447B3C3AD21787E42D /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
 		8095DB564964834B2169974A /* UIBarButtonItemGridiOS6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIBarButtonItemGridiOS6@2x.png"; sourceTree = "<group>"; };
@@ -279,6 +286,7 @@
 		8095DCD2EA9FEEB5F6DB30FD /* MWGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGridCell.h; sourceTree = "<group>"; };
 		8095DCEBA89F0BA995B227BD /* UIBarButtonItemGrid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIBarButtonItemGrid@2x.png"; sourceTree = "<group>"; };
 		8095DD1E52AA291DCB1F1E67 /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		8095DD2401CDF8350BD22C01 /* CopyAllActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyAllActivity.h; sourceTree = "<group>"; };
 		8095DD67704964786F854916 /* ImageSelectedOff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ImageSelectedOff@2x.png"; sourceTree = "<group>"; };
 		8095DD6A36EABE10D5250BAD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8095DDA88F14EF4EE4E50BD9 /* MWGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGridViewController.h; sourceTree = "<group>"; };
@@ -307,6 +315,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40AA1D011955DE1A00CC2277 /* MobileCoreServices.framework in Frameworks */,
 				40ED40AA18EAEAC50003B099 /* CoreGraphics.framework in Frameworks */,
 				40ED40AE18EAEAC50003B099 /* CoreData.framework in Frameworks */,
 				40ED40AC18EAEAC50003B099 /* UIKit.framework in Frameworks */,
@@ -440,6 +449,7 @@
 		40ED40A618EAEAC50003B099 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40AA1D001955DE1A00CC2277 /* MobileCoreServices.framework */,
 				40ED40A718EAEAC50003B099 /* Foundation.framework */,
 				40ED40A918EAEAC50003B099 /* CoreGraphics.framework */,
 				40ED40AB18EAEAC50003B099 /* UIKit.framework */,
@@ -466,6 +476,7 @@
 				40F208C5191FEF9800B798FB /* Localizable.strings */,
 				8095D643D1095F96B055B8A0 /* Utils */,
 				148FA83E943194ABC78810A1 /* Controls */,
+				8095D4F2474F183AF7193E67 /* RecordActivities */,
 			);
 			name = CannyWriter;
 			path = Notes;
@@ -505,6 +516,17 @@
 				8095D1CB5A3F5E8D4F552BAA /* DACircularProgressView.m */,
 			);
 			path = DACircularProgress;
+			sourceTree = "<group>";
+		};
+		8095D4F2474F183AF7193E67 /* RecordActivities */ = {
+			isa = PBXGroup;
+			children = (
+				8095D1D7B11A2C3CB333CA33 /* CopyTextOnlyActivity.m */,
+				8095D1DCCCF08F46688061B1 /* CopyTextOnlyActivity.h */,
+				8095DABD7DF9F7236ABE71E2 /* CopyAllActivity.m */,
+				8095DD2401CDF8350BD22C01 /* CopyAllActivity.h */,
+			);
+			name = RecordActivities;
 			sourceTree = "<group>";
 		};
 		8095D5FDAC9DF551BC75B1BB /* SDWebImage */ = {
@@ -909,6 +931,8 @@
 				8095DE66F58A634E95072A79 /* PSTCollectionViewUpdateItem.m in Sources */,
 				8095D5AFA14109ACB4CA81F4 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
 				8095D7840A186368C1BC99DC /* DACircularProgressView.m in Sources */,
+				8095D29840C036C657C05740 /* CopyTextOnlyActivity.m in Sources */,
+				8095D214B33847E9C78A1FD7 /* CopyAllActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

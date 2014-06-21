@@ -32,3 +32,4 @@
 "Email failed to send. Please try again." = "Не удалось отправить. Попробуйте еще раз";
 "Dismiss" = "Скрыть";
 "Saved" = "Сохранено";
+"HudLabelWait" = "Подождите...";

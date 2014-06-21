@@ -17,6 +17,8 @@
 #import "TextViewAppearancePopoverViewController.h"
 #import "Photo.h"
 #import "UIImage+Resize.h"
+#import "CopyAllActivity.h"
+#import "CopyTextOnlyActivity.h"
 
 static NSInteger const kToolbarItemWidth = 10;
 
@@ -197,10 +199,34 @@ static NSString *const kSegueShowImages = @"showImages";
 }
 
 - (IBAction)onShareButtonClick:(UIBarButtonItem *)sender {
+    if (_record.photos == nil || _record.photos.count == 0) {
+        [self shareTextOnly];
+    } else
+        [self shareAll];
+}
+
+- (void)shareTextOnly {
     NSString *text = self.textView.text;
     NSArray *items = @[text];
     VKontakteActivity *vkontakteActivity = [[VKontakteActivity alloc] initWithParent:self];
     UIActivityViewController *activity = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:@[vkontakteActivity]];
+    [self presentViewController:activity animated:YES completion:nil];
+}
+
+- (void)shareAll {
+    NSString *text = self.textView.text;
+    NSMutableArray *items = @[text].mutableCopy;
+    for (Photo *photo in _photos) {
+        UIImage *image = [UIImage imageWithContentsOfFile:photo.photoUri];
+        [items addObject:image];
+    }
+    VKontakteActivity *vkontakteActivity = [[VKontakteActivity alloc] initWithParent:self];
+    CopyAllActivity *copyAllActivity = [[CopyAllActivity alloc] initWithParent:self];
+    CopyTextOnlyActivity *copyTextOnlyActivity = [[CopyTextOnlyActivity alloc] initWithParent:self];
+
+    UIActivityViewController *activity = [[UIActivityViewController alloc] initWithActivityItems:items
+                                                                           applicationActivities:@[vkontakteActivity, copyAllActivity, copyTextOnlyActivity]];
+    activity.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypePrint, UIActivityTypeCopyToPasteboard];
     [self presentViewController:activity animated:YES completion:nil];
 }
 
@@ -217,7 +243,7 @@ static NSString *const kSegueShowImages = @"showImages";
     return _photos == nil ? 0 : _photos.count;
 }
 
-- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photo_photoBrowser photoAtIndex:(NSUInteger)index {
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
     Photo *photo = _photos[index];
     MWPhoto *_photoBrowserPhoto = [[MWPhoto alloc] initWithURL:[NSURL fileURLWithPath:photo.photoUri]];
     _photoBrowserPhoto.caption = photo.comment;

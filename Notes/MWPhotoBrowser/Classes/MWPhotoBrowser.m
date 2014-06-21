@@ -1607,7 +1607,7 @@
                         [items addObject:photo.caption];
                     }
                     self.activityViewController = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
-                    self.activityViewController.excludedActivityTypes = @[UIActivityTypeAssignToContact];
+                    self.activityViewController.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint];
                     [self presentViewController:self.activityViewController animated:YES completion:nil];
 
                 }
