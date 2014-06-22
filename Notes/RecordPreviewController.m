@@ -255,7 +255,8 @@ static NSString *const kSegueShowImages = @"showImages";
     Photo *photo = _photos[index];
     photo.comment = comment.length > 0 ? comment : nil;
     [self.managedObjectContext save:nil];
-    [self refreshPhotosInBrowser];
+    [self updatePhotos];
+    [_photoBrowser reloadData];
 }
 
 - (void)addImageFromCamera {
