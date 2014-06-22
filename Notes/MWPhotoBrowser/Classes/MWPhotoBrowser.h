@@ -32,6 +32,7 @@
 - (void)removeImageWithIndex:(NSUInteger) index;
 - (void)addImageFromCamera;
 - (void)addImageFromLibrary;
+- (void)setComment:(NSString *)comment forImageWithIndex:(NSUInteger)index;
 
 // Наследство бусурманское
 - (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser thumbPhotoAtIndex:(NSUInteger)index;
@@ -45,9 +46,10 @@
 
 @end
 
-@interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
+@interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, weak) IBOutlet id<MWPhotoBrowserDelegate> delegate;
+@property (nonatomic) BOOL displayCommentButton;
 @property (nonatomic) BOOL hideControlsAfterDelayEnabled;
 @property (nonatomic) BOOL showAddButton;
 @property (nonatomic) BOOL showRemoveButton;

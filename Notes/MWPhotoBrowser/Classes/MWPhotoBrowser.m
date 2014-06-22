@@ -19,6 +19,7 @@
     UIActionSheet *_addActionSheet;
     UIActionSheet *_removeActionSheet;
     UIView *_noImagesView;
+    UIAlertView *_commentDialog;
 }
 
 #pragma mark - Init
@@ -188,6 +189,10 @@
         _previousButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:arrowPathFormat, @"Left"]] style:UIBarButtonItemStylePlain target:self action:@selector(gotoPreviousPage)];
         _nextButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:arrowPathFormat, @"Right"]] style:UIBarButtonItemStylePlain target:self action:@selector(gotoNextPage)];
     }
+    if (self.displayCommentButton) {
+        _commentButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(commentButtonPressed:)];
+    }
+
     if (self.displayActionButton) {
         _actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonPressed:)];
     }
@@ -302,6 +307,7 @@
     // Если нет картинок - отключаем кнопки в тулбаре
     _actionButton.enabled = numberOfPhotos > 0;
     _removeButton.enabled = numberOfPhotos > 0;
+    _commentButton.enabled = numberOfPhotos > 0;
 
     // Left button - Grid
     if (_enableGrid) {
@@ -330,6 +336,11 @@
 
     if (_addButton) {
         self.navigationItem.rightBarButtonItem = _addButton;
+    }
+
+    if (_commentButton) {
+        [items addObject:_commentButton];
+        [items addObject:flexSpace];
     }
 
     // Right - Action
@@ -872,7 +883,7 @@
 
 - (void)tilePages {
 
-    if([self.view.subviews containsObject:_noImagesView])
+    if ([self.view.subviews containsObject:_noImagesView])
         [_noImagesView removeFromSuperview];
 
     // Calculate which pages should be visible
@@ -1186,6 +1197,7 @@
     _nextButton.enabled = (_currentPageIndex < numberOfPhotos - 1);
     _actionButton.enabled = [[self photoAtIndex:_currentPageIndex] underlyingImage] != nil;
     _removeButton.enabled = [[self photoAtIndex:_currentPageIndex] underlyingImage] != nil;
+    _commentButton.enabled = [[self photoAtIndex:_currentPageIndex] underlyingImage] != nil;
 
 }
 
@@ -1557,6 +1569,25 @@
 }
 
 #pragma mark - Actions
+
+- (void)commentButtonPressed:(id)sender {
+    _commentDialog = [[UIAlertView alloc] initWithTitle:nil message:nil delegate:self cancelButtonTitle:@"Отмена" otherButtonTitles:@"Применить", nil];
+    _commentDialog.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField *alertTextField = [_commentDialog textFieldAtIndex:0];
+    alertTextField.placeholder = @"Подпись к фотографии";
+    alertTextField.autocapitalizationType = UITextAutocapitalizationTypeSentences;
+    MWPhoto *photo = (MWPhoto *) [_delegate photoBrowser:self photoAtIndex:_currentPageIndex];
+    alertTextField.text = photo.caption;
+    [_commentDialog show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView == _commentDialog && buttonIndex == 1) {
+        UITextField *alertTextField = [alertView textFieldAtIndex:0];
+        if ([_delegate respondsToSelector:@selector(setComment: forImageWithIndex:)])
+            [_delegate setComment:alertTextField.text forImageWithIndex:_currentPageIndex];
+    }
+}
 
 - (void)actionButtonPressed:(id)sender {
     if (_actionsSheet) {

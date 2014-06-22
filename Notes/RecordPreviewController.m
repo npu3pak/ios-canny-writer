@@ -141,6 +141,7 @@ static NSString *const kSegueShowImages = @"showImages";
     _photoBrowser.displayNavArrows = NO;
     _photoBrowser.displaySelectionButtons = NO;
     _photoBrowser.alwaysShowControls = NO;
+    _photoBrowser.displayCommentButton = YES;
     _photoBrowser.zoomPhotosToFill = YES;
     _photoBrowser.showAddButton = YES;
     _photoBrowser.showRemoveButton = YES;
@@ -248,6 +249,13 @@ static NSString *const kSegueShowImages = @"showImages";
     MWPhoto *_photoBrowserPhoto = [[MWPhoto alloc] initWithURL:[NSURL fileURLWithPath:photo.photoUri]];
     _photoBrowserPhoto.caption = photo.comment;
     return _photoBrowserPhoto;
+}
+
+- (void)setComment:(NSString *)comment forImageWithIndex:(NSUInteger)index {
+    Photo *photo = _photos[index];
+    photo.comment = comment.length > 0 ? comment : nil;
+    [self.managedObjectContext save:nil];
+    [self refreshPhotosInBrowser];
 }
 
 - (void)addImageFromCamera {
