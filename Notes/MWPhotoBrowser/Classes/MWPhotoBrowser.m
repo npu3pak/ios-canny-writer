@@ -228,7 +228,7 @@
                                             cancelButtonTitle:@"Отмена"
                                        destructiveButtonTitle:@"Удалить"
                                             otherButtonTitles:nil];
-    [_removeActionSheet showInView:self.view];
+    [_removeActionSheet showFromToolbar:_toolbar];
 }
 
 - (void)addButtonPressed:(id)removeButton {

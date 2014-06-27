@@ -123,7 +123,7 @@ static NSString *const kSegueShowImages = @"showImages";
                                                  cancelButtonTitle:NSLocalizedString(@"actionSheetAddCancel", @"Отмена")
                                             destructiveButtonTitle:NSLocalizedString(@"actionSheetDeleteRecord", @"Удалить запись")
                                                  otherButtonTitles:nil];
-    [actSheet showInView:self.view];
+    [actSheet showFromToolbar:self.navigationController.toolbar];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
