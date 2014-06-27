@@ -113,7 +113,7 @@ static NSString *const kSegueShowImages = @"showImages";
     UIBarButtonItem *changeAppearance = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarFontSize"] style:UIBarButtonItemStylePlain target:self action:@selector(onChangeTextViewAppearance:)];
     UIBarButtonItem *showImages = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarPhotos"] style:UIBarButtonItemStylePlain target:self action:@selector(onShowImages)];;
     UIBarButtonItem *delete = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarDelete"] style:UIBarButtonItemStylePlain target:self action:@selector(askRecordDeletion)];;
-    [self setToolbarItems:@[search, fixedSpace, history, fixedSpace, changeAppearance, fixedSpace, showImages, fixedSpace, delete, separator, share]];
+    [self setToolbarItems:@[delete, fixedSpace, history, fixedSpace, search, fixedSpace, changeAppearance, fixedSpace, showImages, separator, share]];
     [self.navigationController setToolbarHidden:NO animated:animated];
 }
 

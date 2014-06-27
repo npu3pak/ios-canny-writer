@@ -60,7 +60,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StatusHasPhotos" translatesAutoresizingMaskIntoConstraints="NO" id="b7X-Ip-9U7">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="StatusHasPhotos" translatesAutoresizingMaskIntoConstraints="NO" id="b7X-Ip-9U7">
                                             <rect key="frame" x="249" y="64" width="25" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                         </imageView>
@@ -99,7 +99,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StatusHasPhotos" translatesAutoresizingMaskIntoConstraints="NO" id="tqP-wK-txv">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="StatusHasPhotos" translatesAutoresizingMaskIntoConstraints="NO" id="tqP-wK-txv">
                                             <rect key="frame" x="249" y="64" width="25" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                         </imageView>
@@ -127,9 +127,7 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Записи" id="tQt-TN-PWz">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="H6N-36-x88"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Записи" id="tQt-TN-PWz"/>
                     <connections>
                         <outlet property="searchBar" destination="Umk-Q2-fgG" id="MzL-Kb-abN"/>
                         <segue destination="Ah7-4n-0Wa" kind="push" identifier="showDetail" id="t95-oL-HrT"/>
@@ -581,7 +579,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="StatusHasPhotos" width="25" height="25"/>
+        <image name="StatusHasPhotos" width="20" height="20"/>
         <image name="ToolbarFontSize" width="20" height="20"/>
         <image name="ToolbarPunctuation" width="20" height="20"/>
         <image name="ToolbarRedo" width="20" height="20"/>
