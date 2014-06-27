@@ -190,16 +190,16 @@
         _nextButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:arrowPathFormat, @"Right"]] style:UIBarButtonItemStylePlain target:self action:@selector(gotoNextPage)];
     }
     if (self.displayCommentButton) {
-        _commentButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(commentButtonPressed:)];
+        _commentButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarComment"] style:UIBarButtonItemStylePlain target:self action:@selector(commentButtonPressed:)];
     }
 
     if (self.displayActionButton) {
-        _actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonPressed:)];
+        _actionButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarShare"] style:UIBarButtonItemStylePlain target:self action:@selector(actionButtonPressed:)];
     }
 
     //Моё добро
     if (self.showRemoveButton) {
-        _removeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(removeButtonPressed:)];
+        _removeButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarDelete"] style:UIBarButtonItemStylePlain target:self action:@selector(removeButtonPressed:)];
     }
 
     if (self.showAddButton) {

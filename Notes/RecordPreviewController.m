@@ -111,8 +111,8 @@ static NSString *const kSegueShowImages = @"showImages";
     UIBarButtonItem *separator = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *share = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarShare"] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonClick:)];
     UIBarButtonItem *changeAppearance = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarFontSize"] style:UIBarButtonItemStylePlain target:self action:@selector(onChangeTextViewAppearance:)];
-    UIBarButtonItem *showImages = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(onShowImages)];;
-    UIBarButtonItem *delete = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(askRecordDeletion)];;
+    UIBarButtonItem *showImages = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarPhotos"] style:UIBarButtonItemStylePlain target:self action:@selector(onShowImages)];;
+    UIBarButtonItem *delete = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ToolbarDelete"] style:UIBarButtonItemStylePlain target:self action:@selector(askRecordDeletion)];;
     [self setToolbarItems:@[search, fixedSpace, history, fixedSpace, changeAppearance, fixedSpace, showImages, fixedSpace, delete, separator, share]];
     [self.navigationController setToolbarHidden:NO animated:animated];
 }
