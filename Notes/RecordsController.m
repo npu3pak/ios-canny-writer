@@ -39,6 +39,16 @@
         [self saveContext:context];
     }
     [self.tableView reloadData];
+    [self refreshTableBackground];
+}
+
+- (void)refreshTableBackground {
+    NSInteger sectionsCount = [self numberOfSectionsInTableView:self.tableView];
+    if (sectionsCount > 0) {
+        self.tableView.backgroundView = nil;
+    } else {
+        self.tableView.backgroundView = [[[NSBundle mainBundle] loadNibNamed:@"Views" owner:self options:nil] objectAtIndex:1];
+    }
 }
 
 - (void)addRecord:(id)sender {
@@ -190,6 +200,7 @@
         abort();
     }
     [self.tableView reloadData];
+    [self refreshTableBackground];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)aSearchBar {
@@ -200,6 +211,7 @@
     [self.fetchedResultsController.fetchRequest setPredicate:nil];
     [[self fetchedResultsController] performFetch:nil];
     [self.tableView reloadData];
+    [self refreshTableBackground];
 }
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
     _searchBar.showsCancelButton = YES;
@@ -271,6 +283,7 @@
             break;
         case NSFetchedResultsChangeUpdate:
             [self.tableView reloadData];
+            [self refreshTableBackground];
             break;
         case NSFetchedResultsChangeMove:
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -281,6 +294,7 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
+    [self refreshTableBackground];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
