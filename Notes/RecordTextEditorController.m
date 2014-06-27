@@ -41,10 +41,6 @@ static NSString *const kSegueFindText = @"findText";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self scrollToSearchResult];
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
     self.textView.becomeFirstResponder;
 }
 
