@@ -10,20 +10,21 @@
 
 @implementation RecordsItemCellNoTitle
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    [self updateTextColor:selected];
 }
 
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    [self updateTextColor:highlighted];
+}
+
+- (void)updateTextColor:(BOOL)isSelected {
+    if (isSelected) {
+        self.preview.textColor = [UIColor whiteColor];
+    } else {
+        self.preview.textColor = [UIColor darkGrayColor];
+    }
+}
 @end
