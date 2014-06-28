@@ -71,6 +71,7 @@ static NSString *const kSegueShowImages = @"showImages";
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [self endTitleEditing];
     [self.navigationController setToolbarHidden:YES animated:animated];
 }
 
