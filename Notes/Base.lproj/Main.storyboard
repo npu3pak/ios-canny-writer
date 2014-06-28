@@ -193,7 +193,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="editBarButton" destination="Hte-R5-piU" id="yZX-xU-d5A"/>
+                        <outlet property="editBarButton" destination="Hte-R5-piU" id="xNh-pa-QWw"/>
                         <outlet property="textView" destination="Bx9-3G-Cwb" id="kSw-k5-E9B"/>
                         <outlet property="titleTextField" destination="3Bq-ou-gt2" id="mzR-sU-aqQ"/>
                         <segue destination="quJ-l1-xf0" kind="push" identifier="showHistory" id="oox-4v-FPW"/>

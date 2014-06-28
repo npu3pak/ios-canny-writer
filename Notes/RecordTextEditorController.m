@@ -42,7 +42,12 @@ static NSString *const kSegueFindText = @"findText";
     [super viewWillAppear:animated];
     [self scrollToSearchResult];
     self.textView.becomeFirstResponder;
-    //Пропихиваем в навконтроллер экран просмотра записи
+}
+
+//Пропихиваем в навконтроллер экран просмотра записи.
+//В лог пишется предупреждение о том, что пытаемся править UI, который не показан на экране
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     if (self.isNewRecord) {
         self.isNewRecord = NO;
         [self.recordsNavigationController pushViewController:self.recordPreviewController animated:NO];
