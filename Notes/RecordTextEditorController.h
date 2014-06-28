@@ -17,6 +17,12 @@
 @property Record *record;
 @property NSManagedObjectContext *managedObjectContext;
 
+//При добавлении новой записи сразу показываем экран редактирования.
+//И потом уже из экрана редактирования пропихиваем в NavController экран просмотра
+@property BOOL isNewRecord;
+@property UINavigationController *recordsNavigationController;
+@property UIViewController *recordPreviewController;
+
 @property(weak, nonatomic) IBOutlet NSLayoutConstraint *textPaddingBottom;
 @property(weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHeight;
 @property(weak, nonatomic) IBOutlet UIToolbar *toolbar;

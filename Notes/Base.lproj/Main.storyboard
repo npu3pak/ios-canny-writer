@@ -18,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2272" y="-1498"/>
+            <point key="canvasLocation" x="-2396" y="-1298"/>
         </scene>
         <!--Records Controller - Записи-->
         <scene sceneID="VgW-fR-Quf">
@@ -131,17 +131,17 @@
                     <connections>
                         <outlet property="searchBar" destination="Umk-Q2-fgG" id="MzL-Kb-abN"/>
                         <segue destination="Ah7-4n-0Wa" kind="push" identifier="showDetail" id="t95-oL-HrT"/>
-                        <segue destination="Ah7-4n-0Wa" kind="push" identifier="editNewRecord" id="jjO-qP-LzF"/>
+                        <segue destination="fQV-8d-P1u" kind="modal" identifier="editNewRecord" id="Wfs-T0-iBh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1816" y="-1498"/>
+            <point key="canvasLocation" x="-1940" y="-1298"/>
         </scene>
         <!--Record Preview Controller-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
-                <viewController id="Ah7-4n-0Wa" customClass="RecordPreviewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordPreviewController" id="Ah7-4n-0Wa" customClass="RecordPreviewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G6s-mi-Uc4"/>
                         <viewControllerLayoutGuide type="bottom" id="Vke-vo-2qH"/>
@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1344" y="-1498"/>
+            <point key="canvasLocation" x="-1396" y="-1942"/>
         </scene>
         <!--Images Controller - Изображения-->
         <scene sceneID="mKk-Do-5Co">
@@ -261,7 +261,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cvx-4o-68E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-791" y="-2912"/>
+            <point key="canvasLocation" x="-779" y="-2732"/>
         </scene>
         <!--Record Search Controller-->
         <scene sceneID="zwc-wQ-WOx">
@@ -314,7 +314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PjF-fd-cSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15" y="-2242"/>
+            <point key="canvasLocation" x="-119" y="-2162"/>
         </scene>
         <!--Record Text Editor Controller-->
         <scene sceneID="LBy-9a-2NZ">
@@ -408,6 +408,7 @@
                             <constraint firstItem="Kuz-KT-sPf" firstAttribute="leading" secondItem="HEd-PN-XKm" secondAttribute="leading" id="xVj-NP-FAy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BIm-x8-eCT"/>
                     <connections>
                         <outlet property="appearanceToolbarItem" destination="bix-jJ-5y8" id="X1G-Bl-YSX"/>
                         <outlet property="statusLabel" destination="Kuz-KT-sPf" id="eWh-py-rQj"/>
@@ -419,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gt-es-AMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-554" y="-1530"/>
+            <point key="canvasLocation" x="-854" y="-1298"/>
         </scene>
         <!--History Controller - showHistory-->
         <scene sceneID="oTX-t0-oZf">
@@ -463,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOx-zw-aWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-810" y="-504"/>
+            <point key="canvasLocation" x="-786" y="-3475"/>
         </scene>
         <!--Text View Appearance Popover View Controller-->
         <scene sceneID="BJe-ef-FSp">
@@ -516,7 +517,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6z-3y-rNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-169" y="-610"/>
+            <point key="canvasLocation" x="-119" y="-1282"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="NuT-hm-Tea">
@@ -592,8 +593,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="jxv-6W-nrh"/>
         <segue reference="rdC-vj-Q6v"/>
-        <segue reference="t95-oL-HrT"/>
-        <segue reference="gj9-F1-gna"/>
+        <segue reference="CFp-sY-PcG"/>
     </inferredMetricsTieBreakers>
 </document>

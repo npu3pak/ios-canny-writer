@@ -183,6 +183,7 @@ static NSString *const kSegueShowImages = @"showImages";
         [[segue destinationViewController] setRecordPreviewController:self];
     } else if ([segue.identifier isEqualToString:kSegueEditText]) {
         [[segue destinationViewController] setRecord:self.record];
+        [[segue destinationViewController] setIsNewRecord:NO];
         [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
     } else if ([segue.identifier isEqualToString:kSegueShowImages]) {
         [[segue destinationViewController] setRecord:self.record];

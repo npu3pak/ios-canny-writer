@@ -12,6 +12,7 @@
 #import "NSDate-Utilities.h"
 #import "RecordsItemCell.h"
 #import "RecordsItemCellNoTitle.h"
+#import "RecordTextEditorController.h"
 
 @implementation RecordsController {
     NSIndexPath *_selectedCellIndex;
@@ -174,14 +175,21 @@
         [[segue destinationViewController] setManagedObjectContext:_managedObjectContext];
     }
     if ([[segue identifier] isEqualToString:@"editNewRecord"]) {
+        RecordPreviewController *previewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RecordPreviewController"];
+        previewController.managedObjectContext = self.managedObjectContext;
+        previewController.record = _newRecord;
+        [[segue destinationViewController] setRecordPreviewController:previewController];
+
+        [[segue destinationViewController] setRecordsNavigationController:self.navigationController];
         [[segue destinationViewController] setRecord:_newRecord];
+        [[segue destinationViewController] setIsNewRecord:YES];
         [[segue destinationViewController] setManagedObjectContext:_managedObjectContext];
     }
 }
 
 #pragma mark - Search
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchString{
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchString {
     [self filterTableView:searchString];
 
 }
@@ -213,9 +221,10 @@
     [self.tableView reloadData];
     [self refreshTableBackground];
 }
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     _searchBar.showsCancelButton = YES;
-    if(_searchBar.text != nil)
+    if (_searchBar.text != nil)
         [self filterTableView:_searchBar.text];
 }
 

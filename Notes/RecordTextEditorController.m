@@ -42,6 +42,11 @@ static NSString *const kSegueFindText = @"findText";
     [super viewWillAppear:animated];
     [self scrollToSearchResult];
     self.textView.becomeFirstResponder;
+    //Пропихиваем в навконтроллер экран просмотра записи
+    if (self.isNewRecord) {
+        self.isNewRecord = NO;
+        [self.recordsNavigationController pushViewController:self.recordPreviewController animated:NO];
+    }
 }
 
 //Если мы перешли сюда из окна поиска - показываем результат поиска
