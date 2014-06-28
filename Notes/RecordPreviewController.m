@@ -79,9 +79,12 @@ static NSString *const kSegueShowImages = @"showImages";
     [super viewWillAppear:animated];
     [self showRecord];
     [self showBottomToolbar:animated];
-    [self scrollToSearchResult];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self scrollToSearchResult];
+}
 
 //Если мы перешли сюда из окна поиска - показываем результат поиска
 - (void)scrollToSearchResult {
