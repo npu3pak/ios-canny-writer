@@ -34,7 +34,7 @@
 }
 
 - (UIImage *)activityImage {
-    return [UIImage imageNamed:@"vk_activity"];
+    return [UIImage imageNamed:@"ActivityCopyImage"];
 }
 
 
