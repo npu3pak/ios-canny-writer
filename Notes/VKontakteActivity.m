@@ -40,13 +40,17 @@ static NSString *kAppID = @"4339505";
     return [UIImage imageNamed:@"vk_activity"];
 }
 
-
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems {
     for (UIActivityItemProvider *item in activityItems) {
-        if (![item isKindOfClass:[UIImage class]] && ![item isKindOfClass:[NSString class]])
-            return NO;
+        if ([item isKindOfClass:[UIImage class]]) {
+            return YES;
+        }
+        else if ([item isKindOfClass:[NSString class]]) {
+            if (item != nil && ![item isEqual:@""])
+                return YES;
+        }
     }
-    return YES;
+    return NO;
 }
 
 - (void)prepareWithActivityItems:(NSArray *)activityItems {
@@ -59,6 +63,8 @@ static NSString *kAppID = @"4339505";
             [_images addObject:item];
         }
     }
+    if (_text == nil)
+        _text = @"";
 }
 
 - (void)performActivity {
