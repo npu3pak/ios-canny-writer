@@ -95,8 +95,15 @@ static NSString *const kSegueShowImages = @"showImages";
 
 - (void)showRecord {
     [self updatePhotos];
+    [self updateEditButtonTitle];
     [self.titleTextField setText:self.record.title];
     [self.textView setText:self.record.text];
+}
+
+- (void)updateEditButtonTitle {
+    self.editBarButton.title = self.record.text == nil || self.record.text.length == 0
+            ? @"Добавить текст"
+            : @"Изменить текст";
 }
 
 - (void)updatePhotos {

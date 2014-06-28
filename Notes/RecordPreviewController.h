@@ -19,6 +19,7 @@
 @property(strong, nonatomic) Record *record;
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editBarButton;
 @property(weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property(weak, nonatomic) IBOutlet TextView *textView;
 
