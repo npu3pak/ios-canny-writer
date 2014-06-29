@@ -213,7 +213,7 @@
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)aSearchBar {
     [aSearchBar resignFirstResponder];
-    _searchBar.showsCancelButton = NO;
+    [_searchBar setShowsCancelButton:NO animated:YES];
     _searchBar.text = nil;
     _searchString = nil;
     [self.fetchedResultsController.fetchRequest setPredicate:nil];
@@ -223,7 +223,7 @@
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    _searchBar.showsCancelButton = YES;
+    [_searchBar setShowsCancelButton:YES animated:YES];
     if (_searchBar.text != nil)
         [self filterTableView:_searchBar.text];
 }
