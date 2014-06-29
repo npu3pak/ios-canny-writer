@@ -44,16 +44,6 @@ static NSString *const kSegueFindText = @"findText";
     self.textView.becomeFirstResponder;
 }
 
-//Пропихиваем в навконтроллер экран просмотра записи.
-//В лог пишется предупреждение о том, что пытаемся править UI, который не показан на экране
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    if (self.isNewRecord) {
-        self.isNewRecord = NO;
-        [self.recordsNavigationController pushViewController:self.recordPreviewController animated:NO];
-    }
-}
-
 //Если мы перешли сюда из окна поиска - показываем результат поиска
 - (void)scrollToSearchResult {
     if (_selectedRangeValue) {
@@ -129,6 +119,14 @@ static NSString *const kSegueFindText = @"findText";
 - (IBAction)onDoneButtonClick:(UIBarButtonItem *)sender {
     if (![self.textView.text isEqualToString:self.record.text])
         [self saveText];
+
+    //Пропихиваем в навконтроллер экран просмотра записи.
+    //В лог пишется предупреждение о том, что пытаемся править UI, который не показан на экране
+    if (self.isNewRecord && self.textView.text != nil && self.textView.text.length > 0) {
+        self.isNewRecord = NO;
+        [self.recordsNavigationController pushViewController:self.recordPreviewController animated:NO];
+    }
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
