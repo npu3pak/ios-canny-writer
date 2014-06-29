@@ -353,16 +353,16 @@
                                             <action selector="onRedoButtonClick:" destination="fQV-8d-P1u" id="jcr-6Y-1lh"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="eKL-Es-Kug"/>
-                                    <barButtonItem image="ToolbarPunctuation" style="plain" id="zZk-bx-G2d">
-                                        <connections>
-                                            <action selector="onSwitchKeyboardExtensionClick:" destination="fQV-8d-P1u" id="6QE-2S-tJF"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="wBg-K7-OKO"/>
                                     <barButtonItem image="ToolbarFontSize" style="plain" id="bix-jJ-5y8">
                                         <connections>
                                             <segue destination="qaI-qz-yqZ" kind="custom" identifier="showAppearancePopover" customClass="WYStoryboardPopoverSegue" id="gj9-F1-gna"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="eKL-Es-Kug"/>
+                                    <barButtonItem image="ToolbarPunctuation" style="plain" id="zZk-bx-G2d">
+                                        <connections>
+                                            <action selector="onSwitchKeyboardExtensionClick:" destination="fQV-8d-P1u" id="6QE-2S-tJF"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="7vn-bK-TPa"/>
@@ -594,8 +594,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jxv-6W-nrh"/>
-        <segue reference="rdC-vj-Q6v"/>
         <segue reference="CFp-sY-PcG"/>
+        <segue reference="gj9-F1-gna"/>
+        <segue reference="i2p-XV-ucv"/>
     </inferredMetricsTieBreakers>
 </document>
