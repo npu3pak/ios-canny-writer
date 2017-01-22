@@ -1,0 +1,20 @@
+PODS:
+  - MBProgressHUD (0.8)
+  - VK-ios-sdk (1.0.6.13)
+  - WYPopoverController (0.1.8)
+
+DEPENDENCIES:
+  - MBProgressHUD (~> 0.8)
+  - VK-ios-sdk
+  - WYPopoverController (from `https://github.com/nicolaschengdev/WYPopoverController.git`)
+
+EXTERNAL SOURCES:
+  WYPopoverController:
+    :git: https://github.com/nicolaschengdev/WYPopoverController.git
+
+SPEC CHECKSUMS:
+  MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
+  VK-ios-sdk: c70284387a32f5450e6df5117d369972022fe864
+  WYPopoverController: 938c6f14f0255204199c003853aba8475f3f239c
+
+COCOAPODS: 0.32.1
