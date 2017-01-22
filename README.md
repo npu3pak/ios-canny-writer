@@ -1,4 +1,4 @@
-# ios-canny-writer
+# CannyWriter
 
 Исходный код текстового редактора, который публиковался в AppStore в 2014.
 
